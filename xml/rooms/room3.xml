@@ -1,0 +1,10 @@
+<room id="1">
+	<desc>Du bist auf dem Klo. Hier ist nicht viel los.
+	</desc>
+	<exits>
+		<exit room="haus">N</exit>
+	</exits>
+	<items>
+		<item>4</item>
+	</items>
+</room>

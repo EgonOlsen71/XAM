@@ -1,0 +1,40 @@
+<items>
+	<item id="0" inventory="1">
+		<name>Schlafanzug</name>
+		<desc>Ein eleganter Schlafanzug. Mit Streifen!</desc>
+	</item>
+	<item id="1" inventory="1">
+		<name>Brief</name>
+		<desc>Das ist ein Brief von einer Versicherung!</desc>
+	</item>
+	<item id="2" inventory="0">
+		<name>Schrank</name>
+		<desc>Ein unscheinbarer Schrank!</desc>
+	</item>
+	<item id="3" inventory="1">
+		<name>Katze</name>
+		<desc>Klein und haarig!</desc>
+	</item>
+	<item id="4" inventory="1">
+		<name>Klopapier</name>
+		<desc>Sie ist halbleer und sieht nicht sehr weich aus!</desc>
+	</item>
+	<item id="5" inventory="1">
+		<name>Pappschachtel</name>
+		<desc>Eine einfache Pappschachtel!</desc>
+	</item>
+	<item id="6" inventory="1">
+		<name>Spielkarte</name>
+		<desc>Eine Spielkarte, ein Herz-Ass, um genau zu sein!</desc>
+	</item>
+	<item id="7" inventory="1">
+		<name>Kunstwerk</name>
+		<desc>Eine Kunstwerk aus Spielkarte und Klopapier!</desc>
+	</item>
+	
+	<operations>
+		<operation command="7" item="5" unique="1" remove_inv="" remove_room="" add_room="" add_inv="6" unlock="" with_item="" remove_both="">In der Schachtel findest du eine Spielkarte!</operation>
+		<operation command="8" item="6" unique="1" remove_inv="" remove_room="" add_room="" add_inv="7" unlock="" with_item="4" remove_both="1">Du wickelst die Karte in Klopapier!</operation>
+		<operation command="8" item="4" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="">Das sollte gerade nicht nötig sein!</operation>
+	</operations>
+</items>

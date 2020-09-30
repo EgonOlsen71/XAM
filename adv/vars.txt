@@ -1,0 +1,88 @@
+tx$ 		- Übergabevariable für String-Subroutinen
+sx$ 		- temp. Variable in String-Subroutinen
+a$			- temp. Stringspeicher
+b$			- temp. Stringspeicher
+tf$			- temp. Stringspeicher
+lg$			- Zu loggender Text
+i,ii,p,pp,j	- Laufvariablen in Schleifen
+c$			- Zeichenspeicher (String)
+c%			- Zeichenspeicher 
+c2%			- Zeichenspeicher
+co%			- Erwarteter Befehl
+ff%			- Flag
+rt%			- Rückgabewert
+rr%			- Rückgabewert
+t%			- temp. Zahl
+t2%			- temp. Zahl
+er			- Fehlernummer
+sk%			- Flag, um generische Fehlermeldung zu skippen
+
+cc$			- Eingegebener Befehl
+cb$			- Eingabeprompt
+cp$()		- Ergebnis des Lexers als Strings (nicht nicht normiert)
+cp%()		- Ergebnis des Lexers (auf IDs normiert, -1 für unbekannt)
+co%			- Anzahl der Lexerergebnisse vor Zuordnung
+cc%			- Anzahl der Lexerergebnisse nach Zuordnung
+ct$			- Zwischenspeicher des Lexers
+al$			- String mit "alles"
+
+mc%			- max. Anzahl Befehle
+ms%			- max. Anzahl Synonyme
+cm$()()		- Befehle, Synonyme gruppiert nach ID
+cv$()		- Textbaustein "das kann ich nicht xxx"	
+tb%			- Anzahl Befehle (Endindex)				
+
+
+rn$			- aktueller Raumname
+mr%			- max. Anzahl Räume
+mi%			- max. Anzahl Gegenstände
+it$()		- Namen der Gegenstände
+il$()		- Namen der Gegenstände in Kleinschrift
+id$()()		- Beschreibung eines Gegenstandes (zeilenweise)
+mv%()		- Flag, ob der Gegenstand eingesammelt werden kann (=1)
+rd$()		- Zeilen der Raumbeschreibung (ohne Extras)
+pl%			- Anzahl der Zeilen des Raumbeschreibung
+rd%			- ID des aktuellen Raums
+rd%			- ID des aktuellen Raums
+ex$()		- Ausgänge in einem Raum ingesamt
+xn$()		- Namen des Räume des jeweiligen Ausgangs
+lk%()		- Flag, ob der Ausgang per Default versperrt ist (=1)
+el%			- Anzahl der Ausgänge des Raumes
+lx$()()		- Liste mit nicht mehr versperrten Ausgängen pro Raum-ID
+ri$()		- Gegenstände in einem Raum (als String, aber mit ID als Inhalt)
+il%			- Anzahl der Gegenstände in einem Raum
+iv%()		- Inventar des Spielers (nur die IDs der Gegenstände)
+rv%()		- Inventar des Raumes (flexibel, nur die IDs der Gegenstände)
+ic%			- Anzahl Gegenstände im Inventar
+ip%()		- Im Raum noch sichtbare Gegenstände
+tc%			- Anzahl der im Raum sichtbaren Gegenstände
+uv%()		- Aus dem Inventar schon benutzte Gegenstände (d.h. dort nicht mehr sichtbar)
+xp$()		- Momentan benutzbare Ausgänge
+xx$()		- Namen des Räume der benutzbaren Ausgänge
+xc%			- Anzahl benutzbare Ausgänge
+ti%			- Anzahl Items (Endindex)
+rs%()		- Flag, um zu markieren, dass ein Gegenstand irgendwo im Rauminventar liegt
+
+
+dr$			- Strings für die Himmelsrichtungen, am Index indentifiziert
+op%()()		- Operationen, die in einem Raum möglich sind
+op$()()		- Text für die jeweilige Operation
+oc%			- Anzahl Operationen im Raum
+od$()		- Angewendete Operationen auf Gegenstände (nur unique)
+od%			- Anzahl Operationen auf Gegenständen
+uq%			- Zwischenspeicher für "unique"
+og%()()		- Operationen, die auf Gegenständen möglich sind
+og$()()		- Text für die jeweilige Operation
+gc%			- Anzahl Operationen auf Gegenständen
+ac%()		- Aktionen, die von der aktuelle Operation getriggert werden (umkopiert)
+	
+
+
+command="7" item="2" unique="1" remove_inv="" remove_room="" add_room="5" add_inv="" unlock="" with_item="" remove_both=""
+
+
+
+
+
+
+

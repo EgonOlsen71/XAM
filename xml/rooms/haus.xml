@@ -1,0 +1,24 @@
+<room id="0">
+	<desc>Du befindest dich in deinem Wohnzimmer. An der Wand hängt eine
+		kaputte Kuckkucksuhr.|Beim Anblick der Uhr wirst du leicht
+		melancholisch. Sie gehörte deinem Opa, der schon vor vielen Jahren
+		verstorben ist.|Durch das Fenster dringen die ersten Sonnenstrahlen
+		des jungen Morgens. Irgendwo singt eine Amsel ihr Lied.
+	</desc>
+	<exits>
+		<exit room="room2" locked="1">N</exit>
+		<exit room="room3">S</exit>
+		<exit room="room4">SO</exit>
+		<exit room="room5">H</exit>
+	</exits>
+	<items>
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</items>
+	<operations>
+		<operation command="7" item="2" unique="1" remove_inv="" remove_room="" add_room="5" add_inv="" unlock="" with_item="" remove_both="">Als du den Schrank öffnest, fällt eine kleine Schachtel heraus!</operation>
+		<operation command="8" item="2" unique="" remove_inv="3" remove_room="" add_room="" add_inv="" unlock="" with_item="3" remove_both="">Du steckst die Katze in den Schrank. Sie verschwindet!</operation>
+		<operation command="9" item="2" unique="" remove_inv="" remove_room="2" add_room="" add_inv="" unlock="n" with_item="" remove_both="">Du zerstörst den Schrank. Eine Tür wird frei!</operation>
+	</operations>
+</room>

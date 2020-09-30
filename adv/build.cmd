@@ -1,0 +1,1 @@
+mospeed readtest.bas -compactlevel=5
