@@ -247,25 +247,33 @@ public class Converter {
 		tmp = it.getAttribute("item");
 		write(os, null, tmp + "|", false);
 		tmp = it.getAttribute("unique");
-		write(os, null, ((tmp != null && !tmp.isEmpty()) ? tmp : "0") + "|", false);
+		write(os, null, getZeroValue(tmp), false);
 		tmp = it.getAttribute("remove_inv");
-		write(os, null, ((tmp != null && !tmp.isEmpty()) ? tmp : "-1") + "|", false);
+		write(os, null, getValue(tmp), false);
 		tmp = it.getAttribute("remove_room");
-		write(os, null, ((tmp != null && !tmp.isEmpty()) ? tmp : "-1") + "|", false);
+		write(os, null, getValue(tmp), false);
 		tmp = it.getAttribute("add_room");
-		write(os, null, ((tmp != null && !tmp.isEmpty()) ? tmp : "-1") + "|", false);
+		write(os, null, getValue(tmp), false);
 		tmp = it.getAttribute("add_inv");
-		write(os, null, ((tmp != null && !tmp.isEmpty()) ? tmp : "-1") + "|", false);
+		write(os, null, getValue(tmp), false);
 		tmp = it.getAttribute("unlock");
 		write(os, null, ((tmp != null && !tmp.isEmpty()) ? translate(tmp) : "?") + "|", false);
 		tmp = it.getAttribute("with_item");
-		write(os, null, ((tmp != null && !tmp.isEmpty()) ? tmp : "-1") + "|", false);
+		write(os, null, getValue(tmp), false);
 		tmp = it.getAttribute("remove_both");
-		write(os, null, ((tmp != null && !tmp.isEmpty()) ? tmp : "0") + "|", false);
+		write(os, null, getZeroValue(tmp), false);
 		write(os, null, "?" + "|", false);
 		String desc = it.getTextContent().trim();
 		write(os, null, desc + "|", true);
 		write(os, null, "***|", false);
+	}
+
+	private static String getZeroValue(String tmp) {
+		return ((tmp != null && !tmp.isEmpty()) ? tmp : "0") + "|";
+	}
+
+	private static String getValue(String tmp) {
+		return ((tmp != null && !tmp.isEmpty()) ? tmp : "-1") + "|";
 	}
 
 }
