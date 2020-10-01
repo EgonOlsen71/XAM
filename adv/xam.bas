@@ -253,7 +253,7 @@
 52000 rem evaluate parsed command
 52005 rr%=0:rt%=0:ff%=0:sk%=0
 52010 if er<>0 or cc%=0 then return
-52012 t%=cv%(0):on t%+1 goto 52200,52030,52500,52300,52700,52900,53200
+52012 t%=cv%(0):on t%+1 goto 52700,52030,52500,52300,52200,52900,53200
 52013 on t%-6 goto 53500,53600,53700,53800,53850,53900
 52014 er=2:return
 
@@ -308,8 +308,7 @@
 52700 rem 
 52702 rem cmd geh
 52704 rem
-52720 if co%=2 then 52740
-52730 gosub 40600:return
+52720 if co%<>2 then gosub 40600:return
 52740 a$=cp$(1):gosub 41200
 52745 if len(a$)>2 and len(a$)<7 then a$=left$(a$,1)
 52750 if len(a$)>6 then a$=left$(a$,5)
@@ -327,8 +326,8 @@
 52900 rem 
 52902 rem cmd info
 52904 rem
-53100 print " Simple Adventure Engine 0.1"
-53110 print " by EgonOlsen71 / 2020"
+53100 print:print " XAM 64 - 0.01"
+53110 print " by EgonOlsen71"
 53120 print fre(0);"Bytes frei"
 53130 print " Status: ";ic%;"/";tc%
 53140 return
@@ -473,7 +472,7 @@
 60055 dim ip%(30), tc%: rem items still in the room (mi%)
 60060 dim uv%(30): rem used (flag) from inventory (mi%)
 60070 dim xp$(8), xx$(8), xc%: rem exits usable in the room
-60080 dim cp$(8), cp%(8): rem lexer results
+60080 dim cp$(8), cv%(8): rem lexer results
 60090 dim cm$(mc%, 5), cv$(mc%): rem commands
 60100 dim id$(30,5): rem item descriptions (mi%)
 60110 dim rv%(50,8): rem additional room inventory (mr%)

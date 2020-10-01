@@ -21,7 +21,7 @@ cc$			- Eingegebener Befehl
 lc$			- "Restbefehl" (wenn mit "und" abgetrennt)
 cb$			- Eingabeprompt
 cp$()		- Ergebnis des Lexers als Strings (nicht nicht normiert)
-cp%()		- Ergebnis des Lexers (auf IDs normiert, -1 für unbekannt)
+cv%()		- Ergebnis des Lexers (auf IDs normiert, -1 für unbekannt)
 co%			- Anzahl der Lexerergebnisse vor Zuordnung
 cc%			- Anzahl der Lexerergebnisse nach Zuordnung
 ct$			- Zwischenspeicher des Lexers

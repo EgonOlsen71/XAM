@@ -1,9 +1,9 @@
 <commands>
-	<command id="0" verb="beenden">exit,quit,ende</command>
+	<command id="0" verb="machen">geh,gehe,nach</command>
 	<command id="1" verb="anschauen">schau,sieh,schaue,guck</command>
 	<command id="2" verb="nehmen">nimm,nehme,nehmen</command>
 	<command id="3" verb="anzeigen">inventar,inv</command>
-	<command id="4" verb="machen">geh,gehe,nach</command>
+	<command id="4" verb="beenden">exit,quit,ende</command>
 	<command id="5" verb="anzeigen">info,system</command>
 	<command id="6" verb="ablegen">lege,leg,ablegen,verliere</command>
 	<command id="7" verb="oeffnen">oeffne,oeffnen</command>
