@@ -11,4 +11,5 @@
 	<command id="9" verb="schlagen">schlag,schlage,trete,tritt,zerstoere,zerstoer</command>
 	<command id="10" verb="laden">load,lade,laden</command>
 	<command id="11" verb="speichern">save,speichern,sichern</command>
+	<command id="12" verb="untersuchen">untersuche,untersuchen</command>
 </commands>

@@ -31,6 +31,10 @@
 		<name>Kunstwerk</name>
 		<desc>Eine Kunstwerk aus Spielkarte und Klopapier!</desc>
 	</item>
+	<item id="8" inventory="0">
+		<name>Toilette</name>
+		<desc>Die Toilette ist alt, aber sauber!</desc>
+	</item>
 	
 	<operations>
 		<operation command="7" item="5" unique="1" remove_inv="" remove_room="" add_room="" add_inv="6" unlock="" with_item="" remove_both="">In der Schachtel findest du eine Spielkarte!</operation>

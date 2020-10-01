@@ -1,10 +1,14 @@
 <room id="1">
-	<desc>Du bist auf dem Klo. Hier ist nicht viel los.
+	<desc>Du bist im Badezimmer. Hier ist eine alte Toilette und ansonsten nicht viel los.
 	</desc>
 	<exits>
 		<exit room="haus">N</exit>
 	</exits>
 	<items>
 		<item>4</item>
+		<item>8</item>
 	</items>
+	<operations>
+		<operation command="8" item="8" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="">Du musst aber gar nicht!</operation>
+	</operations>
 </room>

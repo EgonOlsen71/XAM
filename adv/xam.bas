@@ -90,9 +90,9 @@
 42000 rem load room operations
 42010 for i=0 to 10
 42015 if a$="?" then a$="-1"
-42020 op%(oc%,i)=val(a$):input#2,a$:next
+42020 op%(oc%,i)=val(a$):gosub 61700:next
 42040 for i=0 to 5:op$(oc%,i)="":next:ii=0
-42050 tx$=a$:gosub 61000:op$(oc%,ii)=tx$:input#2,a$:ii=ii+1
+42050 tx$=a$:gosub 61000:op$(oc%,ii)=tx$:gosub 61700:ii=ii+1
 42060 if a$="***" then oc%=oc%+1:return
 42070 goto 42050
 
@@ -203,10 +203,10 @@
 48010 lg$="Lade Operationen...":gosub 63000
 48015 open 2,8,2,"operations.def":gc%=0
 48020 for i=0 to 10
-48030 input#2,a$:if a$="?" then a$="-1"
+48030 gosub 61700:if a$="?" then a$="-1"
 48040 og%(gc%,i)=val(a$):next
 48050 for i=0 to 5:og$(gc%,i)="":next:ii=0
-48060 input#2,tx$
+48060 gosub 61700:tx$=a$
 48070 if tx$="***" then 48090
 48080 gosub 61000:og$(gc%,ii)=tx$::ii=ii+1:goto 48060
 48090 gc%=gc%+1:if st<>64 then 48020
@@ -251,10 +251,10 @@
 50520 lc$=right$(cc$, len(cc$)-i):i=256:return
 
 52000 rem evaluate parsed command
-52005 rr%=0:rt%=0:ff%=0
+52005 rr%=0:rt%=0:ff%=0:sk%=0
 52010 if er<>0 or cc%=0 then return
 52012 t%=cv%(0):on t%+1 goto 52200,52030,52500,52300,52700,52900,53200
-52013 on t%-6 goto 53500,53600,53700,53800,53850
+52013 on t%-6 goto 53500,53600,53700,53800,53850,53900
 52014 er=2:return
 
 52022 rem 
@@ -320,7 +320,7 @@
 52800 if a$="u" then a$="h"
 52810 if a$="d" then a$="r"
 52820 for i=0 to xc%:tx$=xp$(i):gosub 63100:b$=tx$
-52830 if a$=b$ then rn$=xx$(i)+".rom":gosub 40100:return
+52830 if a$=b$ then rn$=xx$(i)+".rom":print:gosub 40100:return
 52840 next
 52850 print"Da geht es nicht lang!":return
 
@@ -383,8 +383,20 @@
 53865 open 1,8,15,"s:"+fi$:close 1
 53870 ff%=1:gosub 59200:return
 
+53900 rem
+53902 rem cmd untersuche
+53904 rem
+53910 if cc%<>2 then gosub 40600:return
+53920 sk%=1:co%=12:gosub 58500
+53930 if rt%=1 then return
+53940 sk%=0:rr%=cv%(1):rt%=0:gosub 43600:if sk%=1 then return
+53950 if rt%=0 then t%=cv%(0):gosub 40600:return
+53960 print "Du siehst nichts besonderes!"
+53970 return
+
+
 58500 rem generic command
-58510 sk%=0:if oc%=0 then 58700
+58510 if oc%=0 then 58700
 58520 rt%=0:for j=0 to oc%:t%=op%(j,0)
 58530 if t%=co% then t2%=j:gosub 42200
 58540 if rt%=1 then return
@@ -424,7 +436,7 @@
 59340 for i=0 to mx%
 59350 a$=od$(i):gosub 59950:od$(i)=a$
 59360 next
-59370 close 2
+59370 close 2:print"ok"
 59380 if ff%=0 then gosub 63300:gosub 40100
 59390 lc$="":return
 
@@ -442,9 +454,9 @@
 59930 return
 
 59950 rem actual load/save of strings
-59960 if ff%=0 then input#2,a$:goto 59980
+59960 if ff%=0 then gosub 61700:goto 59980
 59965 if a$="" then a$="?"
-59970 if ff%=1 then print#2,a$
+59970 if ff%=1 then gosub 61700
 59980 gosub 59850:if a$="?" then a$=""
 59990 return
 
@@ -491,7 +503,7 @@
 61205 lg$="Lade Gegenstaende...":gosub 63000
 61206 ii=0:p=0
 61220 open 2,8,2,"items.def"
-61230 input#2,a$:ii=ii+1
+61230 gosub 61700:ii=ii+1
 61250 id$="":for i=1 to len(a$)
 61260 sx$=mid$(a$,i,1):if sx$=";" then 61280
 61270 id$=id$+sx$:next
@@ -507,24 +519,27 @@
 
 61400 rem read item description
 61405 t%=0
-61410 input#2,a$: if a$="***" then return
+61410 gosub 61700: if a$="***" then return
 61420 tx$=a$:gosub 61000:id$(ii,t%)=tx$:t%=t%+1:goto 61410
 
 61500 rem load commands
 61510 lg$="Lade Befehle...":gosub 63000
 61520 p=0:open 2,8,2,"commands.def"
-61530 input#2,a$:ii=val(a$)
-61540 input#2,a$:pp=val(a$)
-61545 input#2,a$:cv$(ii)=a$
-61550 for i=0 to pp-1:input#2,a$
+61530 gosub 61700:ii=val(a$)
+61540 gosub 61700:pp=val(a$)
+61545 gosub 61700:cv$(ii)=a$
+61550 for i=0 to pp-1:gosub 61700
 61560 cm$(ii,i)=a$
 61570 next:if st<>64 then p=p+1:goto 61530
 61580 lg$=str$(p+1)+" Befehle geladen!"
 61590 gosub 63000:tb%=p:close 2:return
 
+61700 rem input call
+61710 input#2,a$:return
+
 62000 rem load room data
-62005 gosub 62100:open2,8,2,rn$:input#2,a$:rd%=val(a$)
-62010 input#2,a$
+62005 gosub 62100:open2,8,2,rn$:gosub 61700:rd%=val(a$)
+62010 gosub 61700
 62020 if a$="***" then md%=md%+1:goto 62050
 62030 tx$=a$:gosub 61000:a$=tx$
 62040 on md% gosub 62200, 62300, 62400, 42000
