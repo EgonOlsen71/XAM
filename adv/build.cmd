@@ -1,1 +1,1 @@
-mospeed readtest.bas -compactlevel=5
+mospeed xam.bas -compactlevel=5

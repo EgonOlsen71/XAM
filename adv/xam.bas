@@ -32,7 +32,7 @@
 40740 next:return
 
 40800 rem take all (special case)
-40805 if tc%=0 then return
+40805 if tc%=0 then print"Hier ist nichts!":return
 40810 rr%=0:for i=0 to tc%-1:t%=ip%(i):gosub 40900
 40820 if rt%=1 then rr%=1:rt%=0
 40830 next
@@ -214,15 +214,16 @@
 48110 gosub 63000:close 2:return
 
 50000 rem enter and parse command
-50010 print cb$;:cc$="":input cc$
-50020 if len(cc$)=0 then 50010
+50010 print cb$;:cc$="":if len(lc$)>0 then cc$=lc$:print"? ";lc$:goto 50020
+50015 input cc$
+50020 ct$="":lc$="":if len(cc$)=0 then 50010
 50030 er=0:tx$=cc$:gosub 63100:cc$=tx$+" ": rem add space to ease lexing
 50035 gosub 41000
 50040 cc%=0:for i=1 to len(cc$):c$=mid$(cc$,i,1):c%=asc(c$)
 50045 if c%=128 then c%=32: rem handle shifted space
 50050 if (c%<65 or c%>90) and c%<>32 then 50100: rem skip bogus char
 50060 if c%<>32 then ct$=ct$+c$:goto 50080
-50070 if len(ct$)>0 then cp$(cc%)=ct$:ct$="":cc%=cc%+1
+50070 if len(ct$)>0 then gosub 50500
 50080 if cc%=9 then i=256
 50100 next i:for i=0 to 8:cv%(i)=-1:next
 50110 pp%=cc%:co%=cc%:cc%=0:for i=0 to pp%-1
@@ -243,8 +244,11 @@
 50240 for i=0 to 8:if cv%(i)<>-1 then cc%=cc%+1:goto 50260
 50250 if cc%=0 then er=2:return
 50260 next
-50270 rem for i=0 to cc%:print cv%(i),:next
 50280 return
+
+50500 rem detect chained commands
+50510 if ct$<>"und" then cp$(cc%)=ct$:ct$="":cc%=cc%+1:return
+50520 lc$=right$(cc$, len(cc$)-i):i=256:return
 
 52000 rem evaluate parsed command
 52005 rr%=0:rt%=0:ff%=0
@@ -422,7 +426,7 @@
 59360 next
 59370 close 2
 59380 if ff%=0 then gosub 63300:gosub 40100
-59390 return
+59390 lc$="":return
 
 59800 rem io-error
 59810 print:print "IO-Error: ";st:end
