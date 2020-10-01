@@ -456,35 +456,33 @@
 59950 rem actual load/save of strings
 59960 if ff%=0 then gosub 61700:goto 59980
 59965 if a$="" then a$="?"
-59970 if ff%=1 then gosub 61700
+59970 if ff%=1 then print#2,a$
 59980 gosub 59850:if a$="?" then a$=""
 59990 return
 
-
-
 60000 rem init
 60002 print "Einen Moment..."
-60005 mx%=50:mr%=50:mi%=10:mc%=15:cb$=chr$(13)+"Was jetzt"
+60005 mx%=50:mr%=50:mi%=30:mc%=15:cb$=chr$(13)+"Was jetzt"
 60006 al$="alles":ms%=5:dim i,ii,p,pp:fi$="savegame.dat"
-60010 dim it$(10), il$(10), mv%(10), ti%: rem all items (mi%)
+60010 dim it$(30), il$(30), mv%(30), ti%: rem all items (mi%)
 60020 dim rd$(22), pl%, rd%: rem current room's description
 60030 dim ex$(8), xn$(8), lk%(8), el%: rem crt. room's exits and names
 60035 dim lx$(50,3): rem flag, which exits are unlocked (mr%)
 60040 dim ri$(8), il%: rem current room's items
-60050 dim iv%(10), ic%: rem inventory (mi%)
-60055 dim ip%(10), tc%: rem items still in the room (mi%)
-60060 dim uv%(10): rem used (flag) from inventory (mi%)
+60050 dim iv%(30), ic%: rem inventory (mi%)
+60055 dim ip%(30), tc%: rem items still in the room (mi%)
+60060 dim uv%(30): rem used (flag) from inventory (mi%)
 60070 dim xp$(8), xx$(8), xc%: rem exits usable in the room
 60080 dim cp$(8), cp%(8): rem lexer results
 60090 dim cm$(mc%, 5), cv$(mc%): rem commands
-60100 dim id$(10,5): rem item descriptions (mi%)
+60100 dim id$(30,5): rem item descriptions (mi%)
 60110 dim rv%(50,8): rem additional room inventory (mr%)
-60120 dim rs%(10): rem flag, that an item lies somewhere else (mi%)
+60120 dim rs%(30): rem flag, that an item lies somewhere else (mi%)
 60130 for i=0 to mr%:for p=0 to 8:rv%(i,p)=-1:next p,i: rem clear room inv.
 60140 dim dr$(9):for i=0 to 9:read dr$(i):next: rem direction strings
 60150 dim op%(8,10), op$(8,5), oc%: rem possible operations in a room
 60160 dim od$(50), od%: rem operations applied (command ID_item 1_item_2) (mx%)
-60170 dim og%(10,10), og$(10,5), gc%: rem ops. on items in the inventory (mi%)
+60170 dim og%(30,10), og$(30,5), gc%: rem ops. on items in the inventory (mi%)
 60180 dim ac%(10): rem actions of the current operation
 60800 rem test data
 60810 iv%(0)=3:iv%(1)=1:ic%=2:rem lx$(0,0)="N"
