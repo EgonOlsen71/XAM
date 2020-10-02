@@ -1,44 +1,36 @@
 <items>
-	<item id="0" inventory="1">
-		<name>Schlafanzug</name>
-		<desc>Ein eleganter Schlafanzug. Mit Streifen!</desc>
+	<item id="0" inventory="0">
+		<name>Schrank</name>
+		<desc>Dein Schrank ist voller Gerümpel. Jemand müsste ihn mal aufräumen. Nur wer soll das sein?</desc>
 	</item>
 	<item id="1" inventory="1">
-		<name>Brief</name>
-		<desc>Das ist ein Brief von einer Versicherung!</desc>
+		<name>Poster</name>
+		<desc>Auf dem Poster ist die Mannschaft des HSV zu sehen. Du bist kein großer Fußballfan, aber ohne Poster war die Wand so kahl.</desc>
 	</item>
-	<item id="2" inventory="0">
-		<name>Schrank</name>
-		<desc>Ein unscheinbarer Schrank!</desc>
+	<item id="2" inventory="1">
+		<name>Kalender</name>
+		<desc>Der Kalender zeigt das Jahr 1984. Heute ist der 19. Juli, dein erster Ferientag.</desc>
 	</item>
-	<item id="3" inventory="1">
-		<name>Katze</name>
-		<desc>Klein und haarig!</desc>
+	<item id="3" inventory="0">
+		<name>Fernseher</name>
+		<desc>Ein einfacher, kleiner Farbfernseher.</desc>
 	</item>
 	<item id="4" inventory="1">
-		<name>Klopapier</name>
-		<desc>Sie ist halbleer und sieht nicht sehr weich aus!</desc>
+		<name>ZX81</name>
+		<desc>Ein ZX81. Dein erster Computer! Aber mit 1 KB Speicher kann man leider nicht viel anfangen. Er hat die Form eines Türkeils und eine schreckliche Tastatur.</desc>
 	</item>
 	<item id="5" inventory="1">
-		<name>Pappschachtel</name>
-		<desc>Eine einfache Pappschachtel!</desc>
+		<name>Zeitschrift</name>
+		<desc>Die Zeitschrift 64er in der Ausgabe 7/1984. Auf dem Cover ist eine Weltkugel und ein C64 zu sehen. Episch!"</desc>
 	</item>
-	<item id="6" inventory="1">
-		<name>Spielkarte</name>
-		<desc>Eine Spielkarte, ein Herz-Ass, um genau zu sein!</desc>
+	<item id="6" inventory="0">
+		<name>Luke</name>
+		<desc>Die Luke (nicht der Kerl aus Star Wars) führt auf den Kriechboden. Sie ist zu weit oben, um sie von hier zu öffnen.</desc>
 	</item>
 	<item id="7" inventory="1">
-		<name>Kunstwerk</name>
-		<desc>Eine Kunstwerk aus Spielkarte und Klopapier!</desc>
-	</item>
-	<item id="8" inventory="0">
-		<name>Toilette</name>
-		<desc>Die Toilette ist alt, aber sauber!</desc>
+		<name>Zugstab</name>
+		<desc>Ein Stab mit einem Haken dran.</desc>
 	</item>
 	
-	<operations>
-		<operation command="7" item="5" unique="1" remove_inv="" remove_room="" add_room="" add_inv="6" unlock="" with_item="" remove_both="">In der Schachtel findest du eine Spielkarte!</operation>
-		<operation command="8" item="6" unique="1" remove_inv="" remove_room="" add_room="" add_inv="7" unlock="" with_item="4" remove_both="1">Du wickelst die Karte in Klopapier!</operation>
-		<operation command="8" item="4" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="">Das sollte gerade nicht nötig sein!</operation>
-	</operations>
+	<operation command="14" item="5" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="">Du blätterst die 64er durch. Ein C64 mit Datasette kostet leider astronomische 800 DM. Woher nehmen?</operation>
 </items>

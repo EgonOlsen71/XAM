@@ -18,7 +18,7 @@
 40500 rem print object description in t%
 40510 for i=0 to 5:a$=id$(t%,i)
 40520 if len(a$)=0 then return
-40530 print a$:next:return
+40530 gosub 59100:next:return
 
 40600 rem print can-not-do-that-message
 40610 print"Das kann ich nicht ";cv$(t%);"!":er=0
@@ -223,7 +223,7 @@
 50035 gosub 41000
 50040 cc%=0:for i=1 to len(cc$):c$=mid$(cc$,i,1):c%=asc(c$)
 50045 if c%=128 then c%=32: rem handle shifted space
-50050 if (c%<65 or c%>90) and c%<>32 then 50100: rem skip bogus char
+50050 if ((c%<48 or c%>57) and (c%<65 or c%>90)) and c%<>32 then 50100
 50060 if c%<>32 then ct$=ct$+c$:goto 50080
 50070 if len(ct$)>0 then gosub 50500
 50080 if cc%=9 then i=256
@@ -256,7 +256,7 @@
 52005 rr%=0:rt%=0:ff%=0:sk%=0
 52010 if er<>0 or cc%=0 then return
 52012 t%=cv%(0):on t%+1 goto 52700,52030,52500,52300,52200,52900,53200
-52013 on t%-6 goto 53500,53600,53700,53800,53850,53900,54000,54100
+52013 on t%-6 goto 53500,53600,53700,53800,53850,53900,54000,53500,53500
 52014 er=2:return
 
 52022 rem 
@@ -354,10 +354,10 @@
 53460 print it$(rr%);" hast du nicht!":sk%=1:return
 
 53500 rem 
-53502 rem cmd oeffne
+53502 rem cmd oeffne/lies/gib
 53504 rem
 53510 if cc%<>2 then goto 59150
-53520 co%=7:gosub 58500:return
+53520 co%=t%:gosub 58500:return
 
 53600 rem 
 53602 rem cmd benutze
@@ -381,8 +381,12 @@
 53852 rem cmd save
 53854 rem
 53860 if cc%>1 then goto 59150
-53865 open 1,8,15,"s:"+fi$:close 1
+53862 a$=fi$+".bak":b$="s:"+a$:gosub 53880
+53865 b$="r:"+a$+"="+fi$:gosub 53880
 53870 ff%=1:gosub 59200:return
+
+53880 rem execute disk command
+53882 open 1,8,15,b$:close 1:return
 
 53900 rem
 53902 rem cmd untersuche
@@ -401,12 +405,6 @@
 54010 if cc%=1 then print "Blah blah blah!?":return
 54020 if cc%<>2 then goto 59150
 54030 co%=13:gosub 58500:return
-
-54100 rem
-54102 rem cmd lies
-54104 rem 
-54120 if cc%<>2 then goto 59150
-54130 co%=14:gosub 58500:return
 
 58500 rem generic command
 58510 if oc%=0 then 58700
@@ -483,7 +481,7 @@
 60000 rem init
 60002 print "Einen Moment..."
 60005 mx%=50:mr%=50:mi%=30:mc%=15:cb$=chr$(13)+"> "
-60006 al$="alles":ms%=5:dim i,ii,p,pp:fi$="savegame.dat"
+60006 al$="alles":ms%=5:dim i,ii,p,pp:fi$="save.dat"
 60010 dim it$(30), il$(30), mv%(30), ti%: rem all items (mi%)
 60020 dim rd$(22), pl%, rd%: rem current room's description
 60030 dim ex$(8), xn$(8), lk%(8), el%: rem crt. room's exits and names
@@ -505,7 +503,7 @@
 60170 dim og%(30,10), og$(30,5), gc%: rem ops. on items in the inventory (mi%)
 60180 dim ac%(10): rem actions of the current operation
 60800 rem test data
-60810 iv%(0)=3:iv%(1)=1:ic%=2:rem lx$(0,0)="N"
+60810 rem iv%(0)=3:iv%(1)=1:ic%=2:rem lx$(0,0)="N"
 60900 return
 
 61000 rem replace semicolon with komma

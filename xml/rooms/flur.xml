@@ -1,0 +1,28 @@
+<room id="1">
+	<desc>Du stehst im Flur im 1. Stock. Eine Treppe führt nach unten ins
+		Erdgeschoss. Ansonsten sind hier noch das Bad und das Zimmer deiner
+		großen Schwester, aber das ist fast leer, weil Silvia mittlerweile in
+		Hamburg wohnt und dort studiert.
+	</desc>
+	<exits>
+		<exit room="start">S</exit>
+		<exit room="silvia">W</exit>
+		<exit room="erd">R</exit>
+		<exit room="bad">O</exit>
+		<exit room="dach" locked="1">H</exit>
+	</exits>
+	<items>
+		<item>6</item>
+		<item>7</item>
+	</items>
+	<operations>
+		<operation command="8" item="6" unique="1" remove_inv=""
+			remove_room="6" add_room="" add_inv="" unlock="h" with_item="7"
+			remove_both="">Du hakst die Stange in die Öse an der Luke ein und ziehst. Die Luke öffnet sich, eine Leiter rumpelt herunter.
+		</operation>
+		<operation command="12" item="6" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="">Bei genauerem Hinsehen entdeckst du eine kleine Öse, die aus einem Loch in der Luke herausguckt.
+		</operation>
+	</operations>
+</room>

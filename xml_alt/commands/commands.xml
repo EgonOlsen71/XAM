@@ -13,6 +13,5 @@
 	<command id="11" verb="speichern">save,speichern,sichern</command>
 	<command id="12" verb="untersuchen">untersuche,untersuchen</command>
 	<command id="13" verb="befragen">sprich,spreche,frag,frage</command>
-	<command id="14" verb="lesen">lies,lese,lesen</command>
-	<command id="15" verb="geben">gib,gebe,geben</command>
+	<command id="14" verb="lesen">lies,lese</command>
 </commands>
