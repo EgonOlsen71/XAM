@@ -1,5 +1,5 @@
 10 gosub 63300:gosub 60000:gosub 61200:gosub 48000:gosub 61500
-20 rn$="haus.rom":gosub 63300
+20 rn$="start.rom":gosub 63300
 30 gosub 40100
 40 gosub 50000:gosub 40000
 50 gosub 52000:gosub 40000
@@ -13,7 +13,7 @@
 40050 er=0:return
 
 40100 rem init room with name in rn$
-40110 gosub 62000:gosub 62600:gosub 62500:return
+40110 gosub 62000:gosub 59500:return
 
 40500 rem print object description in t%
 40510 for i=0 to 5:a$=id$(t%,i)
@@ -25,10 +25,10 @@
 40620 return
 
 40700 rem print inventory
-40710 print:print"Du hast bei dir:"
+40710 poke 646,10:print:print"Du hast bei dir:"
 40715 if ic%=0 then printtab(2);"nichts":return
-40720 for i=0 to ic%-1:pp%=iv%(i)
-40730 if uv%(i)=0 then printtab(2);it$(pp%)
+40720 for i=0 to ic%-1
+40730 if uv%(i)=0 then printtab(2);it$(iv%(i))
 40740 next:return
 
 40800 rem take all (special case)
@@ -214,9 +214,10 @@
 48110 gosub 63000:close 2:return
 
 50000 rem enter and parse command
-50010 print cb$;:cc$="":if len(lc$)>0 then cc$=lc$:print"? ";lc$:goto 50020
-50015 input cc$
-50020 ct$="":lc$="":if len(cc$)=0 then 50010
+50010 poke 646,5:print cb$;:cc$="":poke 646,1
+50012 if len(lc$)>0 then cc$=lc$:print lc$:goto 50020
+50015 poke 19,1:input cc$:poke 19,0:print
+50020 poke 646,3:ct$="":lc$="":if len(cc$)=0 then 50010
 50030 er=0:tx$=cc$:gosub 63100:cc$=tx$+" ": rem add space to ease lexing
 50035 gosub 41000
 50040 cc%=0:for i=1 to len(cc$):c$=mid$(cc$,i,1):c%=asc(c$)
@@ -247,7 +248,7 @@
 50280 return
 
 50500 rem detect chained commands
-50510 if ct$<>"und" then cp$(cc%)=ct$:ct$="":cc%=cc%+1:return
+50510 if ct$<>"und" or cc%=0 then cp$(cc%)=ct$:ct$="":cc%=cc%+1:return
 50520 lc$=right$(cc$, len(cc$)-i):i=256:return
 
 52000 rem evaluate parsed command
@@ -409,9 +410,9 @@
 58760 return
 
 59000 rem show room description
-59010 print:for i=0 to pl%-1:a$=rd$(i)
+59010 poke 646,15:print:for i=0 to pl%-1:a$=rd$(i)
 59020 gosub 59100
-59040 next:gosub 62600:gosub 62500:return
+59040 next:gosub 59500:return
 
 59100 rem print without line break
 59110 if len(a$)=40 then print a$;:return
@@ -439,6 +440,9 @@
 59380 if ff%=0 then gosub 63300:gosub 40100
 59390 lc$="":return
 
+59500 rem print exits and items
+59510 print:gosub 62600:gosub 62500:return
+
 59800 rem io-error
 59810 print:print "IO-Error: ";st:end
 
@@ -461,7 +465,7 @@
 
 60000 rem init
 60002 print "Einen Moment..."
-60005 mx%=50:mr%=50:mi%=30:mc%=15:cb$=chr$(13)+"Was jetzt"
+60005 mx%=50:mr%=50:mi%=30:mc%=15:cb$=chr$(13)+"> "
 60006 al$="alles":ms%=5:dim i,ii,p,pp:fi$="savegame.dat"
 60010 dim it$(30), il$(30), mv%(30), ti%: rem all items (mi%)
 60020 dim rd$(22), pl%, rd%: rem current room's description
@@ -536,16 +540,16 @@
 
 62000 rem load room data
 62005 gosub 62100:open2,8,2,rn$:gosub 61700:rd%=val(a$)
-62010 gosub 61700
+62010 poke 646,15:gosub 61700
 62020 if a$="***" then md%=md%+1:goto 62050
 62030 tx$=a$:gosub 61000:a$=tx$
 62040 on md% gosub 62200, 62300, 62400, 42000
-62050 if st=64 then close 2:gosub 62800:return
+62050 if st=64 then close 2:return
 62060 goto 62010
 
 62100 rem init room data
-62110 for i=0 to pl%:rd$(i)="":next
-62120 md%=1:pl%=0:el%=0:il%=0:oc%=0
+62110 md%=1:pl%=0:el%=0:il%=0:oc%=0
+62120 for i=0 to pl%:rd$(i)="":next
 62130 return
 
 62200 rem assign room description
@@ -572,7 +576,7 @@
 62500 rem print out directions
 62510 gosub 62900
 62520 if xc%=0 then return
-62530 print "Ausgaenge sind: ";
+62530 poke 646,7:print "Ausgaenge sind: ";
 62540 xc%=xc%-1:for i=0 to xc%
 62550 if i>0 then print ", ";
 62560 print xp$(i);:next:print:return
@@ -580,7 +584,7 @@
 62600 rem print out items
 62610 gosub 62750
 62660 if tc%=0 then return
-62670 print "Du siehst: ";
+62670 poke 646,14:print "Du siehst: ";
 62680 for i=0 to tc%-1
 62690 if i>0 then print ", ";
 62700 print it$(ip%(i));:next:print:return
@@ -594,9 +598,6 @@
 62780 ip%(tc%)=p:tc%=tc%+1
 62790 next i
 62795 gosub 41300:return
-
-62800 rem adjust counts
-62840 return
 
 62900 rem calculate usable exits
 62910 xc%=0:for i=0 to el%-1:p=1:if lk%(i)=0 then 62940
@@ -627,7 +628,8 @@
 63280 return
 
 63300 rem clear output
-63310 print chr$(14);chr$(147);:return
+63310 print chr$(14);chr$(147);:poke 53280,0:poke 53281,0:poke 646,15
+63320 return
 
 63400 data "n", "s", "w", "o", "nw", "sw", "no", "so", "h", "r"
 
