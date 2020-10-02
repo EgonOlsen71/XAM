@@ -1,7 +1,7 @@
 <items>
 	<item id="0" inventory="0">
 		<name>Schrank</name>
-		<desc>Dein Schrank ist voller Gerümpel. Jemand müsste ihn mal aufräumen. Nur wer soll das sein?</desc>
+		<desc>Dein Schrank ist voller Gerümpel. Jemand müsste ihn mal aufräumen. Nur wer?</desc>
 	</item>
 	<item id="1" inventory="1">
 		<name>Poster</name>
@@ -9,7 +9,7 @@
 	</item>
 	<item id="2" inventory="1">
 		<name>Kalender</name>
-		<desc>Der Kalender zeigt das Jahr 1984. Heute ist der 19. Juli, dein erster Ferientag.</desc>
+		<desc>Der Kalender zeigt das Jahr 1984. Heute ist der 19. Juli, der erste Ferientag.</desc>
 	</item>
 	<item id="3" inventory="0">
 		<name>Fernseher</name>
@@ -17,7 +17,7 @@
 	</item>
 	<item id="4" inventory="1">
 		<name>ZX81</name>
-		<desc>Ein ZX81. Dein erster Computer! Aber mit 1 KB Speicher kann man leider nicht viel anfangen. Er hat die Form eines Türkeils und eine schreckliche Tastatur.</desc>
+		<desc>Ein ZX81. Dein erster Computer! Aber mit 1 KB Speicher kann man nicht viel anfangen. Er hat die Form eines Türkeils und eine schreckliche Tastatur.</desc>
 	</item>
 	<item id="5" inventory="1">
 		<name>Zeitschrift</name>
@@ -25,12 +25,106 @@
 	</item>
 	<item id="6" inventory="0">
 		<name>Luke</name>
-		<desc>Die Luke (nicht der Kerl aus Star Wars) führt auf den Kriechboden. Sie ist zu weit oben, um sie von hier zu öffnen.</desc>
+		<desc>Die Luke (nicht Luke aus Star Wars) führt auf den Kriechboden. Sie ist zu weit oben, um sie von hier zu öffnen.</desc>
 	</item>
 	<item id="7" inventory="1">
 		<name>Zugstab</name>
 		<desc>Ein Stab mit einem Haken dran.</desc>
 	</item>
+	<item id="8" inventory="0">
+		<name>Toilette</name>
+		<desc>Sie ist grün!</desc>
+	</item>
+	<item id="9" inventory="1">
+		<name>Handtuch</name>
+		<desc>Ein weichgespültes Handtuch, das nach April duftet...vielleicht.</desc>
+	</item>
+	<item id="10" inventory="1">
+		<name>Kaugummi</name>
+		<desc>Eine Packung Blubba-Blubba, dein Lieblingskaugummi. Nicht mehr ganz neu, aber noch in Ordnung.</desc>
+	</item>
+	<item id="11" inventory="0">
+		<name>Nachtschrank</name>
+		<desc>Ein hässlicher Nachtschrank. Vor 30 Jahren sah der sicher noch gut aus.</desc>
+	</item>
 	
-	<operation command="14" item="5" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="">Du blätterst die 64er durch. Ein C64 mit Datasette kostet leider astronomische 800 DM. Woher nehmen?</operation>
+	<item id="12" inventory="0">
+		<name>Item 12</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="13" inventory="0">
+		<name>Item 13</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="14" inventory="0">
+		<name>Item 14</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="15" inventory="0">
+		<name>Item 15</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="16" inventory="0">
+		<name>Item 16</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="17" inventory="0">
+		<name>Item 17</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="18" inventory="0">
+		<name>Item 18</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="19" inventory="0">
+		<name>Item 19</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="20" inventory="0">
+		<name>Item 12</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="21" inventory="0">
+		<name>Item 21</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="22" inventory="0">
+		<name>Item 22</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="23" inventory="0">
+		<name>Item 23</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="24" inventory="0">
+		<name>Item 24</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="25" inventory="0">
+		<name>Item 25</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="26" inventory="0">
+		<name>Item 26</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="27" inventory="0">
+		<name>Item 27</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="28" inventory="0">
+		<name>Item 28</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="29" inventory="0">
+		<name>Item 29</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	<item id="30" inventory="0">
+		<name>Item 20</name>
+		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	</item>
+	
+	<operation command="8" item="10" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="">Du hebst ihn lieber noch auf...für schlechte Zeiten!</operation>
+	<operation command="14" item="5" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="">Du blätterst die 64er durch. Ein C64 mit Datasette kostet astronomische 800 DM. Woher nehmen?</operation>
 </items>

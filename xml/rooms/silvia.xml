@@ -1,0 +1,15 @@
+<room id="3">
+	<desc>Dies ist Silvias Zimmer. Allerdings wohnt deine große Schwester jetzt schon fast ein Jahr lang in Hamburg und hat die meisten ihrer Möbel mitgenommen. Hier sind nur noch leere Wände, die mal gestrichen werden müssten. Lediglich ein kleiner Nachtschrank ist noch da. Den wollte sie wohl nicht mitnehmen.</desc>
+	<exits>
+		<exit room="flur">O</exit>
+	</exits>
+	<items>
+		<item>11</item>
+	</items>
+	<operations>
+		<operation command="7" item="11" unique="1" remove_inv=""
+			remove_room="" add_room="10" add_inv="" unlock="" with_item=""
+			remove_both="">Der Nachtschrank ist beinahe leer. Es liegt nur noch ein einsame Kaugummipackung darin.
+		</operation>
+	</operations>
+</room>

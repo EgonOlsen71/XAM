@@ -16,12 +16,12 @@
 40110 gosub 62000:gosub 59500:return
 
 40500 rem print object description in t%
-40510 for i=0 to 5:a$=id$(t%,i)
-40520 if len(a$)=0 then return
-40530 gosub 59100:next:return
+40510 ad=id%(t%)+ba:a$=""
+40520 for pp=1 to peek(ad):a$=a$+chr$(peek(ad+pp)):next
+40530 gosub 59100:return
 
 40600 rem print can-not-do-that-message
-40610 print"Das kann ich nicht ";cv$(t%);"!":er=0
+40610 print"Das kannst du nicht ";cv$(t%);"!":er=0
 40620 return
 
 40700 rem print inventory
@@ -41,7 +41,7 @@
 
 40900 rem take one item (id in t%)
 40910 rt%=0:if mv%(t%)=1 then 40930
-40920 print "Ich kann ";it$(t%);" nicht nehmen!":rt%=2:return
+40920 print "Du kannst ";it$(t%);" nicht nehmen!":rt%=2:return
 40930 iv%(ic%)=t%:print it$(t%);" genommen!":ic%=ic%+1:rs%(t%)=0
 40940 for pp=0 to 8:if rv%(rd%,pp)=t% then rv%(rd%,pp)=-1
 40950 next pp:rt%=1:return
@@ -200,21 +200,21 @@
 44060 return
 
 48000 rem load item operations
-48010 lg$="Lade Operationen...":gosub 63000
+48010 print "Lade Daten...";
 48015 open 2,8,2,"operations.def":gc%=0
 48020 for i=0 to 10
 48030 gosub 61700:if a$="?" then a$="-1"
 48040 og%(gc%,i)=val(a$):next
 48050 for i=0 to 5:og$(gc%,i)="":next:ii=0
-48060 gosub 61700:tx$=a$
+48060 gosub 61700:tx$=a$:print".";
 48070 if tx$="***" then 48090
 48080 gosub 61000:og$(gc%,ii)=tx$::ii=ii+1:goto 48060
 48090 gc%=gc%+1:if st<>64 then 48020
-48100 lg$=str$(gc%)+" Operationen geladen!"
-48110 gosub 63000:close 2:return
+48100 print"ok"
+48110 close 2:return
 
 50000 rem enter and parse command
-50005 for i=0 to 8:cv%(i)=-1:cp$(i)="":next
+50005 for i=0 to 8:cv%(i)=-1:cp$(i)="":next:sf%=0
 50010 poke 646,5:print cb$;:cc$="":poke 646,1
 50012 if len(lc$)>0 then cc$=lc$:print lc$:goto 50020
 50015 poke 19,1:input cc$:poke 19,0:print
@@ -351,7 +351,8 @@
 53310 return
 
 53450 rem havenot message
-53460 print it$(rr%);" hast du nicht!":sk%=1:return
+53455 if sf%=1 then sk%=1:return: rem already printed in this run...
+53460 print it$(rr%);" hast du nicht!":sk%=1:sf%=1:return
 
 53500 rem 
 53502 rem cmd oeffne/lies/gib
@@ -481,7 +482,7 @@
 60000 rem init
 60002 print "Einen Moment..."
 60005 mx%=50:mr%=50:mi%=30:mc%=15:cb$=chr$(13)+"> "
-60006 al$="alles":ms%=5:dim i,ii,p,pp:fi$="save.dat"
+60006 al$="alles":ms%=5:dim i,ii,p,pp,ad:fi$="save.dat":ba=49152:ad=ba
 60010 dim it$(30), il$(30), mv%(30), ti%: rem all items (mi%)
 60020 dim rd$(22), pl%, rd%: rem current room's description
 60030 dim ex$(8), xn$(8), lk%(8), el%: rem crt. room's exits and names
@@ -493,7 +494,7 @@
 60070 dim xp$(8), xx$(8), xc%: rem exits usable in the room
 60080 dim cp$(8), cv%(8): rem lexer results
 60090 dim cm$(mc%, 5), cv$(mc%): rem commands
-60100 dim id$(30,5): rem item descriptions (mi%)
+60100 dim id%(30): rem item descriptions' addresses (mi%)
 60110 dim rv%(50,8): rem additional room inventory (mr%)
 60120 dim rs%(30): rem flag, that an item lies somewhere else (mi%)
 60130 for i=0 to mr%:for p=0 to 8:rv%(i,p)=-1:next p,i: rem clear room inv.
@@ -516,7 +517,7 @@
 61060 tx$=sx$:return
 
 61200 rem load items
-61205 lg$="Lade Gegenstaende...":gosub 63000
+61205 print "Lade Gegenstaende...";
 61206 ii=0:p=0
 61220 open 2,8,2,"items.def"
 61230 gosub 61700:ii=ii+1
@@ -526,29 +527,34 @@
 61280 ii=val(id$):tf$=mid$(a$,i+1,1):mv%(ii)=1
 61290 if tf$="0" then mv%(ii)=0
 61300 it$(ii)=right$(a$,len(a$)-i-2)
-61302 tx$=it$(ii):gosub 63100:il$(ii)=tx$
+61302 tx$=it$(ii):gosub 63100:il$(ii)=tx$:print".";
 61305 gosub 61400
 61310 if st=64 then 61330
 61320 p=p+1:goto 61230
-61330 lg$=str$(p+1)+" Gegenstaende geladen!"
-61340 gosub 63000:ti%=p:close 2:return
+61330 print"ok ("+str$(ad-ba)+" Bytes)"
+61340 ti%=p:close 2:return
 
 61400 rem read item description
-61405 t%=0
-61410 gosub 61700: if a$="***" then return
-61420 tx$=a$:gosub 61000:id$(ii,t%)=tx$:t%=t%+1:goto 61410
+61405 t%=0:sd=ad:ad=ad+1
+61410 gosub 61700: if a$="***" then 61460
+61415 pp=len(a$):t%=t%+pp:if pp<40 then t%=t%+1
+61420 tx$=a$:gosub 61000
+61430 for p=1 to pp:a$=mid$(tx$,p,1)
+61440 poke ad+p-1,asc(a$):next:p=p-1:if pp<40 then poke ad+p,13:p=p+1
+61450 ad=ad+p:goto 61410
+61460 id%(ii)=sd-ba:poke sd,t%:return
 
 61500 rem load commands
-61510 lg$="Lade Befehle...":gosub 63000
+61510 print "Lade Befehle...";
 61520 p=0:open 2,8,2,"commands.def"
 61530 gosub 61700:ii=val(a$)
 61540 gosub 61700:pp=val(a$)
 61545 gosub 61700:cv$(ii)=a$
 61550 for i=0 to pp-1:gosub 61700
-61560 cm$(ii,i)=a$
+61560 cm$(ii,i)=a$:print".";
 61570 next:if st<>64 then p=p+1:goto 61530
-61580 lg$=str$(p+1)+" Befehle geladen!"
-61590 gosub 63000:tb%=p:close 2:return
+61580 print"ok"
+61590 tb%=p:close 2:return
 
 61700 rem input call
 61710 input#2,a$:return
@@ -621,9 +627,6 @@
 62930 next ii:if p=0 then 62950
 62940 xp$(xc%)=ex$(i):xx$(xc%)=xn$(i):xc%=xc%+1
 62950 next i:return
-
-63000 rem output log message 
-63010 print lg$chr$(13);:return
 
 63100 rem convert tx$ to lower case
 63105 c%=len(tx$):if c%=0 then return

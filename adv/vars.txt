@@ -16,6 +16,9 @@ t%			- temp. Zahl
 t2%			- temp. Zahl
 er			- Fehlernummer
 sk%			- Flag, um generische Fehlermeldung zu skippen
+sk%			- Flag, um generische Fehlermeldung zu skippen
+ba			- Adresse des Stringbuffers
+sf%			- Spezialflag, quasi ein Hack für den Untersuche-Befehl
 
 cc$			- Eingegebener Befehl
 lc$			- "Restbefehl" (wenn mit "und" abgetrennt)
@@ -40,6 +43,9 @@ mi%			- max. Anzahl Gegenstände
 it$()		- Namen der Gegenstände
 il$()		- Namen der Gegenstände in Kleinschrift
 id$()()		- Beschreibung eines Gegenstandes (zeilenweise)
+id%()		- Adressen der Beschreibungen der Gegenstände im Speicher
+ad			- temp. Adresszeiger
+sd			- temp. Adresszeiger
 mv%()		- Flag, ob der Gegenstand eingesammelt werden kann (=1)
 rd$()		- Zeilen der Raumbeschreibung (ohne Extras)
 pl%			- Anzahl der Zeilen des Raumbeschreibung
