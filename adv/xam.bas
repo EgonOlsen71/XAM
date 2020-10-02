@@ -263,7 +263,7 @@
 52030 rem
 52040 if co%=1 then gosub 59000:return 
 52050 if cc%=2 and co%<5 then t%=cv%(1):goto 52070
-52060 gosub 40600:return
+52060 goto 59150
 52065 if tc%=0 then 52085
 52070 for i=0 to tc%-1:pp%=ip%(i):if pp%=t% then gosub 40500:return
 52080 next
@@ -281,12 +281,12 @@
 52250 if a$="j" then print:print "Bis bald!":end
 52260 if a$="n" then return
 52270 goto 52230
-52280 gosub 40600:return
+52280 goto 59150
 
 52300 rem 
 52302 rem cmd inventar
 52304 rem
-52320 if co%<>1 then gosub 40600:return
+52320 if co%<>1 then goto 59150
 52330 gosub 40700:return
 
 52500 rem 
@@ -294,7 +294,7 @@
 52504 rem
 52510 ff%=0
 52520 if cc%=1 and co%=2 and (cp$(0)=al$ or cp$(1)=al$) then gosub 40800:return
-52525 if cc%=1 then gosub 40600:return
+52525 if cc%=1 then goto 59150
 52530 for i=1 to cc%-1:t%=cv%(i):rt%=0
 52540 rr%=0:if tc%=0 then 52580
 52545 for ii=0 to tc%-1:pp%=ip%(ii):if pp%=t% then gosub 40900
@@ -309,7 +309,7 @@
 52700 rem 
 52702 rem cmd geh
 52704 rem
-52720 if co%<>2 then gosub 40600:return
+52720 if co%<>2 then goto 59150
 52740 a$=cp$(1):gosub 41200
 52745 if len(a$)>2 and len(a$)<7 then a$=left$(a$,1)
 52750 if len(a$)>6 then a$=left$(a$,5)
@@ -337,7 +337,7 @@
 53202 rem cmd lege
 53204 rem
 53210 ff%=0:if ic%=0 then print "Du hast nichts!":return
-53220 if cc%=1 then gosub 40600:return
+53220 if cc%=1 then goto 59150
 53230 for i=1 to cc%-1:t%=cv%(i)
 53240 rr%=0:for ii=0 to ic%-1:pp%=iv%(ii):rt%=0
 53245 if pp%=t% and uv%(ii)=0 then gosub 41400
@@ -355,42 +355,42 @@
 53500 rem 
 53502 rem cmd oeffne
 53504 rem
-53510 if cc%<>2 then gosub 40600:return
+53510 if cc%<>2 then goto 59150
 53520 co%=7:gosub 58500:return
 
 53600 rem 
 53602 rem cmd benutze
 53604 rem
-53610 if cc%>3 or cc%<2 then gosub 40600:return
+53610 if cc%>3 or cc%<2 then goto 59150
 53620 co%=8:gosub 58500:return
 
 53700 rem 
 53702 rem cmd schlage
 53704 rem
-53710 if cc%>3 or cc%<2 then gosub 40600:return
+53710 if cc%>3 or cc%<2 then goto 59150
 53720 co%=9:gosub 58500:return
 
 53800 rem
 53802 rem cmd load
 53804 rem
-53810 if cc%>1 then gosub 40600:return
+53810 if cc%>1 then goto 59150
 53820 ff%=0:gosub 59200:return
 
 53850 rem
 53852 rem cmd save
 53854 rem
-53860 if cc%>1 then gosub 40600:return
+53860 if cc%>1 then goto 59150
 53865 open 1,8,15,"s:"+fi$:close 1
 53870 ff%=1:gosub 59200:return
 
 53900 rem
 53902 rem cmd untersuche
 53904 rem
-53910 if cc%<>2 then gosub 40600:return
+53910 if cc%<>2 then goto 59150
 53920 sk%=1:co%=12:gosub 58500
 53930 if rt%=1 then return
 53940 sk%=0:rr%=cv%(1):rt%=0:gosub 43600:if sk%=1 then return
-53950 if rt%=0 then t%=cv%(0):gosub 40600:return
+53950 if rt%=0 then t%=cv%(0):goto 59150
 53960 print "Du siehst nichts besonderes!"
 53970 return
 
@@ -398,13 +398,13 @@
 54002 rem cmd sprich
 54004 rem 
 54010 if cc%=1 then print "Blah blah blah!?":return
-54020 if cc%<>2 then gosub 40600:return
+54020 if cc%<>2 then goto 59150
 54030 co%=13:gosub 58500:return
 
 54100 rem
 54102 rem cmd lies
 54104 rem 
-54120 if cc%<>2 then gosub 40600:return
+54120 if cc%<>2 then goto 59150
 54130 co%=14:gosub 58500:return
 
 58500 rem generic command
@@ -429,6 +429,9 @@
 59100 rem print without line break
 59110 if len(a$)=40 then print a$;:return
 59120 print a$:return
+
+59150 rem print message and return (jump here with goto!)
+59160 gosub 40600:return
 
 59200 rem load/save combined (ff%=0 or 1)
 59210 print:p=0:if ff%=0 then open 2,8,2,fi$+",r":print"Lade...";
