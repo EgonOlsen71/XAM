@@ -214,6 +214,7 @@
 48110 gosub 63000:close 2:return
 
 50000 rem enter and parse command
+50005 for i=0 to 8:cv%(i)=-1:cp$(i)="":next
 50010 poke 646,5:print cb$;:cc$="":poke 646,1
 50012 if len(lc$)>0 then cc$=lc$:print lc$:goto 50020
 50015 poke 19,1:input cc$:poke 19,0:print
@@ -226,7 +227,7 @@
 50060 if c%<>32 then ct$=ct$+c$:goto 50080
 50070 if len(ct$)>0 then gosub 50500
 50080 if cc%=9 then i=256
-50100 next i:for i=0 to 8:cv%(i)=-1:next
+50100 next i
 50110 pp%=cc%:co%=cc%:cc%=0:for i=0 to pp%-1
 50120 a$=cp$(i):t%=-1
 50130 for p=0 to tb%:for ii=0 to ms%:b$=cm$(p,ii)
@@ -461,7 +462,8 @@
 59800 rem io-error
 59810 print:print "IO-Error: ";st:end
 
-59850 p=p+1:if p>40 then print".";:p=0
+59850 rem print progress indicator/check error
+59855 p=p+1:if p>40 then print".";:p=0
 59860 if (st and 191)<>0 then goto 59800
 59870 return
 
@@ -554,8 +556,8 @@
 61710 input#2,a$:return
 
 62000 rem load room data
-62005 gosub 62100:open2,8,2,rn$:gosub 61700:rd%=val(a$)
-62010 poke 646,15:gosub 61700
+62005 gosub 62100:open2,8,2,rn$:gosub 61700:rd%=val(a$):poke 646,15
+62010 gosub 61700:gosub 59860
 62020 if a$="***" then md%=md%+1:goto 62050
 62030 tx$=a$:gosub 61000:a$=tx$
 62040 on md% gosub 62200, 62300, 62400, 42000
