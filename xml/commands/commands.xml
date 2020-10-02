@@ -1,6 +1,6 @@
 <commands>
 	<command id="0" verb="machen">geh,gehe,nach</command>
-	<command id="1" verb="anschauen">schau,sieh,schaue,guck</command>
+	<command id="1" verb="anschauen">schau,sieh,schaue</command>
 	<command id="2" verb="nehmen">nimm,nehme,nehmen</command>
 	<command id="3" verb="anzeigen">inventar,inv</command>
 	<command id="4" verb="beenden">exit,quit,ende</command>
@@ -12,4 +12,6 @@
 	<command id="10" verb="laden">load,lade,laden</command>
 	<command id="11" verb="speichern">save,speichern,sichern</command>
 	<command id="12" verb="untersuchen">untersuche,untersuchen</command>
+	<command id="13" verb="befragen">sprich,spreche,frag,frage</command>
+	<command id="14" verb="lesen">lies,lese</command>
 </commands>

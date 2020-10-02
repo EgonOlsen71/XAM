@@ -2,7 +2,7 @@
 	<desc>Du bist im Badezimmer. Hier ist eine alte Toilette und ansonsten nicht viel los.
 	</desc>
 	<exits>
-		<exit room="haus">N</exit>
+		<exit room="start">N</exit>
 	</exits>
 	<items>
 		<item>4</item>

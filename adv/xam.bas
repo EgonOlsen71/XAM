@@ -255,7 +255,7 @@
 52005 rr%=0:rt%=0:ff%=0:sk%=0
 52010 if er<>0 or cc%=0 then return
 52012 t%=cv%(0):on t%+1 goto 52700,52030,52500,52300,52200,52900,53200
-52013 on t%-6 goto 53500,53600,53700,53800,53850,53900
+52013 on t%-6 goto 53500,53600,53700,53800,53850,53900,54000,54100
 52014 er=2:return
 
 52022 rem 
@@ -394,6 +394,18 @@
 53960 print "Du siehst nichts besonderes!"
 53970 return
 
+54000 rem
+54002 rem cmd sprich
+54004 rem 
+54010 if cc%=1 then print "Blah blah blah!?":return
+54020 if cc%<>2 then gosub 40600:return
+54030 co%=13:gosub 58500:return
+
+54100 rem
+54102 rem cmd lies
+54104 rem 
+54120 if cc%<>2 then gosub 40600:return
+54130 co%=14:gosub 58500:return
 
 58500 rem generic command
 58510 if oc%=0 then 58700
