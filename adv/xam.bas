@@ -24,6 +24,9 @@
 40610 print"Das kannst du nicht ";cv$(t%);"!":er=0
 40620 return
 
+40650 rem print items
+40660 print:gosub 62600:return
+
 40700 rem print inventory
 40710 poke 646,10:print:print"Du hast bei dir:"
 40715 if ic%=0 then printtab(2);"nichts":return
@@ -36,7 +39,7 @@
 40810 rr%=0:for i=0 to tc%-1:t%=ip%(i):gosub 40900
 40820 if rt%=1 then rr%=1:rt%=0
 40830 next
-40840 if rr%=1 then gosub 59000
+40840 if rr%=1 then gosub 40650
 40850 return
 
 40900 rem take one item (id in t%)
@@ -304,7 +307,7 @@
 52570 next ii
 52580 if rr%=0 then print it$(t%)+" ist hier nicht!"
 52590 next i
-52600 if ff%=1 then gosub 59000
+52600 if ff%=1 then gosub 40650
 52610 return
 
 52700 rem 
