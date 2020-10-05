@@ -124,6 +124,7 @@
 		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
 	</item>
 	
+	<operation command="8" item="25" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Hier gibt es nichts zu graben.</operation>
 	<operation command="8" item="24" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Es ist hell genug hier.</operation>
 	<operation command="7" item="19" unique="" remove_inv="19" remove_room="" add_room="" add_inv="20" unlock="" with_item="" remove_both="" portal_to="">Im Brief ist dein Ferienpass von der Stadt. Gerade noch rechtzeitig zum Ferienbeginn.</operation>
 	<operation command="14" item="19" unique="" remove_inv="19" remove_room="" add_room="" add_inv="20" unlock="" with_item="" remove_both="" portal_to="">Im Brief ist dein Ferienpass von der Stadt. Gerade noch rechtzeitig zum Ferienbeginn.</operation>

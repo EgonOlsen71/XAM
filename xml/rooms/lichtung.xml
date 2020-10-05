@@ -1,0 +1,20 @@
+<room id="17">
+	<desc>
+		Du stehst auf einer Lichtung im Wald. Obwohl der Wald nicht groß
+		ist, stehen die Bäume so dicht, dass man die Felder um den Wald herum
+		von	hier aus nicht sehen kann. Die Sonne taucht die Lichtung in
+		gleißendes Licht. Im Unterholz rascheln irgendwelche Tiere.|Die
+		Lichtung sieht aus, als hätte hier jemand kürzlich die Erde
+		aufgewühlt. Vermutlich Wildschweine.|
+		Der einzige Weg von hier aus führt zurück in den Wald.
+	</desc>
+	<exits>
+		<exit room="wald">W</exit>
+	</exits>
+	<operations>
+		<operation command="8" item="25" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Der Boden hier ist zwar weich genug zum Graben, aber ziellos die Lichtung umzugraben ergibt doch keinen Sinn.
+		</operation>
+	</operations>
+</room>

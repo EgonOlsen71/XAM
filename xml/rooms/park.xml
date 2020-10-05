@@ -7,12 +7,14 @@
 		Würmern hin
 		und her hüpfen.|Von Norden hört man leise die Geräusche der Straße.
 		Dieser Park wirkt wie eine kleine grüne Oase mitten in der Stadt.
+		|Am äußeren Ende des Parks führt ein schmaler Pfad in ein kleines Waldstück kurz vor der Stadt.
 	</desc>
 	<items>
 		<item>23</item>
 	</items>
 	<exits>
 		<exit room="portal2">N</exit>
+		<exit room="wald">SO</exit>
 	</exits>
 	<operations>
 		<operation command="8" item="23" unique="1" remove_inv=""
@@ -30,3 +32,4 @@
 		</operation>
 	</operations>
 </room>
+
