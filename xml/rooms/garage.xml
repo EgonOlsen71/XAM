@@ -1,0 +1,15 @@
+<room id="9">
+	<desc>Die Garage ist ungewöhnlich leer. Dein Vater hat vor etwa 3
+		Wochen einen Garagenverkauf veranstaltet und konnte erstaunlich viel
+		von dem alten Krempel an andere Bewohner in der Straße verkaufen. Das
+		Auto ist auch nicht da, weil deine Eltern damit zur Arbeit gefahren
+		sind.
+	</desc>
+	<exits>
+		<exit room="strasse2">N</exit>
+		<exit room="garten">W</exit>
+	</exits>
+	<items>
+		<item>7</item>
+	</items>
+</room>

@@ -1,0 +1,33 @@
+<room id="8">
+	<desc>Du stehst im Garten auf dem Weg vom Haus zur Straße. Wobei Garten
+		ein großes Wort ist für diesen kleinen Streifen Rasen zwischen Gehweg
+		und der Nordseite des Hauses.|Deine Eltern haben es nicht so mit
+		Gartenarbeit, deswegen
+		blüht hier außer dem ein oder anderen
+		Gänseblümchen nicht viel.|An der Seite geht ein kleiner Trampelpfad durch
+		das Gras zu eurer Garage.
+	</desc>
+	<exits>
+		<exit room="erd">S</exit>
+		<exit room="strasse1">N</exit>
+		<exit room="garage">O</exit>
+	</exits>
+	<items>
+		<item>18</item>
+	</items>
+	<operations>
+		<operation command="7" item="18" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Du bekommst ihn nicht auf, die Klappe klemmt...mal wieder! Da hilft wohl nur Gewalt!
+		</operation>
+		<operation command="12" item="18" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Es scheint ein Brief drin zu sein.
+		</operation>
+		<operation command="9" item="18" unique="1" remove_inv=""
+			remove_room="18" add_room="19" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Du schlägst gegen den Briefkasten. Leider etwas zu stark, der Briefkasten fällt ab und auseinander...Hoppala! In den Trümmern liegt ein Brief.
+		</operation>
+		
+	</operations>
+</room>

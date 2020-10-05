@@ -47,62 +47,61 @@
 		<name>Nachtschrank</name>
 		<desc>Ein hässlicher Nachtschrank. Vor 30 Jahren sah der sicher noch gut aus.</desc>
 	</item>
-	
 	<item id="12" inventory="0">
 		<name>Bus</name>
-		<desc>Dies ist der Bus in den Limbo.</desc>
+		<desc>Buslinie 341 - Der Bus pendelt zwischen dem Vorort und der Stadt.</desc>
 	</item>
 	<item id="13" inventory="0">
-		<name>Item 13</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+		<name>Tisch</name>
+		<desc>Ein einfacher Tisch.</desc>
 	</item>
 	<item id="14" inventory="0">
-		<name>Item 14</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+		<name>Tafel</name>
+		<desc>Eine Tafel, auf der deine Eltern ab und zu Nachrichten an dich hinterlassen.</desc>
 	</item>
 	<item id="15" inventory="0">
-		<name>Item 15</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+		<name>Kühlschrank</name>
+		<desc>Der Kühlschrank ist ein treuer Freund der Familie. Ohne ihn wäre das Leben sinnlos.</desc>
 	</item>
-	<item id="16" inventory="0">
-		<name>Item 16</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	<item id="16" inventory="1">
+		<name>Wurstbrot</name>
+		<desc>Das Brot ist dick mit Salami belegt.</desc>
 	</item>
 	<item id="17" inventory="0">
-		<name>Item 17</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+		<name>Bett</name>
+		<desc>Ein einfaches, schlichtes Bett.</desc>
 	</item>
 	<item id="18" inventory="0">
-		<name>Item 18</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+		<name>Briefkasten</name>
+		<desc>Euer Briefkasten ist ein einfacher, schwarzer Metalkasten. Es klebt die Nummer 34 darauf.</desc>
 	</item>
-	<item id="19" inventory="0">
-		<name>Item 19</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	<item id="19" inventory="1">
+		<name>Brief</name>
+		<desc>Der Brief ist an dich addressiert.</desc>
 	</item>
-	<item id="20" inventory="0">
-		<name>Item 12</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	<item id="20" inventory="1">
+		<name>Ferienpass</name>
+		<desc>Dein Ferienpass. Er erlaubt günstige Schwimmbadbesuche und kostenlose Busfahrten während der Ferien.</desc>
 	</item>
 	<item id="21" inventory="0">
-		<name>Item 21</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+		<name>Schild</name>
+		<desc>?</desc>
 	</item>
 	<item id="22" inventory="0">
-		<name>Item 22</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+		<name>Junge</name>
+		<desc>Der Junge ist vielleicht 5 Jahre alt. Er schaut dich erwartungsvoll an.</desc>
 	</item>
 	<item id="23" inventory="0">
-		<name>Item 23</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+		<name>Drachen</name>
+		<desc>Ein Papierdrachen. Er hängt in einem Baum fest. Man kommt mit bloßen Haenden nicht an ihn ran.</desc>
 	</item>
-	<item id="24" inventory="0">
-		<name>Item 24</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	<item id="24" inventory="1">
+		<name>Lampe</name>
+		<desc>Eine billige Taschenlampe aus dem Yps.</desc>
 	</item>
-	<item id="25" inventory="0">
-		<name>Item 25</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	<item id="25" inventory="1">
+		<name>Spaten</name>
+		<desc>Ein alter Spaten. Rostig aber noch stabil.</desc>
 	</item>
 	<item id="26" inventory="0">
 		<name>Item 26</name>
@@ -125,6 +124,10 @@
 		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
 	</item>
 	
-	<operation command="8" item="10" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du hebst ihn lieber noch auf...für schlechte Zeiten!</operation>
+	<operation command="8" item="24" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Es ist hell genug hier.</operation>
+	<operation command="7" item="19" unique="" remove_inv="19" remove_room="" add_room="" add_inv="20" unlock="" with_item="" remove_both="" portal_to="">Im Brief ist dein Ferienpass von der Stadt. Gerade noch rechtzeitig zum Ferienbeginn.</operation>
+	<operation command="14" item="19" unique="" remove_inv="19" remove_room="" add_room="" add_inv="20" unlock="" with_item="" remove_both="" portal_to="">Im Brief ist dein Ferienpass von der Stadt. Gerade noch rechtzeitig zum Ferienbeginn.</operation>
+	<operation command="8" item="10" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du hebst ihn lieber noch auf...für schlechte Zeiten.</operation>
+	<operation command="8" item="16" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du bist nicht hungrig.</operation>
 	<operation command="14" item="5" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du blätterst die 64er durch. Ein C64 mit Datasette kostet astronomische 800 DM. Woher nehmen?</operation>
 </items>

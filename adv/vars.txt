@@ -8,7 +8,6 @@ i,ii,p,pp,j	- Laufvariablen in Schleifen
 c$			- Zeichenspeicher (String)
 c%			- Zeichenspeicher 
 c2%			- Zeichenspeicher
-co%			- Erwarteter Befehl
 ff%			- Flag
 rt%			- Rückgabewert
 rr%			- Rückgabewert
@@ -25,7 +24,7 @@ lc$			- "Restbefehl" (wenn mit "und" abgetrennt)
 cb$			- Eingabeprompt
 cp$()		- Ergebnis des Lexers als Strings (nicht nicht normiert)
 cv%()		- Ergebnis des Lexers (auf IDs normiert, -1 für unbekannt)
-co%			- Anzahl der Lexerergebnisse vor Zuordnung
+co%			- Anzahl der Lexerergebnisse vor Zuordnung, später: erwarteter Befehl
 cc%			- Anzahl der Lexerergebnisse nach Zuordnung
 ct$			- Zwischenspeicher des Lexers
 al$			- String mit "alles"

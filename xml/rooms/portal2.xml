@@ -1,27 +1,28 @@
-<room id="12">
+<room id="13">
 	<desc>
-		Du stehst in der Straße, an der auch euer Haus liegt. Hier endet
-		der Ort. Nach Westen verläuft die Bundesstraße durch zahlreiche Felder
-		in Richtung Stadt, im Osten liegt euer Haus. Hier ist auch die einzige
-		Bushaltestelle des Ortes.|Ein Bus ist hier und wartet auf Fahrgäste.
+		Hier ist die Haltestelle, an welcher der Bus nach Hause abfährt.
+		An die Haltestelle grenzt im Süden ein kleiner Park an, aus dem leises
+		Vogelzwitschern zu hören ist.|Von hier aus geht es weiter zu Fuß in
+		die Stadt hinein.|Der Bus ist hier und wartet auf Fahrgäste.
 	</desc>
 	<items>
 		<item>12</item>
 		<item>21</item>
 	</items>
 	<exits>
-		<exit room="strasse1">O</exit>
+		<exit room="park">S</exit>
+		<exit room="gabelstr">W</exit>
 	</exits>
 	<operations>
 		<operation command="1" item="21" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
 			remove_both="" portal_to="">Das Schild markiert die Bushaltestelle. Es
-			stehen auch noch einige andere Informationen drauf.
+			sieht beschmiert aus.
 		</operation>
 		<operation command="14" item="21" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="" portal_to="">'GVL - Bereit, wenn Sie
-			es sind! Zutritt nur mit gültigem Fahrausweis.'
+			remove_both="" portal_to="">'GVL - Breit, wie Sie
+			es sind! Zutritt nur mit Sechserträger.' - Hmm, irgendwer hat das Schild verschandelt.
 		</operation>
 		<operation command="8" item="12" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
@@ -30,9 +31,9 @@
 		</operation>
 		<operation command="8" item="12" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item="20"
-			remove_both="" portal_to="2">Du zeigst dem Fahrer deinen Ferienpass. Er
-			nickt kurz, du nimmst Platz und schon wenig später fährt der Bus los in
-			Richtung Stadt. Die Felder rauschen nur so vorbei...
+			remove_both="" portal_to="1">Du zeigst dem Fahrer deinen Ferienpass. Er
+			nickt kurz, du nimmst Platz und schon wenig später fährt der Bus raus aus der Stadt, wieder an den Feldern vorbei...
 		</operation>
 	</operations>
+
 </room>

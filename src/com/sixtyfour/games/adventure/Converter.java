@@ -7,7 +7,9 @@ import java.io.FileOutputStream;
 import java.io.FilenameFilter;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -105,6 +107,8 @@ public class Converter {
 			}
 		});
 
+		Set<String> ids = new HashSet<>();
+
 		for (File room : rooms) {
 			System.out.println("Converting " + room);
 			String name = room.getName().replace(".xml", "");
@@ -114,6 +118,10 @@ public class Converter {
 				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 				Document doc = dBuilder.parse(is);
 				String roomId = doc.getDocumentElement().getAttribute("id");
+				if (ids.contains(roomId)) {
+					throw new RuntimeException("ID " + roomId + " isn't unique!");
+				}
+				ids.add(roomId);
 				write(os, null, roomId + "|", false);
 				Element dsce = (Element) doc.getElementsByTagName("desc").item(0);
 				String desc = dsce.getTextContent().trim();

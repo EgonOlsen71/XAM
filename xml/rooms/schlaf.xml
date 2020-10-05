@@ -1,0 +1,23 @@
+<room id="7">
+	<desc>Du bist im Schlafzimmer deiner Eltern. Die Vorhänge sind noch
+		halb zugezogen und die Sonne taucht den Raum in schummeriges,
+		rötliches Licht. Ein paar Staubflocken tanzen in den dünnen
+		Lichstrahlen. Es fühlt sich nicht richtig an, hier herumzuwühlen.
+	</desc>
+	<exits>
+		<exit room="wohnzimmer">N</exit>
+	</exits>
+	<items>
+		<item>17</item>
+	</items>
+	<operations>
+		<operation command="8" item="17" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Nein, du hast doch dein eigenes Bett.
+		</operation>
+		<operation command="1" item="17" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Ein schlichtes Doppelbett, bezogen mit weicher Frotteebettwäsche.
+		</operation>
+	</operations>
+</room>

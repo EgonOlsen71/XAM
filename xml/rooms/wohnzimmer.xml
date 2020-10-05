@@ -1,0 +1,42 @@
+<room id="6">
+	<desc>Das Wohnzimmer ist der größte Raum im ganzen Haus. Im Moment ist
+		er allerding ziemlich leer, weil deine Eltern das Sofa zum Neubeziehen
+		gebracht haben. Man sieht noch die Abdrücke an der
+		Raufasertapete. Es stehen hier noch der Tisch und der große
+		Farbfernseher.
+	</desc>
+	<exits>
+		<exit room="erd">O</exit>
+		<exit room="schlaf">S</exit>
+	</exits>
+	<items>
+		<item>3</item>
+		<item>13</item>
+	</items>
+	<operations>
+		<operation command="1" item="3" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Farbe, 67cm-Bildröhre, Stereo...das neueste
+			Modell (vom letzten Jahr).</operation>
+		<operation command="1" item="13" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Ein niedriger, schwerer Eichentisch mit
+			einer eingelassenen Schieferplatte.
+		</operation>
+		<operation command="8" item="3" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Du schaltest den Fernseher ein, aber es läuft nichts
+			Interessantes auf irgendeinem der drei Programme.
+		</operation>
+		<operation command="8" item="3" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item="4"
+			remove_both="" portal_to="">Du verbindest den Z81 mit dem Fernseher. Er funktioniert,
+			aber was will man mit 1 KB schon anfangen? Frustriert kabelst du ihn
+			wieder ab.
+		</operation>
+		<operation command="9" item="3" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Du haust gegen den Fernseher. Warum auch immer!
+		</operation>
+	</operations>
+</room>

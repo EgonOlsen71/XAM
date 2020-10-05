@@ -1,0 +1,13 @@
+<room id="11">
+	<desc>
+		Du stehst in der Straße vor eurer Garage. Die Straße verläuft von
+		Westen nach Osten durch den Ort. Sei noch weiter entlang in Richtung
+		Osten zu laufen wäre ermüdend. Dort kommen nur noch mehr der immer
+		gleichförmigen Häuser...eine typische, langweilige Vorstadt eben.|Von
+		hier aus geht es durch das offene Tor zu eurer Garage.
+	</desc>
+	<exits>
+		<exit room="strasse1">W</exit>
+		<exit room="garage">S</exit>
+	</exits>
+</room>

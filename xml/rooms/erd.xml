@@ -1,0 +1,14 @@
+<room id="4">
+	<desc>Dies ist der Flur im Erdgeschoss. Der Raum wird dominiert von
+		einer großen Fototapete, die einen bunten Herbstwald zeigt. Von hier
+		aus zweigen die Küche und das Wohnzimmer ab. Eine Treppe führt nach
+		oben in den 1. Stock. Außerdem geht es hier raus
+		in den Garten.
+	</desc>
+	<exits>
+		<exit room="garten">N</exit>
+		<exit room="kueche">O</exit>
+		<exit room="wohnzimmer">W</exit>
+		<exit room="flur">H</exit>
+	</exits>
+</room>

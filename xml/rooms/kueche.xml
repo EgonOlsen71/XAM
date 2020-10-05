@@ -1,0 +1,26 @@
+<room id="5">
+	<desc>Du stehst in der sonnendurchfluteten Küche des Hauses. Die Spüle
+		ist voll mit dreckigem Geschirr, dessen Anblick durch die darüber an
+		die Fliesen geklebten Prilblumen nicht viel besser wird. Neben dem
+		kleinen Küchentisch steht in der Ecke der Kühlschrank. Etwas weiter
+		links vom Kühlschrank befindet sich eine Tafel an der Wand.
+	</desc>
+	<exits>
+		<exit room="erd">W</exit>
+	</exits>
+	<items>
+		<item>13</item>
+		<item>14</item>
+		<item>15</item>
+	</items>
+	<operations>
+		<operation command="7" item="15" unique="1" remove_inv=""
+			remove_room="" add_room="" add_inv="16" unlock="" with_item=""
+			remove_both="" portal_to="">Im Kühlschrank findest du ein in Frischhaltefolie eingewickeltes Wurstbrot. Du nimmst es heraus und steckst es ein.
+		</operation>
+		<operation command="14" item="14" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">'Hallo! Wir sind erst spät von der Arbeit zurück. Im Kühlschrank findest du etwas zum Frühstück. Viel Spaß heute, Mama!'
+		</operation>
+	</operations>
+</room>

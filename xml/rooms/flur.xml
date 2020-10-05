@@ -13,8 +13,6 @@
 	</exits>
 	<items>
 		<item>6</item>
-		<item>7</item>
-		<item>12</item>
 	</items>
 	<operations>
 		<operation command="8" item="6" unique="1" remove_inv=""
@@ -28,8 +26,5 @@
 			remove_both="" portal_to="">Bei genauerem Hinsehen entdeckst du eine
 			kleine Öse, die aus einem Loch in der Klappe herausguckt.
 		</operation>
-		<operation command="8" item="12" unique="" remove_inv=""
-			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="" portal_to="1">Dieser Bus fährt nach nirgendwo.</operation>
 	</operations>
 </room>

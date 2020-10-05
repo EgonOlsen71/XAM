@@ -1,0 +1,14 @@
+<room id="10">
+	<desc>
+		Du stehst in der Straße vor eurem Haus. Die Straße verläuft von
+		Westen nach Osten durch den Ort. An der Straße stehen zahlreiche
+		Häuser, die eurem zumindest ähnlich sehen.|Um diese Zeit ist hier
+		nicht viel los, nur ab und zu fährt ein Auto vorbei und stört die
+		sommerliche Ruhe.
+	</desc>
+	<exits>
+		<exit room="strasse2">O</exit>
+		<exit room="garten">S</exit>
+		<exit room="portal1">W</exit>
+	</exits>
+</room>

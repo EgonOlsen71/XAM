@@ -1,0 +1,21 @@
+<room id="15">
+	<desc>Du bist auf dem Kriechboden. Hier ist es warm und staubig und es
+		hängen ein paar Spinnweben herab. Von oben kommen das Kabel der
+		Fernsehantenne und verschwindet irgendwo in der Glaswolle. Es
+		gibt hier ein kleines Fenster,	durch das aber kaum Licht hineinfällt,
+		weil alles mit alten Kartons zugestellt ist. Es es schwierig, im
+		Dämmerlicht zu erkennen, was hier alles so gelagert worden ist. Es führt eine
+		Leiter wieder nach unten.
+	</desc>
+	<exits>
+		<exit room="flur">R</exit>
+	</exits>
+	<operations>
+		<operation command="8" item="24" unique="1" remove_inv=""
+			remove_room="" add_room="25" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Die leuchtest den Raum aus so gut es geht.
+			Bevor der Lampe der Saft ausgeht, entdeckst du in einer Ecke einen
+			alten, rostigen Spaten.
+		</operation>
+	</operations>
+</room>

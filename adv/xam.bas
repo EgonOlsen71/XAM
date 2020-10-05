@@ -86,7 +86,8 @@
 41440 next:for p=0 to ic%-1:c%=iv%(p)
 41450 if c%<>t% then 41500
 41460 if p=ic%-1 then ic%=ic%-1:p=256:goto 41500
-41470 for pp=p to ic%-2:iv%(pp)=iv%(pp+1):next:ic%=ic%-1:pp=256
+41470 for pp=p to ic%-2:iv%(pp)=iv%(pp+1):uv%(pp)=uv%(pp+1)
+41480 next:ic%=ic%-1:pp=256
 41500 next
 41510 rs%(t%)=1:print it$(t%);" abgelegt!":rt%=1:return
 
@@ -271,15 +272,24 @@
 52025 rem cmd schau
 52030 rem
 52040 if co%=1 then gosub 59000:return 
-52050 if cc%=2 and co%<5 then t%=cv%(1):goto 52070
+52050 if cc%=2 then 52065
 52060 goto 59150
 52065 if tc%=0 then 52085
-52070 for i=0 to tc%-1:pp%=ip%(i):if pp%=t% then gosub 40500:return
+52066 gosub 52150:if rt%=1 then return
+52070 t%=cv%(1):for i=0 to tc%-1:pp%=ip%(i):if pp%=t% then gosub 40500:return
 52080 next
 52085 if ic%=0 then 52110
-52090 for i=0 to ic%-1:pp%=iv%(i):if pp%=t% and uv%(i)=0then gosub 40500:return
+52090 t%=cv%(1):for i=0 to ic%-1
+52095 pp%=iv%(i):if pp%=t% and uv%(i)=0 then gosub 40500:return
 52100 next
 52110 print it$(t%)+" ist hier nicht!":sk%=1:return
+
+52150 rem check schau command against room ops
+52155 rt%=0:if oc%=0 then return
+52160 co%=cv%(0):for j=0 to oc%:t%=op%(j,0)
+52165 if t%=co% then t2%=j:gosub 42200
+52170 if rt%=1 then return
+52175 next:return
 
 52200 rem 
 52202 rem cmd quit
@@ -356,7 +366,7 @@
 53270 next ii
 53280 if rr%=0 then rr%=t%:gosub 53450
 53290 next i
-53300 if ff%=1 then gosub 59000
+53300 if ff%=1 then gosub 40650
 53310 return
 
 53450 rem havenot message

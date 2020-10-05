@@ -1,0 +1,32 @@
+<room id="14">
+	<desc>
+		Du stehst in einem kleinen Park. Der von hohen Linden gesäumte
+		Weg geht am Rande des Parks
+		entlang. In der Mitte ist eine frisch
+		gemähte Wiese, auf der ein paar Amseln auf der Suche nach
+		Würmern hin
+		und her hüpfen.|Von Norden hört man leise die Geräusche der Straße.
+		Dieser Park wirkt wie eine kleine grüne Oase mitten in der Stadt.
+	</desc>
+	<items>
+		<item>23</item>
+	</items>
+	<exits>
+		<exit room="portal2">N</exit>
+	</exits>
+	<operations>
+		<operation command="8" item="23" unique="1" remove_inv=""
+			remove_room="23" add_room="22" add_inv="" unlock="" with_item="7"
+			remove_both="" portal_to="">Die angelst den Drachen mit dem Zugstab aus
+			dem Baum. Plötzlich kommt von hinten ein Junge angelaufen und greift
+			sich den Drachen.
+		</operation>
+		<operation command="13" item="22" unique="1" remove_inv=""
+			remove_room="22" add_room="" add_inv="24" unlock="" with_item=""
+			remove_both="" portal_to="">'Oberaffengeil! Du hast meinen Drachen
+			befreit. Hier hast du meine Taschenlampe dafür, die ist total cool.
+			Tschau, Alter!' Er rennt so schnell aus dem Park, wie er gekommen
+			war.
+		</operation>
+	</operations>
+</room>
