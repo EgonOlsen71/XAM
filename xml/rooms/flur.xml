@@ -14,15 +14,22 @@
 	<items>
 		<item>6</item>
 		<item>7</item>
+		<item>12</item>
 	</items>
 	<operations>
 		<operation command="8" item="6" unique="1" remove_inv=""
 			remove_room="6" add_room="" add_inv="" unlock="h" with_item="7"
-			remove_both="">Du hakst die Stange in die Öse an der Klappe ein und ziehst. Die Klappe öffnet sich, eine Leiter rumpelt herunter und der Weg hoch ist frei.
+			remove_both="" portal_to="">Du hakst die Stange in die Öse an der Klappe
+			ein und ziehst. Die Klappe öffnet sich, eine Leiter rumpelt herunter
+			und der Weg hoch ist frei.
 		</operation>
 		<operation command="12" item="6" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="">Bei genauerem Hinsehen entdeckst du eine kleine Öse, die aus einem Loch in der Klappe herausguckt.
+			remove_both="" portal_to="">Bei genauerem Hinsehen entdeckst du eine
+			kleine Öse, die aus einem Loch in der Klappe herausguckt.
 		</operation>
+		<operation command="8" item="12" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="1">Dieser Bus fährt nach nirgendwo.</operation>
 	</operations>
 </room>

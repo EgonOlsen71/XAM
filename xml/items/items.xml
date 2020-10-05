@@ -49,8 +49,8 @@
 	</item>
 	
 	<item id="12" inventory="0">
-		<name>Item 12</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+		<name>Bus</name>
+		<desc>Dies ist der Bus in den Limbo.</desc>
 	</item>
 	<item id="13" inventory="0">
 		<name>Item 13</name>
@@ -125,6 +125,6 @@
 		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
 	</item>
 	
-	<operation command="8" item="10" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="">Du hebst ihn lieber noch auf...für schlechte Zeiten!</operation>
-	<operation command="14" item="5" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="">Du blätterst die 64er durch. Ein C64 mit Datasette kostet astronomische 800 DM. Woher nehmen?</operation>
+	<operation command="8" item="10" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du hebst ihn lieber noch auf...für schlechte Zeiten!</operation>
+	<operation command="14" item="5" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du blätterst die 64er durch. Ein C64 mit Datasette kostet astronomische 800 DM. Woher nehmen?</operation>
 </items>

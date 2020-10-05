@@ -11,7 +11,7 @@
 	<operations>
 		<operation command="8" item="8" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="">Abblende...es plätschert...es rauscht...Aufblende
+			remove_both="" portal_to="">Abblende...es plätschert...es rauscht...Aufblende
 		</operation>
 	</operations>
 </room>

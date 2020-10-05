@@ -169,6 +169,7 @@
 43440 c%=ac%(5):if c%<>-1 then gosub 42500: rem item to room
 43450 c%=ac%(6):if c%<>-1 then gosub 42600: rem item to inv
 43455 c%=ac%(7):if c%<>-1 then gosub 44000: rem unlock direction
+43460 c%=ac%(10):if c%<>-1 then gosub 44200: rem portal to another room
 43490 rt%=1:return
 
 43500 rem check items with inv/room
@@ -201,6 +202,10 @@
 44030 gosub 62500:i=256
 44040 next:gosub 42400
 44060 return
+
+44200 rem jumps to another room named portal<#>
+44210 a$=str$(c%):rn$="portal"+right$(a$,len(a$)-1)+".rom"
+44220 print:gosub 40100:return
 
 48000 rem load item operations
 48010 print "Lade Daten...";
@@ -323,7 +328,8 @@
 52790 if a$="suedw" then a$="sw"
 52800 if a$="u" then a$="h"
 52810 if a$="d" then a$="r"
-52820 for i=0 to xc%:tx$=xp$(i):gosub 63100:b$=tx$
+52815 if xc%=0 then 52850
+52820 for i=0 to xc%-1:tx$=xp$(i):gosub 63100:b$=tx$
 52830 if a$=b$ then rn$=xx$(i)+".rom":print:gosub 40100:return
 52840 next
 52850 print"Da geht es nicht lang!":return
@@ -572,7 +578,7 @@
 62060 goto 62010
 
 62100 rem init room data
-62110 md%=1:pl%=0:el%=0:il%=0:oc%=0
+62110 md%=1:pl%=0:el%=0:il%=0:oc%=0:xc%=0:tc%=0
 62120 for i=0 to pl%:rd$(i)="":next
 62130 return
 
@@ -601,7 +607,7 @@
 62510 gosub 62900
 62520 if xc%=0 then return
 62530 poke 646,7:print "Ausgaenge sind: ";
-62540 xc%=xc%-1:for i=0 to xc%
+62540 for i=0 to xc%-1
 62550 if i>0 then print ", ";
 62560 print xp$(i);:next:print:return
 
@@ -614,8 +620,8 @@
 62700 print it$(ip%(i));:next:print:return
 
 62750 rem calculate visible items
-62752 if il%=0 then 62795
-62755 tc%=0:for i=0 to il%-1:p=val(ri$(i)):ff%=0:if ic%=0 then 62775
+62752 tc%=0:if il%=0 then 62795
+62755 for i=0 to il%-1:p=val(ri$(i)):ff%=0:if ic%=0 then 62775
 62760 for ii=0 to ic%-1:if iv%(ii)=p then ff%=1:ii=ic%
 62770 next ii:if ff%=1 then 62790
 62775 if rs%(p)=1 then 62790
@@ -624,7 +630,8 @@
 62795 gosub 41300:return
 
 62900 rem calculate usable exits
-62910 xc%=0:for i=0 to el%-1:p=1:if lk%(i)=0 then 62940
+62905 xc%=0:if el%=0 then return
+62910 for i=0 to el%-1:p=1:if lk%(i)=0 then 62940
 62920 p=0:for ii=0 to 3:tx$=lx$(rd%, ii):gosub 63100:a1$=tx$
 62925 tx$=ex$(i):gosub 63100:a2$=tx$:if a1$=a2$ then p=1:ii=4
 62930 next ii:if p=0 then 62950

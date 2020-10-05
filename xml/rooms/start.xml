@@ -19,17 +19,17 @@
 	<operations>
 		<operation command="7" item="0" unique="1" remove_inv=""
 			remove_room="" add_room="4" add_inv="" unlock="" with_item=""
-			remove_both="">Als du den Schrank öffnest, fällt ein ZX81 heraus, der
+			remove_both="" portal_to="">Als du den Schrank öffnest, fällt ein ZX81 heraus, der
 			sich auf dem Gerümpel nicht mehr halten konnte.
 		</operation>
 		<operation command="8" item="3" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="">Du schaltest den Fernseher ein, aber es läuft nichts
+			remove_both="" portal_to="">Du schaltest den Fernseher ein, aber es läuft nichts
 			Interessantes auf irgendeinem der drei Programme.
 		</operation>
 		<operation command="8" item="3" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item="4"
-			remove_both="">Du verbindest den Z81 mit dem Fernseher. Er funktioniert,
+			remove_both="" portal_to="">Du verbindest den Z81 mit dem Fernseher. Er funktioniert,
 			aber was will man mit 1 KB schon anfangen? Frustriert kabelst du ihn
 			wieder ab.
 		</operation>

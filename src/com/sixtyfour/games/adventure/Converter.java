@@ -262,7 +262,8 @@ public class Converter {
 		write(os, null, getValue(tmp), false);
 		tmp = it.getAttribute("remove_both");
 		write(os, null, getZeroValue(tmp), false);
-		write(os, null, "?" + "|", false);
+		tmp = it.getAttribute("portal_to");
+		write(os, null, getValue(tmp), false);
 		String desc = it.getTextContent().trim();
 		write(os, null, desc + "|", true);
 		write(os, null, "***|", false);

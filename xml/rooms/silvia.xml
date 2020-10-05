@@ -9,7 +9,7 @@
 	<operations>
 		<operation command="7" item="11" unique="1" remove_inv=""
 			remove_room="" add_room="10" add_inv="" unlock="" with_item=""
-			remove_both="">Der Nachtschrank ist beinahe leer. Es liegt nur noch ein einsame Kaugummipackung darin.
+			remove_both="" portal_to="">Der Nachtschrank ist beinahe leer. Es liegt nur noch ein einsame Kaugummipackung darin.
 		</operation>
 	</operations>
 </room>
