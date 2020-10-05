@@ -1,7 +1,7 @@
 <items>
 	<item id="0" inventory="0">
 		<name>Schrank</name>
-		<desc>Dein Schrank ist voller Gerümpel. Jemand müsste ihn mal aufräumen. Nur wer?</desc>
+		<desc>Einfach ein Schrank.</desc>
 	</item>
 	<item id="1" inventory="1">
 		<name>Poster</name>
@@ -104,12 +104,12 @@
 		<desc>Ein alter Spaten. Rostig aber noch stabil.</desc>
 	</item>
 	<item id="26" inventory="0">
-		<name>Item 26</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+		<name>Aushang</name>
+		<desc>Es ist ein Bild von einer Halskette zu sehen, darunter steht näheres.</desc>
 	</item>
 	<item id="27" inventory="0">
-		<name>Item 27</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+		<name>Polizist</name>
+		<desc>Er sieht gelangweilt aus.</desc>
 	</item>
 	<item id="28" inventory="0">
 		<name>Item 28</name>

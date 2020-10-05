@@ -24,6 +24,11 @@
 			heraus, der
 			sich auf dem Gerümpel nicht mehr halten konnte.
 		</operation>
+		<operation command="1" item="0" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Dein Schrank ist voller Gerümpel. Jemand
+			müsste ihn mal aufräumen. Nur wer?
+		</operation>
 		<operation command="8" item="3" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
 			remove_both="" portal_to="">Du schaltest den Fernseher ein, aber es

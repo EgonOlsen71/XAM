@@ -1,0 +1,42 @@
+<room id="20">
+	<desc>
+		Du bist in der Polizeistation. Hinter einem Tisch steht ein
+		Polizist, der dich gelangweilt beobachtet. Irgendwo weiter hinten
+		im Raum klappert eine Schreibmaschine eher langsam vor sich hin. Es
+		riecht angenehm nach Kaffee. In der Ecke kämpft ein Ficus damit, nicht
+		auch noch sein letztes Blatt zu verlieren.
+		An der Wand hängt, neben dem üblichen RAF-Fandungsplakat, ein Aushang.
+	</desc>
+	<items>
+		<item>13</item>
+		<item>26</item>
+		<item>27</item>
+	</items>
+	<exits>
+		<exit room="marktstr">W</exit>
+	</exits>
+	<operations>
+		<operation command="1" item="13" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Der Tisch ist mehr eine Art Tresen und fast
+			so lang wie der ganze Raum.
+		</operation>
+		<operation command="14" item="26" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">'Halskette gestohlen! Für die
+			Wiederbeschaffung oder Hinweise auf die Täter ist eine Belohnung von
+			1000 DM ausgesetzt.' - Hmm...ziemlich viel Geld!
+		</operation>
+		<operation command="13" item="27" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">'Wenn du keine Straftat zu melden oder was
+			abzugeben hast, dann verschwinde hier besser schnell wieder!'
+		</operation>
+		<operation command="9" item="27" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Diese Idee ist...naja...ausgesprochen
+			dämlich? Ja, das ist sie!
+		</operation>
+	</operations>
+
+</room>

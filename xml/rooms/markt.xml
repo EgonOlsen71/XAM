@@ -1,0 +1,21 @@
+<room id="19">
+	<desc>
+		Du befindest dich mitten auf dem Marktplatz. Morgen um diese
+		Zeit, zum Wochenmarkt, ist hier sicher viel los.
+		Aber im Moment ist der Platz
+		noch weitgehend leer. Nur ein paar vereinzelte
+		Passanten bummeln hin und wieder vorbei und genießen die
+		Strahlen der Vormittagssonne. Die Stadttauben sitzen in großen Gruppen
+		auf dem Platz.
+		Sie fliegen nicht einmal davon, wenn sich ihnen jemand
+		nährt.|
+		Angrenzend an den Marktplatz ist eine Polizeitstation. Im
+		Norden beginnt die Osterstraße, im Osten liegt die Marktstraße.
+	</desc>
+	<exits>
+		<exit room="gabelstr">SO</exit>
+		<exit room="polizei">W</exit>
+		<exit room="osterstr">N</exit>
+		<exit room="marktstr">O</exit>
+	</exits>
+</room>

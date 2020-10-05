@@ -1,0 +1,15 @@
+<room id="18">
+	<desc>
+		Du bist auf der Gabelstraße. Sie verbindet die Innenstadt mit dem
+		östlichen Stadtrand und ist eine typische, triste Einfall- bzw. Ausfallstraße. Der
+		Verkehr morgens und Abends muss mörderisch sein. Die
+		Leute, die hier in den grauen Hochhäusern links und recht der Straße wohnen, sind zu
+		bedauern.|
+		Die Straße macht einen Knick in nördlicher Richtung und führt dann weiter in die Innenstadt.
+		Im Osten liegt der Stadtrand.
+	</desc>
+	<exits>
+		<exit room="portal2">O</exit>
+		<exit room="markt">NW</exit>
+	</exits>
+</room>
