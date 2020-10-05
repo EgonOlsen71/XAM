@@ -41,7 +41,7 @@
 	</item>
 	<item id="10" inventory="1">
 		<name>Kaugummi</name>
-		<desc>Eine Packung Blubba-Blubba, dein Lieblingskaugummi. Nicht mehr ganz neu, aber noch in Ordnung.</desc>
+		<desc>Eine Packung Blubba-Blubba, das mit den Klebeblasen. Dein Lieblingskaugummi. Nicht mehr ganz neu, aber noch in Ordnung.</desc>
 	</item>
 	<item id="11" inventory="0">
 		<name>Nachtschrank</name>
@@ -105,23 +105,31 @@
 	</item>
 	<item id="26" inventory="0">
 		<name>Aushang</name>
-		<desc>Es ist ein Bild von einer Halskette zu sehen, darunter steht näheres.</desc>
+		<desc>Es ist ein Bild von einer Halskette zu sehen, darunter steht Näheres.</desc>
 	</item>
 	<item id="27" inventory="0">
 		<name>Polizist</name>
 		<desc>Er sieht gelangweilt aus.</desc>
 	</item>
-	<item id="28" inventory="0">
-		<name>Item 28</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	<item id="28" inventory="1">
+		<name>Pilz</name>
+		<desc>Ein Fliegenpilz, bekannt für seine psychedelische Wirkung.</desc>
 	</item>
 	<item id="29" inventory="0">
-		<name>Item 29</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+		<name>Taube</name>
+		<desc>Die Taube scheint den Brunnen sehr zu mögen. Sie trägt irgendein Papier im Schnabel.</desc>
 	</item>
-	<item id="30" inventory="0">
-		<name>Item 20</name>
-		<desc>Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext Blindtext</desc>
+	<item id="30" inventory="1">
+		<name>Los</name>
+		<desc>Ein Los für die 'Spiel-Mit-Lotterie' mit der Nummer 00128.</desc>
+	</item>
+	<item id="31" inventory="0">
+		<name>Brunnen</name>
+		<desc>Ein runder Brunnen mit einem Wasserspeier in der Mitte, momentan aber außer Betrieb.</desc>
+	</item> 
+	<item id="32" inventory="0">
+		<name>Pilzbrot</name>
+		<desc>Zusätzlich zur Salami ist jetzt noch Fliegenpilz drauf.</desc>
 	</item>
 	
 	<operation command="8" item="25" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Hier gibt es nichts zu graben.</operation>
@@ -130,5 +138,8 @@
 	<operation command="14" item="19" unique="" remove_inv="19" remove_room="" add_room="" add_inv="20" unlock="" with_item="" remove_both="" portal_to="">Im Brief ist dein Ferienpass von der Stadt. Gerade noch rechtzeitig zum Ferienbeginn.</operation>
 	<operation command="8" item="10" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du hebst ihn lieber noch auf...für schlechte Zeiten.</operation>
 	<operation command="8" item="16" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du bist nicht hungrig.</operation>
+	<operation command="8" item="32" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Nee, besser nicht...</operation>
+	<operation command="8" item="28" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Lieber nicht...</operation>
 	<operation command="14" item="5" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du blätterst die 64er durch. Ein C64 mit Datasette kostet astronomische 800 DM. Woher nehmen?</operation>
+	<operation command="8" item="16" unique="1" remove_inv="" remove_room="" add_room="" add_inv="32" unlock="" with_item="28" remove_both="1" portal_to="">Du zerbröselst den Pilz und legst die Teile unter die Salami auf das Brot. Guten Hunger!</operation>
 </items>

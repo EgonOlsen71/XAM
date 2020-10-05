@@ -1,0 +1,41 @@
+<room id="23">
+	<desc>In dieser Ecke des Marktplatzes steht ein kleiner, runder
+		Brunnen. Er scheint kaputt zu sein oder die Stadt will im Sommer
+		Wasser sparen, jedenfalls ist er außer Betrieb. Eine der Stadttauben
+		sitzt auf dem Brunnenrand. Wenn sich jemand nähert, fliegt sie kurz
+		hoch und setzt sich danach wieder auf dieselbe Stelle.
+	</desc>
+	<exits>
+		<exit room="markt">SO</exit>
+	</exits>
+	<items>
+		<item>31</item>
+		<item>29</item>
+	</items>
+	<operations>
+		<operation command="12" item="29" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Die Taube hat ein Papier im Schnabel. Sie
+			fliegt aber immer hoch, wenn man sich nähert. Wenn man sie nur
+			irgendwie 'festhalten' könnte!?
+		</operation>
+		<operation command="8" item="9" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Du versuchst, die Taube mit dem Handtuch zu
+			fangen, aber sie ist zu schnell. Es wäre besser, sie irgendwie am
+			Fliegen zu hindern.
+		</operation>
+		<operation command="8" item="31" unique="1" remove_inv="10"
+			remove_room="29" add_room="30" add_inv="" unlock="" with_item="10"
+			remove_both="" portal_to="">Du klebst das gekaute Kaugummi auf die
+			Stelle, wo die Taube immer sitzt. Als sie merkt, dass sie festklebt,
+			verliert sie vor Schreck den Zettel, flattert sich frei und fliegt
+			davon.
+		</operation>
+		<operation command="8" item="29" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item="10"
+			remove_both="" portal_to="">Auf die Taube kannst du das nicht kleben.
+		</operation>
+
+	</operations>
+</room>

@@ -5,8 +5,11 @@
 		entfernt beginnen schon die ersten Häuser. Der Weg führt über das Feld
 		zurück in den Park oder weiter in den Wald hinein auf eine kleine
 		Lichtung.|
-		Das dichte Blätterdach der Buchen schirmt die Sonne weitgehend ab. Es ist angenehm kühl hier. 
+		Das dichte Blätterdach der Bäume schirmt die Sonne weitgehend ab. Es ist angenehm kühl hier. 
 	</desc>
+	<items>
+		<item>28</item>
+	</items>
 	<exits>
 		<exit room="park">NW</exit>
 		<exit room="lichtung">O</exit>

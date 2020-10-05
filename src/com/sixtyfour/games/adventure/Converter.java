@@ -40,7 +40,7 @@ public class Converter {
 			NodeList its = doc.getElementsByTagName("command");
 			for (int i = 0; i < its.getLength(); i++) {
 				Element it = (Element) its.item(i);
-				String cmd = it.getTextContent().trim();
+				String cmd = getText(it);
 				String id = it.getAttribute("id");
 				String verb = it.getAttribute("verb");
 				String[] parts = cmd.split(",");
@@ -70,8 +70,8 @@ public class Converter {
 				Element it = (Element) its.item(i);
 				Element it2 = (Element) it.getElementsByTagName("name").item(0);
 				Element it3 = (Element) it.getElementsByTagName("desc").item(0);
-				String name = it2.getTextContent().trim();
-				String desc = it3.getTextContent().trim();
+				String name = getText(it2);
+				String desc = getText(it3);
 				String id = it.getAttribute("id");
 				String inv = it.getAttribute("inventory");
 				write(os, id + ";" + inv + ";", name + "|", false);
@@ -124,7 +124,7 @@ public class Converter {
 				ids.add(roomId);
 				write(os, null, roomId + "|", false);
 				Element dsce = (Element) doc.getElementsByTagName("desc").item(0);
-				String desc = dsce.getTextContent().trim();
+				String desc = getText(dsce);
 				write(os, null, desc + "|", true);
 				write(os, null, "***|", false);
 
@@ -132,7 +132,7 @@ public class Converter {
 				NodeList its = doc.getElementsByTagName("exit");
 				for (int i = 0; i < its.getLength(); i++) {
 					Element it = (Element) its.item(i);
-					desc = it.getTextContent().trim();
+					desc = getText(it);
 					String xRoom = it.getAttribute("room");
 					String locked = it.getAttribute("locked");
 					write(os, xRoom + ";" + (locked.isEmpty() ? "0" : locked) + ";", desc + "|", false);
@@ -143,7 +143,7 @@ public class Converter {
 				its = doc.getElementsByTagName("item");
 				for (int i = 0; i < its.getLength(); i++) {
 					Element it = (Element) its.item(i);
-					desc = it.getTextContent().trim();
+					desc = getText(it);
 					write(os, null, desc + "|", false);
 				}
 				write(os, null, "***|", false);
@@ -272,9 +272,15 @@ public class Converter {
 		write(os, null, getZeroValue(tmp), false);
 		tmp = it.getAttribute("portal_to");
 		write(os, null, getValue(tmp), false);
-		String desc = it.getTextContent().trim();
+		String desc = getText(it);
 		write(os, null, desc + "|", true);
 		write(os, null, "***|", false);
+	}
+
+	private static String getText(Element it) {
+		String tmp = it.getTextContent().trim();
+		tmp = tmp.replace("\"", "'").replace(":", ".");
+		return tmp;
 	}
 
 	private static String getZeroValue(String tmp) {
