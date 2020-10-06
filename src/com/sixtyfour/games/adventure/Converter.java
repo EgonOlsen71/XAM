@@ -25,6 +25,8 @@ import org.w3c.dom.NodeList;
 public class Converter {
 
 	private int uniques = 0;
+	private int maxOps = 0;
+	private String maxOpsName = null;
 
 	public static void main(String[] args) {
 		Converter conv = new Converter();
@@ -33,11 +35,13 @@ public class Converter {
 
 	public void convert() {
 		uniques = 0;
+		maxOps = 0;
 		convertItems();
 		convertCommands();
 		int endId = convertRooms();
 		writeEndId(endId);
 		System.out.println("Unique operations in total: " + uniques);
+		System.out.println("Maximum number of room ops: " + maxOps + "/" + maxOpsName);
 	}
 
 	private void writeEndId(int endId) {
@@ -173,7 +177,12 @@ public class Converter {
 
 				// Operations
 				its = doc.getElementsByTagName("operation");
-				for (int i = 0; i < its.getLength(); i++) {
+				int len = its.getLength();
+				if (len > maxOps) {
+					maxOps = len;
+					maxOpsName = room.getName();
+				}
+				for (int i = 0; i < len; i++) {
 					convert(os, its, i);
 				}
 				if (its.getLength() == 0) {

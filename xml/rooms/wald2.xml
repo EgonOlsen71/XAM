@@ -31,7 +31,7 @@
 	</operation>
 	<operation command="8" item="45" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""
-		remove_both="" portal_to="">Wozu willst du die genau benutzen? Um Spechte zu erschrecken oder für wen anders?
+		remove_both="" portal_to="">Wozu willst du die genau benutzen? Um Spechte zu erschrecken oder für wen anderes?
 	</operation>
 	<operation command="9" item="43" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""

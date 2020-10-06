@@ -46,7 +46,7 @@
 	</operation>
 	<operation command="1" item="36" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="" portal_to="">Der Verkäufer ist ein hagerer Typ, dem sein Hemd ein paar Nummer zu groß ist. Er ist hinter dem Tresen beschäftig, ab und zu nippt er an einem Kaffee.
+			remove_both="" portal_to="">Der Verkäufer ist ein hagerer Typ, dem sein Hemd ein paar Nummer zu groß ist. Er ist hinter dem Tresen beschäftigt, ab und zu nippt er an einem Kaffee.
 	</operation>
 	<operation command="9" item="36" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""

@@ -16,8 +16,7 @@
 		<item>0</item>
 	</items>
 	<exits>
-		<exit room="markt">NO</exit>
-		<exit room="keller" locked="1">R</exit>
+		<exit room="gasse">H</exit>
 	</exits>
 	<operations>
 		<operation command="1" item="0" unique="" remove_inv=""

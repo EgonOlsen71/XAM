@@ -92,6 +92,7 @@
 41510 rs%(t%)=1:print it$(t%);" abgelegt!":rt%=1:return
 
 42000 rem load room operations
+42005 if oc%>xo% then 42420
 42010 for i=0 to 10
 42015 if a$="?" then a$="-1"
 42020 op%(oc%,i)=val(a$):gosub 61700:next
@@ -515,7 +516,7 @@
 
 60000 rem init
 60002 print "Einen Moment..."
-60005 mx%=30:mr%=35:mi%=50:mc%=16:cb$=chr$(13)+"> ":lr%=0
+60005 mx%=30:mr%=35:mi%=50:mc%=16:xo%=8:cb$=chr$(13)+"> ":lr%=0
 60006 al$="alles":ms%=5:dim i,ii,p,pp,ad:fi$="save.dat":ba=49152:ad=ba
 60010 dim it$(50), il$(50), mv%(50), ti%: rem all items (mi%)
 60020 dim rd$(24), pl%, rd%: rem current room's description
@@ -533,7 +534,7 @@
 60120 dim rs%(50): rem flag, that an item lies somewhere else (mi%)
 60130 for i=0 to mr%:for p=0 to 8:rv%(i,p)=-1:next p,i: rem clear room inv.
 60140 dim dr$(9):for i=0 to 9:read dr$(i):next: rem direction strings
-60150 dim op%(8,10), op$(8,5), oc%: rem possible operations in a room
+60150 dim op%(8,10), op$(8,5), oc%: rem possible operations in a room (xo%)
 60160 dim od$(30), od%: rem operations applied (command ID_item 1_item_2) (mx%)
 60170 dim og%(50,10), og$(50,5), gc%: rem ops. on items in the inventory (mi%)
 60180 dim ac%(10): rem actions of the current operation
@@ -605,8 +606,9 @@
 
 62100 rem init room data
 62110 md%=1:pl%=0:el%=0:il%=0:oc%=0:xc%=0:tc%=0
-62120 for i=0 to pl%:rd$(i)="":next
-62130 return
+62120 for i=0 to pl%-1:rd$(i)="":next
+62130 for i=0 to 8:for ii=0 to 5:op$(i,ii)="":next:next
+62140 return
 
 62200 rem assign room description
 62210 rd$(pl%)=a$
