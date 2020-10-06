@@ -576,7 +576,7 @@
 61430 for p=1 to pp:a$=mid$(tx$,p,1)
 61440 poke ad+p-1,asc(a$):next:p=p-1:if pp<40 then poke ad+p,13:p=p+1
 61450 ad=ad+p:goto 61410
-61460 id%(ii)=sd-ba:poke sd,t%:return
+61460 id%(ii)=sd-ba:ad=ad-1:poke sd,t%-1:return
 
 61500 rem load commands
 61510 print "Lade Befehle...";
