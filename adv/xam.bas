@@ -212,6 +212,14 @@
 44210 a$=str$(c%):rn$="portal"+right$(a$,len(a$)-1)+".rom"
 44220 print:gosub 40100:return
 
+45000 rem print all commands
+45010 poke 646,10:print:print "Moegliche Befehle:"
+45020 for i=0 to tb%-1:print:for ii=0 to 4
+45030 a$=cm$(i,ii):if len(a$)=0 then ii=5:goto 45060
+45040 if ii>0 then print", ";
+45050 print a$;
+45060 next:next:print:return 
+
 48000 rem load item operations
 48010 print "Lade Daten...";
 48015 open 2,8,2,"operations.def":gc%=0
@@ -274,7 +282,7 @@
 52005 rr%=0:rt%=0:ff%=0:sk%=0
 52010 if er<>0 or cc%=0 then return
 52012 t%=cv%(0):on t%+1 goto 52700,52030,52500,52300,52200,52900,53200
-52013 on t%-6 goto 53500,53600,53700,53800,53850,53900,54000,53500,53500
+52013 on t%-6 goto 53500,53600,53700,53800,53850,53900,54000,53500,53500,45000
 52014 er=2:return
 
 52022 rem 
@@ -507,7 +515,7 @@
 
 60000 rem init
 60002 print "Einen Moment..."
-60005 mx%=30:mr%=35:mi%=50:mc%=15:cb$=chr$(13)+"> ":lr%=0
+60005 mx%=30:mr%=35:mi%=50:mc%=16:cb$=chr$(13)+"> ":lr%=0
 60006 al$="alles":ms%=5:dim i,ii,p,pp,ad:fi$="save.dat":ba=49152:ad=ba
 60010 dim it$(50), il$(50), mv%(50), ti%: rem all items (mi%)
 60020 dim rd$(24), pl%, rd%: rem current room's description
