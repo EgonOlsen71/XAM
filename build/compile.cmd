@@ -1,0 +1,1 @@
+mospeed ..\adv\xam.bas -compactlevel=4

@@ -1,1 +1,0 @@
-mospeed xam.bas -compactlevel=4
