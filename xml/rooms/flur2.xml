@@ -1,0 +1,20 @@
+<room id="32">
+	<desc>Du stehst in einem kleinen Flur im Dachgeschoss. Hier gibt es nur
+		einen Spiegel. Eine Treppe ist nirgends zu sehen, aber wenn
+		man nach unten schaut, sieht man unzählige Räume, die von einem
+		scheinbar endlosen Tunnel ausgehen. So unheimlich das auch ist, es kommt dir
+		seltsam vertraut und irgendwie gar nicht bedrohlich vor.
+	</desc>
+	<exits>
+		<exit room="portal3">S</exit>
+	</exits>
+	<items>
+		<item>49</item>
+	</items>
+	<operations>
+		<operation command="8" item="49" unique="1" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="4">Du erwartest, einen Teenager im Spiegel zu sehen. Stattdessen blickst du in ein Gesicht, dass locker 45 oder mehr Jahre auf dem Buckel hat. Dir wird schwindelig...
+		</operation>
+	</operations>
+</room>

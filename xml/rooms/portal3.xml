@@ -1,0 +1,18 @@
+<room id="31">
+	<desc>
+		Du bist in einem Raum unter dem Dach. Die Sommersonne scheint herein und
+		erzeugt ein interessantes Lichtmuster auf einem mit Computern vollgestellten Regal.
+	</desc>
+	<items>
+		<item>48</item>
+	</items>
+	<exits>
+		<exit room="flur2">N</exit>
+	</exits>
+	<operations>
+		<operation command="12" item="48" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Das Regal kann die Last der ganzen Geräte fasst nicht mehr halten. Die Böden biegen sich teilweise schon bedenklich durch.
+		</operation>
+	</operations>
+</room>

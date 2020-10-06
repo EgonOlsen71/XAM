@@ -1,10 +1,9 @@
 
 <room id="16">
 	<desc>
-		Du bist in einem kleine Wäldchen vor der Stadt. Nur 500m von dir
+		Du bist in einem kleinen Wäldchen vor der Stadt. Nur 500m von dir
 		entfernt beginnen schon die ersten Häuser. Der Weg führt über das Feld
-		zurück in den Park oder weiter in den Wald hinein auf eine kleine
-		Lichtung.|
+		zurück in den Park oder weiter in den Wald hinein.|
 		Das dichte Blätterdach der Bäume schirmt die Sonne weitgehend ab. Es ist angenehm kühl hier. 
 	</desc>
 	<items>
@@ -12,6 +11,6 @@
 	</items>
 	<exits>
 		<exit room="park">NW</exit>
-		<exit room="lichtung">O</exit>
+		<exit room="wald2">O</exit>
 	</exits>
 </room>

@@ -1,11 +1,11 @@
 <room id="20">
 	<desc>
-		Du bist in der Polizeistation. Hinter einem Tisch steht ein
+		Du bist im Polizeirevier. Hinter einem Tisch steht ein
 		Polizist, der dich gelangweilt beobachtet.|Irgendwo weiter hinten
 		im Raum klappert eine Schreibmaschine eher langsam vor sich hin. Es
 		riecht angenehm nach Kaffee und der Ecke kämpft ein Ficus damit, nicht
-		auch noch sein letztes Blatt zu verlieren.
-		An der Wand hängt, neben dem üblichen RAF-Fandungsplakat, ein Aushang.
+		auch noch sein letztes Blatt zu verlieren.|An der Wand hängen, neben dem
+		üblichen RAF-Fandungsplakat, eine Reihe weiterer Zettel.
 	</desc>
 	<items>
 		<item>13</item>
@@ -13,7 +13,7 @@
 		<item>27</item>
 	</items>
 	<exits>
-		<exit room="marktstr">W</exit>
+		<exit room="markt">O</exit>
 	</exits>
 	<operations>
 		<operation command="1" item="13" unique="" remove_inv=""
@@ -25,7 +25,7 @@
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
 			remove_both="" portal_to="">'Halskette gestohlen! Für die
 			Wiederbeschaffung oder Hinweise auf die Täter ist eine Belohnung von
-			1000 DM ausgesetzt.' - Hmm...ziemlich viel Geld!
+			1000 DM ausgesetzt.' - Hmm...das würde für einen C64 reichen!
 		</operation>
 		<operation command="13" item="27" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
@@ -34,9 +34,24 @@
 		</operation>
 		<operation command="9" item="27" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="" portal_to="">Diese Idee ist...naja...ausgesprochen
+			remove_both="" portal_to="">Ist diese Idee...naja...ausgesprochen
 			dämlich? Ja, das ist sie!
 		</operation>
+		<operation command="8" item="35" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Klar, verwende die Sirene hier, die du von
+			der Polizei 'ausgeliehen' hast. Sehr schlau!
+		</operation>
+		<operation command="15" item="27" unique="1" remove_inv="47"
+			remove_room="26" add_room="" add_inv="38" unlock="" with_item="47"
+			remove_both="" portal_to="">'Wo hast du die denn her?' - Der Polizist
+			sieht dich ungläubig an. 'Gefunden, wah? Naja, ist ja auch egal. Gibt
+			eine Belohnung dafür, hier 1000 DM für dich.'
+		</operation>
+		<operation command="15" item="47" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Du lässt die Halskette locker an deiner Hand
+			baumeln. Niemand nimmt Notiz davon.
+		</operation>
 	</operations>
-
 </room>

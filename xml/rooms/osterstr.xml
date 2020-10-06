@@ -1,0 +1,17 @@
+<room id="21">
+	<desc>
+		Die Osterstraße erstreckt sich vom Marktplatz aus in nördlicher
+		Richtung bis hinunter zum Fluss. Sie ist eine der beliebtesten
+		Einkaufsstraßen der Stadt und zahlreiche Passanten sind bereits
+		unterwegs. Die meisten Geschäfte hier sind für dich
+		herzlich uninteressant.|Allerdings ist hier auch eines der besten
+		Geschäfte der Stadt, die örtliche Filiale der aufstrebenden
+		Computerhandelskette Wobist.|Im Schaufenster läuft ein Spiel auf einem C64, bei dem ein
+		Frosch versucht, Fliegen zu fangen. Das sieht schon super aus!
+	</desc>
+	<exits>
+		<exit room="fluss">N</exit>
+		<exit room="markt">S</exit>
+		<exit room="wobist">O</exit>
+	</exits>
+</room>

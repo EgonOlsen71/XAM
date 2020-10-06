@@ -127,19 +127,95 @@
 		<name>Brunnen</name>
 		<desc>Ein runder Brunnen mit einem Wasserspeier in der Mitte, momentan aber außer Betrieb.</desc>
 	</item> 
-	<item id="32" inventory="0">
+	<item id="32" inventory="1">
 		<name>Pilzbrot</name>
 		<desc>Zusätzlich zur Salami ist jetzt noch Fliegenpilz drauf.</desc>
 	</item>
+	<item id="33" inventory="0">
+		<name>Kellertuer</name>
+		<desc>Die Tuer zum Rumpelkeller der Polizei. Die hat keine Klinke, ist aber nur angelehnt.</desc>
+	</item>
+	<item id="34" inventory="1">
+		<name>Sirene</name>
+		<desc>Eine alte Polizeisirene mit Handkurbel.</desc>
+	</item>
+	<item id="35" inventory="1">
+		<name>Sirenchen</name>
+		<desc>Eine gedämpfte Polizeisirene.</desc>
+	</item>
+	<item id="36" inventory="0">
+		<name>Verkaeufer</name>
+		<desc>?</desc>
+	</item>
+	<item id="37" inventory="0">
+		<name>Computer</name>
+		<desc>?</desc>
+	</item>
+	<item id="38" inventory="1">
+		<name>Geld</name>
+		<desc>Das sind die 1000 DM, die du als Belohnung für die Halskette bekommen hast.</desc>
+	</item>
+	<item id="39" inventory="1">
+		<name>Restgeld</name>
+		<desc>Das sind 200 DM, die von Wobist als Wechselgeld bekommen hast.</desc>
+	</item>
+	<item id="40" inventory="1">
+		<name>C64</name>
+		<desc>Dein eigener C64! Mit Datasette und einem Textadventure gratis dazu. Die Zukunft kann kommen!</desc>
+	</item>
+	<item id="41" inventory="1">
+		<name>Karte</name>
+		<desc>Eine handgezeichnete Karte. Sie zeigt eine Art Kreis inmitten von Bäumen und an einer Stelle im Kreis ist ein Kreuz. Ein Schatzkarte?</desc>
+	</item>
+	<item id="42" inventory="0">
+		<name>Mann</name>
+		<desc>?</desc>
+	</item>
+	<item id="43" inventory="0">
+		<name>Arbeiter</name>
+		<desc>?</desc>
+	</item>
+	<item id="44" inventory="0">
+		<name>Hund</name>
+		<desc>Vermutlich ein Pudel, aber ein sehr wilder. Wenn man ihn nur beruhigen...oder betäuben...könnte.</desc>
+	</item>
+	<item id="45" inventory="1">
+		<name>Maske</name>
+		<desc>Eine Magnum-Maske. Das ist dieser Privatdetektiv aus der neuen Fernsehserie im Ersten. Wieso gibt es den als Maske?</desc>
+	</item>
+	<item id="46" inventory="1">
+		<name>Holzkiste</name>
+		<desc>Eine kleine Holzkiste</desc>
+	</item>
+	<item id="47" inventory="1">
+		<name>Halskette</name>
+		<desc>Eine hübsche Halskette, die sehr wertvoll aussieht.</desc>
+	</item>
+	<item id="48" inventory="0">
+		<name>Regal</name>
+		<desc>Auf dem Regal stehen jede Menge 8-Bit-Rechner, vom C128 über den C64 bis hin zu C16 und VC20. Auf den unteren Böden liegen auch noch einige Einzelteile.</desc>
+	</item>
+	<item id="49" inventory="0">
+		<name>Spiegel</name>
+		<desc>Ein einfacher Wandspiegel.</desc>
+	</item>
 	
+	<operation command="8" item="45" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du setzt die Maske auf, aber niemand bemerkt es.</operation>
+	<operation command="8" item="34" unique="1" remove_inv="" remove_room="" add_room="" add_inv="35" unlock="" with_item="9" remove_both="1" portal_to="">Du stopfst das Handtuch in die Sirene. Das sollte sie leiser machen, nun ist es nur noch ein 'Sirenchen'.</operation>
+	<operation command="8" item="34" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Nein, das wäre viel zu laut! Vielleicht kannst du sie irgendwie dämpfen?</operation>
+	<operation command="8" item="35" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Uhhhuuiii...uhhhuuiii...es klingt jetzt, als wäre die Sirene etwas weiter entfernt.</operation>
 	<operation command="8" item="25" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Hier gibt es nichts zu graben.</operation>
-	<operation command="8" item="24" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Es ist hell genug hier.</operation>
+	<operation command="8" item="24" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Es ist hell genug.</operation>
+	<operation command="8" item="7" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Wo willst du den Zugstab denn einhaken?</operation>
 	<operation command="7" item="19" unique="" remove_inv="19" remove_room="" add_room="" add_inv="20" unlock="" with_item="" remove_both="" portal_to="">Im Brief ist dein Ferienpass von der Stadt. Gerade noch rechtzeitig zum Ferienbeginn.</operation>
 	<operation command="14" item="19" unique="" remove_inv="19" remove_room="" add_room="" add_inv="20" unlock="" with_item="" remove_both="" portal_to="">Im Brief ist dein Ferienpass von der Stadt. Gerade noch rechtzeitig zum Ferienbeginn.</operation>
 	<operation command="8" item="10" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du hebst ihn lieber noch auf...für schlechte Zeiten.</operation>
 	<operation command="8" item="16" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du bist nicht hungrig.</operation>
 	<operation command="8" item="32" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Nee, besser nicht...</operation>
+	<operation command="14" item="41" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Ein X markiert die Stelle!</operation>
 	<operation command="8" item="28" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Lieber nicht...</operation>
 	<operation command="14" item="5" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Du blätterst die 64er durch. Ein C64 mit Datasette kostet astronomische 800 DM. Woher nehmen?</operation>
 	<operation command="8" item="16" unique="1" remove_inv="" remove_room="" add_room="" add_inv="32" unlock="" with_item="28" remove_both="1" portal_to="">Du zerbröselst den Pilz und legst die Teile unter die Salami auf das Brot. Guten Hunger!</operation>
+	<operation command="7" item="46" unique="1" remove_inv="" remove_room="" add_room="" add_inv="47" unlock="" with_item="" remove_both="" portal_to="">In der Kiste findest du, eingewickelt in Plastikfolie, eine hübsche Halskette.</operation>
+	<operation command="8" item="47" unique="" remove_inv="" remove_room="" add_room="" add_inv="" unlock="" with_item="" remove_both="" portal_to="">Nicht dein Stil...</operation>
 </items>

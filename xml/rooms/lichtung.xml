@@ -2,19 +2,31 @@
 	<desc>
 		Du stehst auf einer Lichtung im Wald. Obwohl der Wald nicht groß
 		ist, stehen die Bäume so dicht, dass man die Felder um den Wald herum
-		von	hier aus nicht sehen kann. Die Sonne taucht die Lichtung in
+		von hier aus nicht sehen kann. Die Sonne taucht die Lichtung in
 		gleißendes Licht. Im Unterholz rascheln irgendwelche Tiere.|Die
 		Lichtung sieht aus, als hätte hier jemand kürzlich die Erde
 		aufgewühlt. Vermutlich Wildschweine.|
-		Der einzige Weg von hier aus führt zurück in den Wald.
+		Der einzige Weg von hier aus
+		führt zurück in den Wald.
 	</desc>
 	<exits>
-		<exit room="wald">W</exit>
+		<exit room="wald2">W</exit>
 	</exits>
 	<operations>
 		<operation command="8" item="25" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="" portal_to="">Der Boden hier ist zwar weich genug zum Graben, aber ziellos die Lichtung umzugraben ergibt doch keinen Sinn.
+			remove_both="" portal_to="">Der Boden hier ist zwar weich genug zum
+			Graben, aber ziellos die Lichtung umzugraben ergibt doch keinen Sinn.
+		</operation>
+		<operation command="8" item="41" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Die Karte scheint diese Lichtung zu zeigen und bei dem X sollte man vermutlich mal ein Grabewerkzeug verwenden.
+		</operation>
+		<operation command="8" item="25" unique="1" remove_inv=""
+			remove_room="" add_room="46" add_inv="" unlock="" with_item="41"
+			remove_both="" portal_to="">Du gräbst an der Stelle, die auf der Karte
+			markiert ist. Nach einer Weile findest du eine kleine Holzkiste im
+			Boden. Du legst sie frei.
 		</operation>
 	</operations>
 </room>

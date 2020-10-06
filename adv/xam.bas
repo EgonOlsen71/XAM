@@ -120,8 +120,9 @@
 42530 gosub 62600:rt%=1:return
 
 42600 rem add item to inventory
-42605 print it$(c%);" erhalten!"
+42605 poke 646,2:print it$(c%);" erhalten!"
 42610 gosub 42650
+42615 if ac%(5)<>-1 then rt%=1:return: rem hack to suppress double msg output
 42620 gosub 62600:rt%=1:return
 
 42650 rem actual add operation
@@ -225,7 +226,12 @@
 48100 print"ok"
 48110 close 2:return
 
+49000 rem wait for restart
+49005 geta$:ifa$="q" or a$="x" then end
+49010 goto 49000
+
 50000 rem enter and parse command
+50002 if rd%=lr% then 49000
 50005 for i=0 to 8:cv%(i)=-1:cp$(i)="":next:sf%=0
 50010 poke 646,5:print cb$;:cc$="":poke 646,1
 50012 if len(lc$)>0 then cc$=lc$:print lc$:goto 50020
@@ -350,10 +356,8 @@
 52900 rem 
 52902 rem cmd info
 52904 rem
-53100 print:print " XAM 64 - 0.01"
-53110 print " by EgonOlsen71"
+53100 print:print " XAM / EgonOlsen71"
 53120 print fre(0);"Bytes frei"
-53130 print " Status: ";ic%;"/";tc%
 53140 return
 
 53200 rem 
@@ -379,7 +383,7 @@
 53500 rem 
 53502 rem cmd oeffne/lies/gib
 53504 rem
-53510 if cc%<>2 then goto 59150
+53510 if cc%<2 or (t%<>15 and cc%<>2) then goto 59150
 53520 co%=t%:gosub 58500:return
 
 53600 rem 
@@ -503,12 +507,12 @@
 
 60000 rem init
 60002 print "Einen Moment..."
-60005 mx%=50:mr%=50:mi%=50:mc%=15:cb$=chr$(13)+"> "
+60005 mx%=30:mr%=35:mi%=50:mc%=15:cb$=chr$(13)+"> ":lr%=0
 60006 al$="alles":ms%=5:dim i,ii,p,pp,ad:fi$="save.dat":ba=49152:ad=ba
 60010 dim it$(50), il$(50), mv%(50), ti%: rem all items (mi%)
-60020 dim rd$(22), pl%, rd%: rem current room's description
+60020 dim rd$(24), pl%, rd%: rem current room's description
 60030 dim ex$(8), xn$(8), lk%(8), el%: rem crt. room's exits and names
-60035 dim lx$(50,3): rem flag, which exits are unlocked (mr%)
+60035 dim lx$(35,3): rem flag, which exits are unlocked (mr%)
 60040 dim ri$(8), il%: rem current room's items
 60050 dim iv%(50), ic%: rem inventory (mi%)
 60055 dim ip%(20), tc%: rem items still in the room (20 is generous)
@@ -517,12 +521,12 @@
 60080 dim cp$(8), cv%(8): rem lexer results
 60090 dim cm$(mc%, 5), cv$(mc%): rem commands
 60100 dim id%(50): rem item descriptions' addresses (mi%)
-60110 dim rv%(50,8): rem additional room inventory (mr%)
+60110 dim rv%(35,8): rem additional room inventory (mr%)
 60120 dim rs%(50): rem flag, that an item lies somewhere else (mi%)
 60130 for i=0 to mr%:for p=0 to 8:rv%(i,p)=-1:next p,i: rem clear room inv.
 60140 dim dr$(9):for i=0 to 9:read dr$(i):next: rem direction strings
 60150 dim op%(8,10), op$(8,5), oc%: rem possible operations in a room
-60160 dim od$(50), od%: rem operations applied (command ID_item 1_item_2) (mx%)
+60160 dim od$(30), od%: rem operations applied (command ID_item 1_item_2) (mx%)
 60170 dim og%(50,10), og$(50,5), gc%: rem ops. on items in the inventory (mi%)
 60180 dim ac%(10): rem actions of the current operation
 60800 rem test data
@@ -553,7 +557,7 @@
 61305 gosub 61400
 61310 if st=64 then 61330
 61320 j=j+1:goto 61230
-61330 print"ok ("+str$(ad-ba)+" Bytes)"
+61330 print"ok"
 61340 ti%=j:close 2:return
 
 61400 rem read item description
@@ -576,7 +580,8 @@
 61560 cm$(ii,i)=a$:print".";
 61570 next:if st<>64 then p=p+1:goto 61530
 61580 print"ok"
-61590 tb%=p:close 2:return
+61590 tb%=p:close 2
+61600 open 2,8,2,"endid.def":input#2,lr%:close2:return
 
 61700 rem input call
 61710 input#2,a$:return

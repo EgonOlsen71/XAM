@@ -1,0 +1,43 @@
+<room id="29">
+	<desc>
+		Dies ist Spiel-Mit, früher dein absoluter Lieblingsladen. Es ist
+		immer noch schön, hier zu sein. Neben allen Arten von Spielzeug
+		bekommt man hier auch noch alles, was man für die Schule braucht. Zum
+		Glück betrifft dich das jetzt 6 Wochen lang erstmal nicht weiter.|
+		Im Laden laufen zahlreiche Kinder umher, die ihre Mütter und Väter von einer
+		Ecke in die andere scheuchen.|
+		Außerdem ist heute die große Verlosung.	Wenn man letzte Woche was gekauft hat, hat man ein Los dazubekommen und
+		die Preise werden heute verteilt.
+	</desc>
+	<exits>
+		<exit room="marktstr2">S</exit>
+	</exits>
+	<items>
+		<item>36</item>
+		<item>13</item>
+	</items>
+	<operation command="13" item="36" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">'Du warst früher aber öfter hier!? Brauchst du was für die Schule oder hast du ein Los dabei?'
+	</operation>
+	<operation command="1" item="36" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Der Verkäufer ist ein etwas schlaksiger, älterer Herr. Du kennst ihn noch von früher, er muss schon seit dem Urknall hier arbeiten.
+	</operation>
+	<operation command="15" item="30" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Du solltest es nicht einfach irgendwem im Laden geben. Gib es dem Verkäufer.
+	</operation>
+	<operation command="15" item="30" unique="1" remove_inv="30"
+		remove_room="" add_room="" add_inv="45" unlock="" with_item="36"
+		remove_both="" portal_to="">'Ah, du hast ein Los, lass mich mal schauen...00..1.2..8...da hast du eine schöne Maske gewonnen. Hier, bitte sehr!'
+	</operation>
+	<operation command="1" item="13" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Auf dem Tisch hat der Verkäufer alle Preise für die Verlosung aufgebaut. Von Bauklötzen bis zum ferngesteuerten Auto ist alles dabei.
+	</operation>
+	<operation command="9" item="36" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Wieso solltest du diesen netten Herrn schlagen wollen?
+	</operation>
+</room>

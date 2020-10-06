@@ -24,13 +24,31 @@ import org.w3c.dom.NodeList;
  */
 public class Converter {
 
+	private int uniques = 0;
+
 	public static void main(String[] args) {
-		convertItems();
-		convertCommands();
-		convertRooms();
+		Converter conv = new Converter();
+		conv.convert();
 	}
 
-	private static void convertCommands() {
+	public void convert() {
+		uniques = 0;
+		convertItems();
+		convertCommands();
+		int endId = convertRooms();
+		writeEndId(endId);
+		System.out.println("Unique operations in total: " + uniques);
+	}
+
+	private void writeEndId(int endId) {
+		try (OutputStream os = new FileOutputStream(new File("seq/endid.def"))) {
+			os.write(String.valueOf(endId).getBytes());
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	private void convertCommands() {
 		System.out.println("Converting commands");
 		try (InputStream is = new FileInputStream("xml/commands/commands.xml");
 				OutputStream os = new FileOutputStream(new File("seq/commands.def"))) {
@@ -58,7 +76,7 @@ public class Converter {
 		System.out.println("Done  with commands");
 	}
 
-	private static void convertItems() {
+	private void convertItems() {
 		System.out.println("Converting items");
 		try (InputStream is = new FileInputStream("xml/items/items.xml");
 				OutputStream os = new FileOutputStream(new File("seq/items.def"))) {
@@ -99,7 +117,7 @@ public class Converter {
 
 	}
 
-	public static void convertRooms() {
+	public int convertRooms() {
 		File[] rooms = new File("xml/rooms").listFiles(new FilenameFilter() {
 			@Override
 			public boolean accept(File dir, String name) {
@@ -108,6 +126,7 @@ public class Converter {
 		});
 
 		Set<String> ids = new HashSet<>();
+		int endId = 0;
 
 		for (File room : rooms) {
 			System.out.println("Converting " + room);
@@ -118,6 +137,10 @@ public class Converter {
 				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 				Document doc = dBuilder.parse(is);
 				String roomId = doc.getDocumentElement().getAttribute("id");
+				String end = doc.getDocumentElement().getAttribute("end");
+				if (Boolean.valueOf(end)) {
+					endId = Integer.parseInt(roomId);
+				}
 				if (ids.contains(roomId)) {
 					throw new RuntimeException("ID " + roomId + " isn't unique!");
 				}
@@ -163,9 +186,10 @@ public class Converter {
 			System.out.println("Done  with " + room);
 		}
 		System.out.println("All done!");
+		return endId;
 	}
 
-	private static String translate(String tmp) {
+	private String translate(String tmp) {
 		String[] dirs = new String[] { "n", "s", "w", "o", "nw", "sw", "no", "so", "h", "r" };
 		tmp = tmp.toLowerCase().trim();
 		for (int i = 0; i < dirs.length; i++) {
@@ -176,7 +200,7 @@ public class Converter {
 		return "-1";
 	}
 
-	private static void write(OutputStream os, String prefix, String txt, boolean fullText) {
+	private void write(OutputStream os, String prefix, String txt, boolean fullText) {
 		try {
 			os.write(toBytes(prefix));
 			txt = clean(txt);
@@ -217,7 +241,7 @@ public class Converter {
 		}
 	}
 
-	private static String clean(String txt) {
+	private String clean(String txt) {
 		txt = txt.replace("ö", "oe").replace("Ö", "Oe");
 		txt = txt.replace("ä", "ae").replace("Ä", "Ae");
 		txt = txt.replace("ü", "ue").replace("Ü", "Ue");
@@ -227,11 +251,14 @@ public class Converter {
 		return txt;
 	}
 
-	private static byte[] toBytes(String txt) {
+	private byte[] toBytes(String txt) {
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
 		if (txt != null) {
 			for (int i = 0; i < txt.length(); i++) {
 				char c = txt.charAt(i);
+				if (c == '_') {
+					c = ' ';
+				}
 				int ci = getConvertedChar(c);
 				bos.write(ci);
 			}
@@ -239,7 +266,7 @@ public class Converter {
 		return bos.toByteArray();
 	}
 
-	private static int getConvertedChar(int c) {
+	private int getConvertedChar(int c) {
 		if (c >= 'a' && c <= 'z') {
 			c = (char) ((int) c - 32);
 		} else if (c >= 'A' && c <= 'Z') {
@@ -248,14 +275,18 @@ public class Converter {
 		return c;
 	}
 
-	private static void convert(OutputStream os, NodeList its, int i) {
+	private void convert(OutputStream os, NodeList its, int i) {
 		Element it = (Element) its.item(i);
 		String tmp = it.getAttribute("command");
 		write(os, null, tmp + "|", false);
 		tmp = it.getAttribute("item");
 		write(os, null, tmp + "|", false);
 		tmp = it.getAttribute("unique");
-		write(os, null, getZeroValue(tmp), false);
+		String v = getZeroValue(tmp);
+		if (!v.startsWith("0")) {
+			uniques++;
+		}
+		write(os, null, v, false);
 		tmp = it.getAttribute("remove_inv");
 		write(os, null, getValue(tmp), false);
 		tmp = it.getAttribute("remove_room");
@@ -277,17 +308,17 @@ public class Converter {
 		write(os, null, "***|", false);
 	}
 
-	private static String getText(Element it) {
+	private String getText(Element it) {
 		String tmp = it.getTextContent().trim();
 		tmp = tmp.replace("\"", "'").replace(":", ".");
 		return tmp;
 	}
 
-	private static String getZeroValue(String tmp) {
+	private String getZeroValue(String tmp) {
 		return ((tmp != null && !tmp.isEmpty()) ? tmp : "0") + "|";
 	}
 
-	private static String getValue(String tmp) {
+	private String getValue(String tmp) {
 		return ((tmp != null && !tmp.isEmpty()) ? tmp : "-1") + "|";
 	}
 

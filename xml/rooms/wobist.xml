@@ -1,0 +1,55 @@
+<room id="27">
+	<desc>
+		Du befindest dich im Computergeschäft von Wobist, also eigentlich
+		fast im Paradies. Hier gibt es alles, was das Herz begehrt, aber zu
+		Preisen, die das Herz bluten lassen.|Hinter dem Verkaufstresen stapeln
+		sich Kartons mit C64-Geräten und anderen Computern.|Obwohl die Osterstr. heute schon
+		recht gut von Passanten besucht ist, ist hier im Laden noch nicht viel
+		los. Der Verkäufer fummelt an einem geöffneten ZX Spectrum herum,
+		während im Radio Laura Branigan was von Self Control singt. Die
+		Selbstkontrolle fällt hier natürlich schwer.
+	</desc>
+	<exits>
+		<exit room="osterstr">W</exit>
+	</exits>
+	<items>
+		<item>36</item>
+		<item>37</item>
+	</items>
+	<operation command="13" item="36" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">'Na, willste einen C64 haben? Sind gerade im Angebot! Mit Datasette und einem Spiel für nur 800 DM.'
+	</operation>
+	<operation command="8" item="37" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Du tippst ein wenig auf den ausgestellten Computern herum. 'Hey, aber nichts kaputt machen!', grummelt der Verkäufer.
+	</operation>
+	<operation command="1" item="37" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Hier stehen C64, VC20, ZX Spectrum und irgendwas, das sich MSX nennt, zum Ausprobieren bereit. Natürlich schlägt nichts den C64!
+	</operation>
+	<operation command="15" item="5" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Du hältst die Zeitschrift in die Luft...nichts passiert!
+	</operation>
+	<operation command="15" item="5" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item="36"
+			remove_both="" portal_to="">'Ach, eine 64er-Ausgabe. Die lese ich auch immer. Habe natürlich einen C64 zuhause, das ist einfach das beste Gerät, weißt du!?'
+	</operation>
+	<operation command="15" item="38" unique="1" remove_inv="38"
+			remove_room="" add_room="40" add_inv="39" unlock="" with_item="36"
+			remove_both="" portal_to="">'Oh, zu Geld gekommen?' - Der Verkäufer nimmt das Geld, gibt dir 200 DM raus und stellt einen C64 mit Datasette auf den Tresen. 'Ist auch noch ein Spiel dabei, Viel Spaß!'
+	</operation>
+	<operation command="15" item="38" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Du wedelst mit den Scheinen in der Luft. Der Verkäufer sieht es nicht einmal.
+	</operation>
+	<operation command="1" item="36" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Der Verkäufer ist ein hagerer Typ, dem sein Hemd ein paar Nummer zu groß ist. Er ist hinter dem Tresen beschäftig, ab und zu nippt er an einem Kaffee.
+	</operation>
+	<operation command="9" item="36" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Er sieht zwar nicht sehr kräftig aus, aber er hat dir nichts getan!
+	</operation>
+</room>

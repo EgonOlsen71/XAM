@@ -1,0 +1,40 @@
+
+<room id="30">
+	<desc>
+		Du bist in einem kleinen Wäldchen vor der Stadt. Die Häuser der
+		Stadt im Westen kann man durch die dichten Blätter der Bäume schon nicht mehr
+		erkennen. Es ist erstaunlich ruhig hier, nur ab und zu hört man einen Specht klopfen.|
+		Im Osten scheint eine kleine Lichtung zu sein.
+	</desc>
+	<items>
+		<item>43</item>
+	</items>
+	<exits>
+		<exit room="wald">W</exit>
+		<exit room="lichtung" locked="1">O</exit>
+	</exits>
+	<operation command="1" item="43" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Der Waldarbeiter sieht grimmig aus. Er läuft mit einer Schaufel umher und buddelt scheinbar wahllos den Waldboden auf.
+	</operation>
+	<operation command="12" item="43" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Wenn er nicht buddelt, sieht er sich langsam um. Er scheint ein schlechtes Gewissen zu haben bei dem, was er da macht.
+	</operation>
+	<operation command="13" item="43" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">'Verschwinde hier! Pfeifen wie du haben in meinem Wald nichts zu suchen.' Demonstrativ versperrt er dir den Weg.
+	</operation>
+	<operation command="8" item="45" unique="" remove_inv=""
+		remove_room="43" add_room="" add_inv="" unlock="o" with_item="43"
+		remove_both="" portal_to="">Du näherst dich mit aufgesetzter Maske dem Arbeiter. Er erschrickt! 'Scheiße, was macht Magnum hier? Im Fernsehen sieht der größer aus!' Er läuft verwirrt durch das Unterholz davon.
+	</operation>
+	<operation command="8" item="45" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Wozu willst du die genau benutzen? Um Spechte zu erschrecken oder für wen anders?
+	</operation>
+	<operation command="9" item="43" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">'Waldarbeiter erschlägt Teenager auf Waldweg' - das wäre bestimmt eine tolle Schlagzeile!
+	</operation>
+</room>

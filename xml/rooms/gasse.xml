@@ -1,0 +1,37 @@
+<room id="24">
+	<desc>
+		Dies ist die schmale Gasse neben dem Polizeirevier. Die hohen
+		Wände links und rechts tauchen die Gasse in dauerhaften Schatten. Die
+		Gasse ist etwas verwinkelt, so dass man den Marktplatz von hier aus
+		nicht mehr sehen kann. Es liegt eine Menge altes Gerümpel herum. Die
+		Polizei scheint hier eine Art Müllplatz zu betreiben. Unter dem
+		Polizeirevier geht es in einen Keller, vermutlich mit noch mehr
+		Gerümpel darin.
+	</desc>
+	<items>
+		<item>33</item>
+	</items>
+	<exits>
+		<exit room="markt">NO</exit>
+		<exit room="keller" locked="1">R</exit>
+	</exits>
+	<operations>
+		<operation command="12" item="33" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Sie ist angelehnt, hat aber keine Klinke. Wenn sie zufällt, bist du im Keller gefangen. Man müsste sie irgendwie feststellen oder so.
+		</operation>
+			<operation command="7" item="33" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Du kannst sie zwar öffnen, aber sie könnte zufallen, während du im Keller bist. Es wäre ratsam, sie vorher irgendwie festzustellen.
+		</operation>
+		<operation command="8" item="33" unique="1" remove_inv="4"
+			remove_room="33" add_room="" add_inv="" unlock="r" with_item="4"
+			remove_both="" portal_to="">Du schiebst den ZX81 unter die offene Tür. Er hat die ideale Form dafür und bildet jetzt mit der Tür eine unauflösbare Einheit. Die Tuer bleibt jetzt offen.
+		</operation>
+		<operation command="8" item="33" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item="9"
+			remove_both="" portal_to="">Du stopfst das Handtuch unter die Tür, aber das hält sie nicht offen. Du nimmst es wieder hoch.
+		</operation>
+	</operations>
+
+</room>

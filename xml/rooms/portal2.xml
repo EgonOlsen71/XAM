@@ -34,6 +34,10 @@
 			remove_both="" portal_to="1">Du zeigst dem Fahrer deinen Ferienpass. Er
 			nickt kurz, du nimmst Platz und schon wenig später fährt der Bus raus aus der Stadt, wieder an den Feldern vorbei...
 		</operation>
+		<operation command="15" item="20" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="1">Der Fahrer betrachtet den Ferienpass. Alles ok, du nimmst Platz und schon wenig später fährt der Bus raus aus der Stadt, wieder an den Feldern vorbei...
+		</operation>
 	</operations>
 
 </room>

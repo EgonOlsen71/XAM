@@ -49,7 +49,6 @@ mv%()		- Flag, ob der Gegenstand eingesammelt werden kann (=1)
 rd$()		- Zeilen der Raumbeschreibung (ohne Extras)
 pl%			- Anzahl der Zeilen des Raumbeschreibung
 rd%			- ID des aktuellen Raums
-rd%			- ID des aktuellen Raums
 ex$()		- Ausgänge in einem Raum ingesamt
 xn$()		- Namen des Räume des jeweiligen Ausgangs
 lk%()		- Flag, ob der Ausgang per Default versperrt ist (=1)
@@ -68,12 +67,13 @@ xx$()		- Namen des Räume der benutzbaren Ausgänge
 xc%			- Anzahl benutzbare Ausgänge
 ti%			- Anzahl Items (Endindex)
 rs%()		- Flag, um zu markieren, dass ein Gegenstand irgendwo im Rauminventar liegt
-
+lr%			- ID des letzten Raumes im Spiel
 
 dr$			- Strings für die Himmelsrichtungen, am Index indentifiziert
 op%()()		- Operationen, die in einem Raum möglich sind
 op$()()		- Text für die jeweilige Operation
 oc%			- Anzahl Operationen im Raum
+mx%			- maximale Anzahl von Unique-Operations
 od$()		- Angewendete Operationen auf Gegenstände (nur unique)
 od%			- Anzahl Operationen auf Gegenständen
 uq%			- Zwischenspeicher für "unique"

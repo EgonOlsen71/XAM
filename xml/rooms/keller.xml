@@ -1,0 +1,35 @@
+<room id="25">
+	<desc>
+		Du bist im Rumpelkeller des Polizeireviers. Flackerndes,
+		anscheinend über einen Bewegungsmelder gesteuertes Neonlicht erhellt
+		den Raum. Hier lagern die	Beamten allen möglichen Schrott, den sie
+		nicht mehr für ihre Arbeit
+		benötigen.|Es wird wohl niemanden stören,
+		wenn du dir hier etwas
+		'ausleihst', die Sachen kommen früher oder
+		später ohnehin auf den
+		Müll.|Von hier führt eine Treppe nach oben
+		zurück in die Gasse.
+	</desc>
+	<items>
+		<item>34</item>
+		<item>0</item>
+	</items>
+	<exits>
+		<exit room="markt">NO</exit>
+		<exit room="keller" locked="1">R</exit>
+	</exits>
+	<operations>
+		<operation command="1" item="0" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Ein ausrangierter Büroschrank, der offen
+			steht. In ihm und um ihn herum verteilt liege diverse Gegenstände,
+			die meisten davon kaputt oder nutzlos. Oder beides.
+		</operation>
+		<operation command="7" item="0" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Der Schrank ist schon offen.
+		</operation>
+	</operations>
+
+</room>

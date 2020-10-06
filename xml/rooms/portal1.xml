@@ -34,5 +34,10 @@
 			nickt kurz, du nimmst Platz und schon wenig später fährt der Bus los in
 			Richtung Stadt. Die Felder rauschen nur so vorbei...
 		</operation>
+		<operation command="15" item="20" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="2">Der Fahrer betrachtet den Ferienpass. Alles ok, du nimmst Platz und schon wenig später fährt der Bus los in
+			Richtung Stadt. Die Felder rauschen nur so vorbei...
+		</operation>
 	</operations>
 </room>

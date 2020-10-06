@@ -1,0 +1,59 @@
+<room id="28">
+	<desc>
+		Die Fußgängerzone endet hier, es gibt aber noch ein paar weitere
+		Geschäfte zu sehen. Unter anderem den Spiel-Mit-Laden, in dem du
+		früher stundenlang verloren gehen konntest.|Vor dem Laden steht eine
+		Art mechanischer Clown, der aus einem knarzigen Lautsprecher 'Heute
+		große Verlosung - Jedes Los gewinnt!' über die Straße plärrt.|Im
+		Schaufenster ist Spielzeug für alle Altersgruppen ausgestellt.
+	</desc>
+	<items>
+		<item>44</item>
+	</items>
+	<exits>
+		<exit room="marktstr">W</exit>
+		<exit room="spielmit" locked="1">N</exit>
+	</exits>
+	<operation command="9" item="44" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Sicher! Du traust dich schon nicht vorbei,
+		aber schlagen geht, oder wie?
+	</operation>
+	<operation command="13" item="44" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Wau, wau? Hmm...das bringt nichts!
+	</operation>
+	<operation command="1" item="44" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Er versperrt den Weg in den Spielzeugladen,
+		indem er vor der Tür auf und ab läuft und bellt, sobald jemand näher
+		kommt.
+	</operation>
+	<operation command="12" item="44" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Er sieht aggressiv aus. Man müsste ihn
+		irgendwie beruhigen. Vielleicht hat er auch Hunger?
+	</operation>
+	<operation command="15" item="16" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Stolz präsentierst du dein Wurstbrot. Aber
+		wem bloß?
+	</operation>
+	<operation command="15" item="32" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item=""
+		remove_both="" portal_to="">Stolz präsentierst du dein Pilzbrot. Aber wem
+		bloß?
+	</operation>
+	<operation command="15" item="16" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item="44"
+		remove_both="" portal_to="">Das würde er vermutlich fressen, aber es
+		würde ihn sicher nicht genug beruhigen. Mit der richtigen Zutat aber
+		vielleicht schon.
+	</operation>
+	<operation command="15" item="32" unique="1" remove_inv="32"
+		remove_room="44" add_room="" add_inv="" unlock="n" with_item="44"
+		remove_both="" portal_to="">Du wirfst dem Hund das Pilzbrot hin. Er
+		verschlingt es gierig. Nach einer Weile torkelt er seltsam abwesend
+		die Straße entlang. Der Weg ist frei!
+	</operation>
+</room>
