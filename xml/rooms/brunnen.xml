@@ -23,7 +23,7 @@
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
 			remove_both="" portal_to="">Du versuchst, die Taube mit dem Handtuch zu
 			fangen, aber sie ist zu schnell. Es wäre besser, sie irgendwie am
-			Fliegen zu hindern.
+			Wegfliegen zu hindern.
 		</operation>
 		<operation command="8" item="31" unique="1" remove_inv="10"
 			remove_room="29" add_room="30" add_inv="" unlock="" with_item="10"
@@ -34,7 +34,11 @@
 		</operation>
 		<operation command="8" item="29" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item="10"
-			remove_both="" portal_to="">Auf die Taube kannst du das nicht kleben.
+			remove_both="" portal_to="">Auf die Taube selber kannst du das nicht kleben.
+		</operation>
+		<operation command="9" item="29" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Gemein! Ist aber auch egal. Du trifft die Taube ohnehin nicht.
 		</operation>
 
 	</operations>

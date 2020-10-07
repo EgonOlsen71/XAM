@@ -8,9 +8,11 @@
 40000 rem print error message
 40010 if er=0 then return
 40020 if er=1 then print "Das klappt so nicht!"
-40030 if er=2 then print "Das verstehe ich nicht!"
-40040 if er=3 then print "Das bewirkt nichts mehr!"
-40050 er=0:return
+40030 if er=3 then print "Das bewirkt nichts mehr!"
+40040 if er<>2 then er=0:return
+40050 er=0
+40060 if cv%(0)<>-1 then print "Das verstehe ich nicht!":return
+40070 print "'";cp$(0);"' kenne ich nicht!":return
 
 40100 rem init room with name in rn$
 40110 gosub 62000:gosub 59500:return
@@ -245,7 +247,7 @@
 50010 poke 646,5:print cb$;:cc$="":poke 646,1
 50012 if len(lc$)>0 then cc$=lc$:print lc$:goto 50020
 50015 poke 19,1:input cc$:poke 19,0:print
-50020 poke 646,3:ct$="":lc$="":if len(cc$)=0 then 50010
+50020 poke 646,3:ct$="":lc$="":if len(cc$)=0 then cc$="help"
 50030 er=0:tx$=cc$:gosub 63100:cc$=tx$+" ": rem add space to ease lexing
 50035 gosub 41000
 50040 cc%=0:for i=1 to len(cc$):c$=mid$(cc$,i,1):c%=asc(c$)
