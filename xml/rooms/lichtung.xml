@@ -1,13 +1,11 @@
 <room id="17">
 	<desc>
 		Du stehst auf einer Lichtung im Wald. Obwohl der Wald nicht groß
-		ist, stehen die Bäume so dicht, dass man die Felder um den Wald herum
-		von hier aus nicht sehen kann. Die Sonne taucht die Lichtung in
-		gleißendes Licht. Im Unterholz rascheln irgendwelche Tiere.|Die
+		ist, stehen die Bäume um die Lichtung herum so dicht, dass man den Eindruck bekommt, er wäre endlos.
+		Die Sonne taucht die Lichtung in gleißendes Licht. Im Unterholz rascheln irgendwelche Tiere.|Die
 		Lichtung sieht aus, als hätte hier jemand kürzlich die Erde
 		aufgewühlt. Vermutlich Wildschweine.|
-		Der einzige Weg von hier aus
-		führt zurück in den Wald.
+		Der einzige Weg von hier aus führt zurück in den Wald.
 	</desc>
 	<exits>
 		<exit room="wald2">W</exit>

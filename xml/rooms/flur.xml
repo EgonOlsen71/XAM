@@ -1,8 +1,7 @@
 <room id="1">
 	<desc>Du stehst im Flur im 1. Stock. Eine Treppe führt nach unten ins
-		Erdgeschoss. Ansonsten sind hier noch das Bad und das Zimmer deiner
-		großen Schwester, aber das ist fast leer, weil Silvia mittlerweile in
-		Hamburg wohnt und dort studiert.
+		Erdgeschoss. Ansonsten sind hier noch das Bad und das ehemalige Zimmer deiner
+		großen Schwester.
 	</desc>
 	<exits>
 		<exit room="start">S</exit>

@@ -1,15 +1,13 @@
 <room id="14">
 	<desc>
 		Du stehst in einem kleinen Park. Der von hohen Linden gesäumte
-		Weg geht am Rande des Parks
-		entlang. In der Mitte ist eine frisch
+		Weg geht am Rande des Parks	entlang. In der Mitte ist eine frisch
 		gemähte Wiese, auf der ein paar Amseln auf der Suche nach
 		Würmern hin
 		und her hüpfen.|Von Norden hört man leise die Geräusche der Straße.
 		Dieser Park wirkt wie eine kleine, grüne Oase mitten in der Stadt.
-		|Am
-		äußeren Ende des Parks führt ein schmaler Pfad in ein kleines
-		Waldstück kurz vor der Stadt.
+		|Am äußeren Ende des Parks führt ein schmaler Pfad in ein kleines
+		Waldstück.
 	</desc>
 	<items>
 		<item>23</item>

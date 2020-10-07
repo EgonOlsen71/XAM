@@ -1,12 +1,13 @@
 <room id="29">
 	<desc>
 		Dies ist Spiel-Mit, früher dein absoluter Lieblingsladen. Es ist
-		immer noch schön, hier zu sein. Neben allen Arten von Spielzeug
-		bekommt man hier auch noch alles, was man für die Schule braucht. Zum
+		sogar immer noch schön, hier zu sein. Neben allen Arten von Spielzeug
+		bekommt man auch alles, was man für die Schule braucht. Zum
 		Glück betrifft dich das jetzt 6 Wochen lang erstmal nicht weiter.|
 		Im Laden laufen zahlreiche Kinder umher, die ihre Mütter und Väter von einer
 		Ecke in die andere scheuchen.|
-		Außerdem ist heute die große Verlosung.	Wenn man letzte Woche was gekauft hat, hat man ein Los dazubekommen und
+		Heute gibt es hier eine große Verlosung. Wenn man letzte Woche was 
+		gekauft hat, hat man ein Los dazubekommen und
 		die Preise werden heute verteilt.
 	</desc>
 	<exits>
@@ -18,11 +19,11 @@
 	</items>
 	<operation command="13" item="36" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""
-		remove_both="" portal_to="">'Du warst früher aber öfter hier!? Brauchst du was für die Schule oder hast du ein Los dabei?'
+		remove_both="" portal_to="">'Du warst früher öfter hier, nicht wahr? Brauchst du was für die Schule oder willst du ein Los abgeben?'
 	</operation>
 	<operation command="1" item="36" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""
-		remove_both="" portal_to="">Der Verkäufer ist ein etwas schlaksiger, älterer Herr. Du kennst ihn noch von früher, er muss schon seit dem Urknall hier arbeiten.
+		remove_both="" portal_to="">Der Verkäufer ist ein etwas schlaksiger, älterer Herr. Du kennst ihn noch von früher, er wird wohl schon seit dem Urknall hier arbeiten.
 	</operation>
 	<operation command="15" item="30" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""

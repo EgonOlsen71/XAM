@@ -1,5 +1,5 @@
 <room id="2">
-	<desc>Du bist im Badezimmer. Der gesamte Raum ist in Grün gehalten. In einem Regal liegt ein Stapel aprilfrischer Handtücher.
+	<desc>Du bist im Badezimmer. Der gesamte Raum ist in modischem Grün gehalten. In einem Regal liegt ein Stapel aprilfrisch weichgespülter Handtücher.
 	</desc>
 	<exits>
 		<exit room="flur">W</exit>

@@ -1,10 +1,14 @@
 
 <room id="16">
 	<desc>
-		Du bist in einem kleinen Wäldchen vor der Stadt. Nur 500m von dir
-		entfernt beginnen schon die ersten Häuser. Der Weg führt über das Feld
-		zurück in den Park oder weiter in den Wald hinein.|
-		Das dichte Blätterdach der Bäume schirmt die Sonne weitgehend ab. Es ist angenehm kühl hier. 
+		Du bist in einem kleinen Wäldchen vor der Stadt. Hier wachsen
+		hauptsächlich Buchen, aber immer wieder unterbrochen durch kleine
+		Ansammlungen von Fichten. Vom tragischen Waldsterben ist noch nichts
+		zu sehen. Der Weg führt über das Feld
+		zurück in den Park oder weiter in
+		den Wald hinein.|
+		Das dichte Blätterdach der Bäume schirmt die Sonne
+		weitgehend ab. Es ist angenehm kühl hier.
 	</desc>
 	<items>
 		<item>28</item>

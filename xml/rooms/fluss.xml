@@ -1,6 +1,10 @@
 <room id="26">
 	<desc>
-		Hier endet die Osterstraße am schattigen Ufer des Flusses, der in der Sonne glitzert. Hier sind fast keine Menschen, weswegen die Enten weitgehend ungestört auf der Wiese zwischen den Bäumen hin- und herwatscheln.
+		Die Osterstraße endet am schattigen Ufer des kleinen Flusses,
+		der, in	der Sonne glitzernd, hier langsam dahin plättschert. Hier sind
+		fast keine Menschen, so dass die Enten	weitgehend ungestört auf der
+		Wiese zwischen den Bäumen hin- und herwatscheln können. Ab und zu sieht
+		man einen Fisch im Wasser nach irgendwas an der Oberfläche schnappen.
 	</desc>
 	<exits>
 		<exit room="osterstr">S</exit>
@@ -10,23 +14,32 @@
 	</items>
 	<operation command="1" item="42" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""
-		remove_both="" portal_to="">Auf der Wiese hockt ein Mann, der hektisch in einem Koffer wühlt. Ab und zu blickt er sich um, als ob er sich verfolgt fühlen würde.
+		remove_both="" portal_to="">Auf der Wiese hockt ein Mann, der hektisch in
+		einem Koffer wühlt. dann und wann blickt er sich um, als ob er sich
+		verfolgt fühlen würde.
 	</operation>
 	<operation command="12" item="42" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""
-		remove_both="" portal_to="">Der Mann wirkt dubios, sehr darauf bedacht, dass niemand einen Blick in seinen Koffer werfen kann. Manchmal scheint er auf etwas zu lauschen, dann wühlt er weiter.
+		remove_both="" portal_to="">Der Mann wirkt dubios und ist sehr darauf bedacht,
+		dass niemand einen Blick in seinen Koffer werfen kann. Manchmal
+		scheint er auf etwas zu lauschen, dann wühlt er weiter.
 	</operation>
 	<operation command="8" item="35" unique="1" remove_inv=""
 		remove_room="42" add_room="41" add_inv="" unlock="" with_item=""
-		remove_both="" portal_to="">Als der Mann die leise Sirene hört, bekommt er Panik, klappt den Koffer zu und rennt davon. In der Hektik verliert er eine Art Karte aus dem Koffer.
+		remove_both="" portal_to="">Als der Mann die leise Sirene hört, bekommt
+		er Panik, klappt den Koffer zu und rennt davon. In der Hektik verliert
+		er eine Art Karte aus dem Koffer.
 	</operation>
 	<operation command="8" item="42" unique="1" remove_inv=""
 		remove_room="42" add_room="41" add_inv="" unlock="" with_item="35"
-		remove_both="" portal_to="">Als der Mann die leise Sirene hört, bekommt er Panik, klappt den Koffer zu und rennt davon. In der Hektik verliert er eine Art Karte aus dem Koffer.
+		remove_both="" portal_to="">Als der Mann die leise Sirene hört, bekommt
+		er Panik, klappt den Koffer zu und rennt davon. In der Hektik verliert
+		er eine Art Karte aus dem Koffer.
 	</operation>
 	<operation command="13" item="42" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""
-		remove_both="" portal_to="">Besser nicht. Der Typ sieht irgendwie finster aus.
+		remove_both="" portal_to="">Besser nicht. Der Typ sieht irgendwie finster
+		aus.
 	</operation>
 	<operation command="9" item="42" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""

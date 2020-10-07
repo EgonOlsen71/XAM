@@ -1,8 +1,7 @@
 <room id="28">
 	<desc>
-		Die Fußgängerzone endet hier, es gibt aber noch ein paar weitere
-		Geschäfte zu sehen. Unter anderem den Spiel-Mit-Laden, in dem du
-		früher stundenlang verloren gehen konntest.|Vor dem Laden steht eine
+		Die Fußgängerzone endet hier. Unter den Geschäften ist auch der Spiel-Mit-Laden, in dem du
+		früher stundenlang zwischen Bausteinen und Spielzeugautos verloren gehen konntest.|Vor dem Laden steht eine
 		Art mechanischer Clown, der aus einem knarzigen Lautsprecher 'Heute
 		große Verlosung - Jedes Los gewinnt!' über die Straße plärrt.|Im
 		Schaufenster ist Spielzeug für alle Altersgruppen ausgestellt.
@@ -17,15 +16,15 @@
 	<operation command="9" item="44" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""
 		remove_both="" portal_to="">Sicher! Du traust dich schon nicht vorbei,
-		aber schlagen geht, oder wie?
+		aber schlagen geht?
 	</operation>
 	<operation command="13" item="44" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""
-		remove_both="" portal_to="">Wau, wau? Hmm...das bringt nichts!
+		remove_both="" portal_to="">WAU, WAU? Hmm...das bringt nichts!
 	</operation>
 	<operation command="1" item="44" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""
-		remove_both="" portal_to="">Er versperrt den Weg in den Spielzeugladen,
+		remove_both="" portal_to="">Er versperrt dir den Weg in den Spielzeugladen,
 		indem er vor der Tür auf und ab läuft und bellt, sobald jemand näher
 		kommt.
 	</operation>

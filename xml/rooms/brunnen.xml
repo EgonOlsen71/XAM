@@ -1,9 +1,9 @@
 <room id="23">
 	<desc>In dieser Ecke des Marktplatzes steht ein kleiner, runder
-		Brunnen. Er scheint kaputt zu sein oder die Stadt will im Sommer
-		Wasser sparen, jedenfalls ist er außer Betrieb. Eine der Stadttauben
-		sitzt auf dem Brunnenrand. Wenn sich jemand nähert, fliegt sie kurz
-		hoch und setzt sich danach wieder auf dieselbe Stelle.
+		Brunne. Er scheint kaputt zu sein oder die Stadt will im Sommer
+		Wasser sparen, jedenfalls ist er außer Betrieb. Statt Wasser sammelt
+		sich daher diverser Unrat im Becken.|Ein paar der Tauben vom
+		Marktplatz haben den Brunnen für sich als Ruheort entdeckt.
 	</desc>
 	<exits>
 		<exit room="markt">SO</exit>
@@ -15,9 +15,9 @@
 	<operations>
 		<operation command="12" item="29" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="" portal_to="">Die Taube hat ein Papier im Schnabel. Sie
-			fliegt aber immer hoch, wenn man sich nähert. Wenn man sie nur
-			irgendwie 'festhalten' könnte!?
+			remove_both="" portal_to="">Die Taube sitzt auf dem Brunnen. Sie hat ein
+			Papier im Schnabel, fliegt aber immer kurz hoch, wenn man sich
+			nähert. Wenn man sie nur irgendwie 'festhalten' könnte.
 		</operation>
 		<operation command="8" item="9" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
@@ -34,11 +34,17 @@
 		</operation>
 		<operation command="8" item="29" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item="10"
-			remove_both="" portal_to="">Auf die Taube selber kannst du das nicht kleben.
+			remove_both="" portal_to="">Auf die Taube selber kannst du das nicht
+			kleben.
 		</operation>
 		<operation command="9" item="29" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="" portal_to="">Gemein! Ist aber auch egal. Du trifft die Taube ohnehin nicht.
+			remove_both="" portal_to="">Gemein! Ist aber auch egal. Du triffst die
+			Taube ohnehin nicht.
+		</operation>
+		<operation command="13" item="29" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Ruckedigu...Ruckedigu...die Taube schaut dich an. Mehr passiert nicht.
 		</operation>
 
 	</operations>

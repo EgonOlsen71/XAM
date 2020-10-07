@@ -1,8 +1,8 @@
 <room id="20">
 	<desc>
 		Du bist im Polizeirevier. Hinter einem Tisch steht ein
-		Polizist, der dich gelangweilt beobachtet.|Irgendwo weiter hinten
-		im Raum klappert eine Schreibmaschine eher langsam vor sich hin. Es
+		Polizist, der dich gelangweilt beobachtet.|Von irgendwo weiter hinten
+		im Raum dringt das monotone Klappern einer Schreibmaschine zu dir vor. Es
 		riecht angenehm nach Kaffee und in der Ecke kämpft ein Ficus damit, nicht
 		auch noch sein letztes Blatt zu verlieren.|An der Wand hängen, neben dem
 		üblichen RAF-Fandungsplakat, eine Reihe weiterer Zettel.
@@ -34,8 +34,7 @@
 		</operation>
 		<operation command="9" item="27" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="" portal_to="">Ist diese Idee...naja...ausgesprochen
-			dämlich? Ja, das ist sie!
+			remove_both="" portal_to="">Grandiose Idee! Oder auch nicht.
 		</operation>
 		<operation command="8" item="35" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""

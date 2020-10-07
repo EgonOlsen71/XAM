@@ -1,13 +1,13 @@
 <room id="27">
 	<desc>
 		Du befindest dich im Computergeschäft von Wobist, also eigentlich
-		fast im Paradies. Hier gibt es alles, was das Herz begehrt, aber zu
+		fast im Paradies. Hier gibt es alles, was das Herz begehrt. Aber zu
 		Preisen, die das Herz bluten lassen.|Hinter dem Verkaufstresen stapeln
-		sich Kartons mit C64-Geräten und anderen Computern.|Obwohl die Osterstr. heute schon
-		recht gut von Passanten besucht ist, ist hier im Laden noch nicht viel
+		sich Kartons mit C64-Geräten und anderen Computern.|Obwohl die Osterstrasse heute schon
+		recht gut von Passanten besucht ist, ist im Laden noch nicht viel
 		los. Der Verkäufer fummelt an einem geöffneten ZX Spectrum herum,
 		während im Radio Laura Branigan was von Self Control singt. Die
-		Selbstkontrolle fällt hier natürlich schwer.
+		Selbstkontrolle fällt dir hier natürlich schwer.
 	</desc>
 	<exits>
 		<exit room="osterstr">W</exit>
