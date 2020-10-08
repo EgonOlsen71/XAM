@@ -1,3 +1,4 @@
+del brotquest.d64
 c1541 -format brotquest,bq d64 brotquest.d64
 call compile.cmd
 call ..\build\c1541 ..\build\brotquest.d64 -write ++brotquest.prg brotquest,p
