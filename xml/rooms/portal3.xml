@@ -5,13 +5,14 @@
 		Computern vollgestellten Regal.|
 		Davon abgesehen ist der Raum
 		merkwürdig leer und auch durch das Dachfenster sieht man nur
-		Himmel.
+		den leeren, blauen Himmel.|Hier sind zwei Türen, eine nach Norden und eine nach Osten.
 	</desc>
 	<items>
 		<item>48</item>
 	</items>
 	<exits>
 		<exit room="flur2">N</exit>
+		<exit room="grue">O</exit>
 	</exits>
 	<operations>
 		<operation command="12" item="48" unique="" remove_inv=""

@@ -7,11 +7,11 @@
 	<command id="5" verb="anzeigen">info,system</command>
 	<command id="6" verb="ablegen">lege,leg,ablegen,verliere</command>
 	<command id="7" verb="oeffnen">oeffne,oeffnen</command>
-	<command id="8" verb="so_benutzen">benutze,benutzen,nutze</command>
+	<command id="8" verb="so_benutzen">benutze,benutzen,nutze,verwende</command>
 	<command id="9" verb="schlagen">schlag,schlage,trete,tritt,zerstoere,zerstoer</command>
 	<command id="10" verb="laden">load,lade,laden</command>
 	<command id="11" verb="speichern">save,speichern,sichern</command>
-	<command id="12" verb="untersuchen">untersuche,untersuchen</command>
+	<command id="12" verb="untersuchen">untersuche,untersuchen,pruefe,pruefen</command>
 	<command id="13" verb="befragen">sprich,spreche,frag,frage,rede,red</command>
 	<command id="14" verb="lesen">lies,lese,lesen</command>
 	<command id="15" verb="geben">gib,gebe,geben</command>

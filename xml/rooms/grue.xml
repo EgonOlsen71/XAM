@@ -1,0 +1,15 @@
+<room id="34">
+	<desc>
+		It is pitch black. You are likely to be eaten by a grue.
+	</desc>
+	<exits>
+		<exit room="portal3">W</exit>
+	</exits>
+	<operations>
+		<operation command="8" item="24" unique="" remove_inv=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_both="" portal_to="">Du leuchtest den kleinen Raum aus. Er ist
+			komplett leer. Nur an die Wand hat jemand 'Zork was here!' gekritzelt.
+		</operation>
+	</operations>
+</room>

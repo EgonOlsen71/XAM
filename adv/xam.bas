@@ -157,7 +157,8 @@
 
 43100 rem calculate unique flag (c%,c2%,t%)
 43110 i=c%:p=c2%:if i>p then p=i:i=c2%: rem swap if needed
-43120 tf$=str$(t%)+"."+str$(i)+"."+str$(p):return
+43120 tf$=str$(t%)+"."+str$(i)+"."+str$(p)
+43125 tf$=right$(tf$,len(tf$)-1):return
 
 43150 rem flag as unique
 43160 od$(od%)=tf$:od%=od%+1:if od%>mx% then 42420
@@ -216,12 +217,12 @@
 44220 print:gosub 40100:return
 
 45000 rem print all commands
-45010 poke 646,10:print:print "Moegliche Befehle:"
-45020 for i=0 to tb%-1:print:for ii=0 to 4
-45030 a$=cm$(i,ii):if len(a$)=0 then ii=5:goto 45060
-45040 if ii>0 then print", ";
-45050 print a$;
-45060 next:next:print:return 
+45010 poke 646,10:print "Moegliche Befehle:":print
+45020 for i=0 to tb%-1:a$="":for ii=0 to 4:b$=cm$(i,ii)
+45030 if len(b$)=0 then ii=5:goto 45060
+45040 if ii>0 then a$=a$+", "
+45050 a$=a$+b$
+45060 next:gosub 59100:next:return 
 
 48000 rem load item operations
 48010 print "Lade Daten...";
@@ -485,7 +486,8 @@
 59315 if ii<4 then a$=lx$(i,ii):gosub 59950:lx$(i,ii)=a$
 59320 next ii,i
 59330 a$=rn$:gosub 59950:rn$=a$
-59340 for i=0 to mx%
+59335 for i=od% to mx%:od$(i)="":next:if od%=0 then 59370
+59340 for i=0 to od%-1
 59350 a$=od$(i):gosub 59950:od$(i)=a$
 59360 next
 59370 close 2:print"ok"
@@ -504,8 +506,8 @@
 59870 return
 
 59900 rem actual load/save of ints
-59910 if ff%=0 then input#2,c%
-59920 if ff%=1 then print#2,c%
+59910 if ff%=0 then input#2,c%:goto 59925
+59920 print#2,c%
 59925 gosub 59850
 59930 return
 
@@ -548,10 +550,13 @@
 61002 sx$="":li=1:for i=1 to len(tx$)
 61010 c$=mid$(tx$,i,1)
 61020 if c$<>";" then 61040
-61030 sx$=sx$+mid$(tx$,li,i-li)+",":li=i+1
+61030 gosub 61100:sx$=sx$+",":li=i+1
 61040 next
-61050 sx$=sx$+mid$(tx$,li,i-li)
+61050 gosub 61100
 61060 tx$=sx$:return
+
+61100 rem add chunk
+61110 sx$=sx$+mid$(tx$,li,i-li):return
 
 61200 rem load items
 61205 print "Lade Gegenstaende...";
