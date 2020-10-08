@@ -6,7 +6,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FilenameFilter;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.Reader;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
@@ -17,12 +19,15 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 
 /**
  * @author EgonOlsen
  *
  */
 public class Converter {
+
+	private final static String[] DIRS = new String[] { "n", "s", "w", "o", "nw", "sw", "no", "so", "h", "r" };
 
 	private int uniques = 0;
 	private int maxOps = 0;
@@ -52,13 +57,35 @@ public class Converter {
 		}
 	}
 
+	private Reader getReader(String file) {
+		try {
+			return new InputStreamReader(new FileInputStream(file), "UTF-8");
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	private Reader getReader(File file) {
+		try {
+			return new InputStreamReader(new FileInputStream(file), "UTF-8");
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	private InputSource getInputSource(Reader fr) {
+		InputSource is=new InputSource(fr);
+		is.setEncoding("UTF-8");
+		return is;
+	}
+	
 	private void convertCommands() {
 		System.out.println("Converting commands");
-		try (InputStream is = new FileInputStream("xml/commands/commands.xml");
+		try (Reader fr = getReader("xml/commands/commands.xml");
 				OutputStream os = new FileOutputStream(new File("seq/commands.def"))) {
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse(is);
+			Document doc = dBuilder.parse(getInputSource(fr));
 			NodeList its = doc.getElementsByTagName("command");
 			for (int i = 0; i < its.getLength(); i++) {
 				Element it = (Element) its.item(i);
@@ -82,11 +109,11 @@ public class Converter {
 
 	private void convertItems() {
 		System.out.println("Converting items");
-		try (InputStream is = new FileInputStream("xml/items/items.xml");
+		try (Reader fr = getReader("xml/items/items.xml");
 				OutputStream os = new FileOutputStream(new File("seq/items.def"))) {
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse(is);
+			Document doc = dBuilder.parse(getInputSource(fr));
 			NodeList its = doc.getElementsByTagName("item");
 			for (int i = 0; i < its.getLength(); i++) {
 				Element it = (Element) its.item(i);
@@ -104,11 +131,11 @@ public class Converter {
 			throw new RuntimeException(e);
 		}
 
-		try (InputStream is = new FileInputStream("xml/items/items.xml");
+		try (Reader fr = getReader("xml/items/items.xml");
 				OutputStream os = new FileOutputStream(new File("seq/operations.def"))) {
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse(is);
+			Document doc = dBuilder.parse(getInputSource(fr));
 			NodeList its = doc.getElementsByTagName("operation");
 			for (int i = 0; i < its.getLength(); i++) {
 				convert(os, its, i);
@@ -135,11 +162,11 @@ public class Converter {
 		for (File room : rooms) {
 			System.out.println("Converting " + room);
 			String name = room.getName().replace(".xml", "");
-			try (InputStream is = new FileInputStream(room);
+			try (Reader fr = getReader(room);
 					OutputStream os = new FileOutputStream(new File("seq/" + name + ".rom"))) {
 				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-				Document doc = dBuilder.parse(is);
+				Document doc = dBuilder.parse(getInputSource(fr));
 				String roomId = doc.getDocumentElement().getAttribute("id");
 				String end = doc.getDocumentElement().getAttribute("end");
 				if (Boolean.valueOf(end)) {
@@ -199,10 +226,9 @@ public class Converter {
 	}
 
 	private String translate(String tmp) {
-		String[] dirs = new String[] { "n", "s", "w", "o", "nw", "sw", "no", "so", "h", "r" };
 		tmp = tmp.toLowerCase().trim();
-		for (int i = 0; i < dirs.length; i++) {
-			if (tmp.equals(dirs[i])) {
+		for (int i = 0; i < DIRS.length; i++) {
+			if (tmp.equals(DIRS[i])) {
 				return String.valueOf(i);
 			}
 		}
@@ -251,10 +277,10 @@ public class Converter {
 	}
 
 	private String clean(String txt) {
-		txt = txt.replace("ö", "oe").replace("Ö", "Oe");
-		txt = txt.replace("ä", "ae").replace("Ä", "Ae");
-		txt = txt.replace("ü", "ue").replace("Ü", "Ue");
-		txt = txt.replace("ß", "ss");
+		txt = txt.replace("Ã¶", "oe").replace("Ã–", "Oe");
+		txt = txt.replace("Ã¤", "ae").replace("Ã„", "Ae");
+		txt = txt.replace("Ã¼", "ue").replace("Ãœ", "Ue");
+		txt = txt.replace("ÃŸ", "ss");
 		txt = txt.replace("|", "~\r").replace("\t", " ");
 		txt = txt.replace(",", ";");
 		return txt;

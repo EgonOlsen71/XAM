@@ -84,8 +84,6 @@ ac%()		- Aktionen, die von der aktuelle Operation getriggert werden (umkopiert)
 	
 
 
-command="7" item="2" unique="1" remove_inv="" remove_room="" add_room="5" add_inv="" unlock="" with_item="" remove_both=""
-
 
 
 
