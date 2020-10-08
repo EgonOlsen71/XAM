@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<trizbort>
+	<info />
+	<map>
+		<room id="1" name="Zimmer" x="32" y="0" w="160" h="96" description="">
+			<objects at="e">Schrank|Bett|Poster|Kalender|Fernseher|(ZX81)</objects>
+		</room>
+		<room id="2" name="Flur, 1.OG" x="32" y="-160" w="160" h="96" description="">
+			<objects at="e">Klappe</objects>
+		</room>
+		<room id="4" name="Dachboden" x="288" y="-320" w="160" h="96" isDark="yes" description="">
+			<objects at="e">Schaufel</objects>
+		</room>
+		<room id="6" name="Bad" x="288" y="-160" w="160" h="96" description="">
+			<objects at="e">Toilette|Handtuch</objects>
+		</room>
+		<room id="8" name="Silvias Zimmer" x="-224" y="-160" w="160" h="96" description="">
+			<objects at="e">Nachtschrank|(Kaugummi)</objects>
+		</room>
+		<room id="10" name="Flur, EG" x="-224" y="-320" w="160" h="96" description="">
+			<objects at="e" />
+		</room>
+		<room id="12" name="Wohnzimmer" x="-480" y="-320" w="160" h="96" description="">
+			<objects at="e">Fernseher|Tisch</objects>
+		</room>
+		<room id="14" name="Schlafzimmer" x="-480" y="-160" w="160" h="96" description="">
+			<objects at="e">Bett|Schrank</objects>
+		</room>
+		<room id="16" name="Garten" x="-224" y="-480" w="160" h="96" description="">
+			<objects at="e">Briefkasten|(Brief)</objects>
+		</room>
+		<room id="17" name="Straße" x="-224" y="-640" w="160" h="96" description="">
+			<objects at="e" />
+		</room>
+		<line id="19">
+			<dock index="0" id="17" port="s" />
+			<dock index="1" id="16" port="n" />
+		</line>
+		<room id="20" name="Garage" x="32" y="-480" w="160" h="96" description="">
+			<objects at="e">Zugstab</objects>
+		</room>
+		<line id="21">
+			<dock index="0" id="20" port="w" />
+			<dock index="1" id="16" port="e" />
+		</line>
+		<line id="18">
+			<dock index="0" id="16" port="s" />
+			<dock index="1" id="10" port="n" />
+		</line>
+		<line id="13">
+			<dock index="0" id="10" port="w" />
+			<dock index="1" id="12" port="e" />
+		</line>
+		<line id="15">
+			<dock index="0" id="12" port="s" />
+			<dock index="1" id="14" port="n" />
+		</line>
+		<line id="7">
+			<dock index="0" id="8" port="e" />
+			<dock index="1" id="2" port="w" />
+		</line>
+		<line id="9">
+			<dock index="0" id="2" port="e" />
+			<dock index="1" id="6" port="w" />
+		</line>
+		<line id="11">
+			<dock index="0" id="2" port="s" />
+			<dock index="1" id="1" port="n" />
+		</line>
+		<room id="22" name="Straße" x="32" y="-640" w="160" h="96" description="">
+			<objects at="e" />
+		</room>
+		<line id="23">
+			<dock index="0" id="22" port="s" />
+			<dock index="1" id="20" port="n" />
+		</line>
+		<line id="24">
+			<dock index="0" id="22" port="w" />
+			<dock index="1" id="17" port="e" />
+		</line>
+		<room id="25" name="Bushaltestelle" x="-480" y="-640" w="160" h="96" description="">
+			<objects at="e">Bus|Schild</objects>
+		</room>
+		<line id="26">
+			<dock index="0" id="25" port="e" />
+			<dock index="1" id="17" port="w" />
+		</line>
+		<line id="3">
+			<dock index="0" id="4" port="sw" />
+			<dock index="1" id="2" port="ne" />
+		</line>
+		<line id="5">
+			<dock index="0" id="2" port="nw" />
+			<dock index="1" id="10" port="se" />
+		</line>
+		<room id="27" name="Küche" x="32" y="-320" w="160" h="96" description="">
+			<objects at="e">Tisch|Tafel|Kühlschrank|(Wurstbrot)</objects>
+		</room>
+		<line id="28">
+			<dock index="0" id="27" port="w" />
+			<dock index="1" id="10" port="e" />
+		</line>
+	</map>
+	<settings>
+		<colors>
+			<canvas>White</canvas>
+			<fill>White</fill>
+			<border>MidnightBlue</border>
+			<line>MidnightBlue</line>
+			<selectedLine>SteelBlue</selectedLine>
+			<hoverLine>DarkOrange</hoverLine>
+			<largeText>MidnightBlue</largeText>
+			<smallText>MidnightBlue</smallText>
+			<lineText>MidnightBlue</lineText>
+			<grid>#F5F5F5</grid>
+		</colors>
+		<fonts>
+			<room size="13">Comic Sans MS</room>
+			<object size="11">Comic Sans MS</object>
+			<line size="9">Comic Sans MS</line>
+		</fonts>
+		<grid>
+			<snapTo>yes</snapTo>
+			<visible>yes</visible>
+			<showOrigin>yes</showOrigin>
+			<size>32</size>
+		</grid>
+		<lines>
+			<width>2</width>
+			<handDrawn>yes</handDrawn>
+			<arrowSize>12</arrowSize>
+			<textOffset>4</textOffset>
+		</lines>
+		<rooms>
+			<darknessStripeSize>24</darknessStripeSize>
+			<objectListOffset>4</objectListOffset>
+			<connectionStalkLength>32</connectionStalkLength>
+			<preferredDistanceBetweenRooms>64</preferredDistanceBetweenRooms>
+		</rooms>
+		<ui>
+			<handleSize>12</handleSize>
+			<snapToElementSize>16</snapToElementSize>
+		</ui>
+		<keypadNavigation>
+			<creationModifier>control</creationModifier>
+			<unexploredModifier>alt</unexploredModifier>
+		</keypadNavigation>
+	</settings>
+</trizbort>

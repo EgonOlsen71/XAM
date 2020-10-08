@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<trizbort>
+	<info />
+	<map>
+		<room id="1" name="Haltestelle" x="160" y="0" w="160" h="96" description="">
+			<objects at="e">Bus|Schild</objects>
+		</room>
+		<room id="2" name="Park" x="160" y="160" w="160" h="96" description="">
+			<objects at="e">Drachen|(Junge)|(Taschenlampe)</objects>
+		</room>
+		<line id="3">
+			<dock index="0" id="1" port="s" />
+			<dock index="1" id="2" port="n" />
+		</line>
+		<room id="4" name="Wald" x="416" y="320" w="160" h="96" description="">
+			<objects at="e">Pilz</objects>
+		</room>
+		<line id="5">
+			<dock index="0" id="2" port="se" />
+			<dock index="1" id="4" port="nw" />
+		</line>
+		<room id="6" name="Wald" x="672" y="320" w="160" h="96" description="">
+			<objects at="e">Arbeiter</objects>
+		</room>
+		<line id="7">
+			<dock index="0" id="6" port="w" />
+			<dock index="1" id="4" port="e" />
+		</line>
+		<room id="8" name="Lichtung" x="928" y="320" w="160" h="96" description="">
+			<objects at="e">Holzkiste</objects>
+		</room>
+		<line id="9">
+			<dock index="0" id="8" port="w" />
+			<dock index="1" id="6" port="e" />
+		</line>
+		<room id="10" name="Gabelstraße" x="-96" y="0" w="160" h="96" description="">
+			<objects at="e" />
+		</room>
+		<line id="11">
+			<dock index="0" id="1" port="w" />
+			<dock index="1" id="10" port="e" />
+		</line>
+		<room id="12" name="Marktplatz" x="-352" y="-160" w="160" h="96" description="">
+			<objects at="e" />
+		</room>
+		<line id="13">
+			<dock index="0" id="12" port="se" />
+			<dock index="1" id="10" port="nw" />
+		</line>
+		<room id="14" name="Polizeirevier" x="-608" y="-160" w="160" h="96" description="">
+			<objects at="e">Tisch|Aushang|Polizist|(Geld)</objects>
+		</room>
+		<line id="15">
+			<dock index="0" id="12" port="w" />
+			<dock index="1" id="14" port="e" />
+		</line>
+		<room id="16" name="Gasse" x="-608" y="0" w="160" h="96" description="">
+			<objects at="e">Kellertür</objects>
+		</room>
+		<line id="17">
+			<dock index="0" id="12" port="sw" />
+			<dock index="1" id="16" port="ne" />
+		</line>
+		<room id="18" name="Keller" x="-608" y="160" w="160" h="96" description="">
+			<objects at="e">Sirene</objects>
+		</room>
+		<line id="19">
+			<dock index="0" id="16" port="s" />
+			<dock index="1" id="18" port="n" />
+		</line>
+		<room id="20" name="Brunnen" x="-608" y="-320" w="160" h="96" description="">
+			<objects at="e">Brunnen|Taube|(Los)</objects>
+		</room>
+		<line id="21">
+			<dock index="0" id="20" port="se" />
+			<dock index="1" id="12" port="nw" />
+		</line>
+		<room id="22" name="Osterstraße" x="-352" y="-320" w="160" h="96" description="">
+			<objects at="e" />
+		</room>
+		<line id="23">
+			<dock index="0" id="22" port="s" />
+			<dock index="1" id="12" port="n" />
+		</line>
+		<room id="24" name="Wobist" x="-96" y="-320" w="160" h="96" description="">
+			<objects at="e">Computer|Verkäufer|(C64)|(Restgeld)</objects>
+		</room>
+		<line id="25">
+			<dock index="0" id="24" port="w" />
+			<dock index="1" id="22" port="e" />
+		</line>
+		<room id="26" name="Flussufer" x="-352" y="-480" w="160" h="96" description="">
+			<objects at="e">Mann|(Karte)</objects>
+		</room>
+		<line id="27">
+			<dock index="0" id="26" port="s" />
+			<dock index="1" id="22" port="n" />
+		</line>
+		<room id="28" name="Marktstraße" x="-96" y="-160" w="160" h="96" description="">
+			<objects at="e" />
+		</room>
+		<line id="29">
+			<dock index="0" id="28" port="w" />
+			<dock index="1" id="12" port="e" />
+		</line>
+		<room id="30" name="Marktstraße" x="160" y="-320" w="160" h="96" description="">
+			<objects at="e">Hund</objects>
+		</room>
+		<line id="31">
+			<dock index="0" id="28" port="ne" />
+			<dock index="1" id="30" port="sw" />
+		</line>
+		<room id="32" name="Spiel-Mit" x="160" y="-480" w="160" h="96" description="">
+			<objects at="e">Tisch|Verkäufer|(Maske)</objects>
+		</room>
+		<line id="33">
+			<dock index="0" id="32" port="s" />
+			<dock index="1" id="30" port="n" />
+		</line>
+	</map>
+	<settings>
+		<colors>
+			<canvas>White</canvas>
+			<fill>White</fill>
+			<border>MidnightBlue</border>
+			<line>MidnightBlue</line>
+			<selectedLine>SteelBlue</selectedLine>
+			<hoverLine>DarkOrange</hoverLine>
+			<largeText>MidnightBlue</largeText>
+			<smallText>MidnightBlue</smallText>
+			<lineText>MidnightBlue</lineText>
+			<grid>#F5F5F5</grid>
+		</colors>
+		<fonts>
+			<room size="13">Comic Sans MS</room>
+			<object size="11">Comic Sans MS</object>
+			<line size="9">Comic Sans MS</line>
+		</fonts>
+		<grid>
+			<snapTo>yes</snapTo>
+			<visible>yes</visible>
+			<showOrigin>yes</showOrigin>
+			<size>32</size>
+		</grid>
+		<lines>
+			<width>2</width>
+			<handDrawn>yes</handDrawn>
+			<arrowSize>12</arrowSize>
+			<textOffset>4</textOffset>
+		</lines>
+		<rooms>
+			<darknessStripeSize>24</darknessStripeSize>
+			<objectListOffset>4</objectListOffset>
+			<connectionStalkLength>32</connectionStalkLength>
+			<preferredDistanceBetweenRooms>64</preferredDistanceBetweenRooms>
+		</rooms>
+		<ui>
+			<handleSize>12</handleSize>
+			<snapToElementSize>16</snapToElementSize>
+		</ui>
+		<keypadNavigation>
+			<creationModifier>control</creationModifier>
+			<unexploredModifier>alt</unexploredModifier>
+		</keypadNavigation>
+	</settings>
+</trizbort>
