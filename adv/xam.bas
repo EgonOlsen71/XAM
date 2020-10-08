@@ -15,7 +15,7 @@
 40070 print "'";cp$(0);"' kenne ich nicht!":return
 
 40100 rem init room with name in rn$
-40110 gosub 62000:gosub 59500:return
+40110 poke 919,0:gosub 62000:gosub 59500:return
 
 40500 rem print object description in t%
 40510 ad=id%(t%)+ba:a$=""
@@ -239,11 +239,14 @@
 48110 close 2:return
 
 49000 rem wait for restart
-49005 geta$:ifa$="q" or a$="x" then end
+49005 geta$:ifa$="q" or a$="x" then 49100
 49010 goto 49000
 
+49100 rem end game
+49110 poke 919,0:end
+
 50000 rem enter and parse command
-50002 if rd%=lr% then 49000
+50002 poke 919,11:if rd%=lr% then 49000
 50005 for i=0 to 8:cv%(i)=-1:cp$(i)="":next:sf%=0
 50010 poke 646,5:print cb$;:cc$="":poke 646,1
 50012 if len(lc$)>0 then cc$=lc$:print lc$:goto 50020
@@ -318,7 +321,7 @@
 52220 if co%<>1 then 52280
 52230 print:print "Wirklich beenden (j/n)?";
 52240 geta$:if a$="" then 52240
-52250 if a$="j" then print:print "Bis bald!":end
+52250 if a$="j" then print:print "Bis bald!":goto 49100
 52260 if a$="n" then return
 52270 goto 52230
 52280 goto 59150
@@ -414,13 +417,13 @@
 53802 rem cmd load
 53804 rem
 53810 if cc%>1 then goto 59150
-53820 ff%=0:gosub 59200:return
+53820 poke 919,0:ff%=0:gosub 59200:return
 
 53850 rem
 53852 rem cmd save
 53854 rem
 53860 if cc%>1 then goto 59150
-53862 a$=fi$+".bak":b$="s:"+a$:gosub 53880
+53862 poke 919,0:a$=fi$+".bak":b$="s:"+a$:gosub 53880
 53865 b$="r:"+a$+"="+fi$:gosub 53880
 53870 ff%=1:gosub 59200:return
 
@@ -519,7 +522,8 @@
 59990 return
 
 60000 rem init
-60002 print "Einen Moment..."
+60001 if peek(832)=120 then sys 832
+60002 poke919,0:print "Einen Moment..."
 60005 mx%=30:mr%=35:mi%=50:mc%=16:xo%=8:cb$=chr$(13)+"> ":lr%=0
 60006 al$="alles":ms%=5:dim i,ii,p,pp,ad:fi$="save.dat":ba=49152:ad=ba
 60010 dim it$(50), il$(50), mv%(50), ti%: rem all items (mi%)
@@ -542,8 +546,6 @@
 60160 dim od$(30), od%: rem operations applied (command ID_item 1_item_2) (mx%)
 60170 dim og%(50,10), og$(50,5), gc%: rem ops. on items in the inventory (mi%)
 60180 dim ac%(10): rem actions of the current operation
-60800 rem test data
-60810 rem iv%(0)=3:iv%(1)=1:ic%=2:rem lx$(0,0)="N"
 60900 return
 
 61000 rem replace semicolon with komma
@@ -650,9 +652,11 @@
 62610 gosub 62750
 62660 if tc%=0 then return
 62670 poke 646,14:print "Du siehst: ";
-62680 for i=0 to tc%-1
-62690 if i>0 then print ", ";
-62700 print it$(ip%(i));:next:print:return
+62680 a$="":ii=11:for i=0 to tc%-1:b$=it$(ip%(i))
+62690 if i>0 then a$=a$+", ":ii=ii+2
+62700 if ii+len(b$)>37 then print a$:a$="":ii=0
+62710 a$=a$+b$:ii=ii+len(b$):next
+62720 print a$:return
 
 62750 rem calculate visible items
 62752 tc%=0:if il%=0 then 62795

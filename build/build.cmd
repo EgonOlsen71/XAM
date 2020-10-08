@@ -2,6 +2,7 @@ c1541 -format brotquest,bq d64 brotquest.d64
 call compile.cmd
 call ..\build\c1541 ..\build\brotquest.d64 -write ++brotquest.prg brotquest,p
 call ..\build\c1541 ..\build\brotquest.d64 -write ++xam.prg xam,p
+call ..\build\c1541 ..\build\brotquest.d64 -write raster.prg xam2,p
 cd ..\build
 cd ..\seq
 for %%f in (*.*) do call :add "%%f"
