@@ -1,4 +1,4 @@
-package com.sixtyfour.games.adventure;
+package com.sixtyfour.games.xam;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
