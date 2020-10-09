@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FilenameFilter;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.Reader;
@@ -22,6 +21,10 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 /**
+ * A hacky converter tool that takes XML-files located in the xml-subdir and
+ * converts it into SQE-files in the seq directory that the BASIC/compiled XAM
+ * interpreter running on the C64 can then read.
+ * 
  * @author EgonOlsen
  *
  */
