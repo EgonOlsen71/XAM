@@ -71,8 +71,9 @@ dr$  				strings for the cardinal points, identified by the index
 op%()()  			operations that are possible in a room
 op$()()  			text for the respective operation
 oc%  				number of operations in room
-mx% 				maximum number of unique operations
-mo%  				maximum number of item operations
+mx% 				maximum number of unique operations (as logged by the Converter as "Unique operations in total")
+mo%  				maximum number of item operations	(as logged by the Converter as "Number of item ops")
+xo%					maxinum number of room operations   (as logged by the Converter as "Maximum number of room ops")
 od$()	  			Applied operations on objects (only unique)
 od%  				number of operations on objects
 uq%  				buffer for "unique"
