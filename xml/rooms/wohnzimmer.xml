@@ -41,7 +41,7 @@
 			kabelst du ihn
 			wieder ab.
 		</operation>
-		<operation command="8" item="40" unique="" remove_inv="40"
+		<operation command="8" item="40" unique="1" remove_inv="40"
 			remove_room="" add_room="" add_inv="" unlock="" with_item="3"
 			remove_both="" portal_to="3">Du verbindest den C64 samt Zubehör mit dem
 			Fernseher. Ein Moment, so grandios wie die Mondlandung! 'READY.'...du

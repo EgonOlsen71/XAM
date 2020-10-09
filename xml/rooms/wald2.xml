@@ -25,7 +25,7 @@
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""
 		remove_both="" portal_to="">'Verschwinde hier! Pfeifen wie du haben in meinem Wald nichts zu suchen.' Demonstrativ versperrt er dir den Weg.
 	</operation>
-	<operation command="8" item="45" unique="" remove_inv=""
+	<operation command="8" item="45" unique="1" remove_inv=""
 		remove_room="43" add_room="" add_inv="" unlock="o" with_item="43"
 		remove_both="" portal_to="">Du näherst dich mit aufgesetzter Maske dem Arbeiter. Er erschrickt! 'Scheiße, was macht Magnum hier? Im Fernsehen sieht der größer aus!' Er läuft verwirrt durch das Unterholz davon.
 	</operation>
