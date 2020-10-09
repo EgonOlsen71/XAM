@@ -116,7 +116,7 @@
 
 42400 rem error check
 42410 if i>=255 then return
-42420 print"Fehler: Array voll!":end
+42420 print"Fehler: Array voll!":goto 49100
 
 42500 rem add item to room
 42510 for i=0 to 8:if rv%(rd%,i)=-1 then rv%(rd%,i)=c%:i=256
@@ -163,6 +163,7 @@
 
 43150 rem flag as unique
 43160 od$(od%)=tf$:od%=od%+1:if od%>mx% then 42420
+43165 po%=po%+10:gosub 63000
 43170 return
 
 43200 rem remove from inventory (i.e. flag as used, id in c%)
@@ -245,7 +246,7 @@
 49010 goto 49000
 
 49100 rem end game
-49110 gosub 62820:end
+49110 gosub 62820:sys 1007:end
 
 50000 rem enter and parse command
 50002 gosub 62840:if rd%=lr% then 49000
@@ -479,6 +480,7 @@
 59200 rem load/save combined (ff%=0 or 1)
 59210 print:p=0:if ff%=0 then open 2,8,2,fi$+",r":print"Lade...";
 59220 if ff%=1 then open 2,8,2,fi$+",w":print"Speichere...";
+59225 c%=po%:gosub 59900:po%=c%
 59230 c%=ic%:gosub 59900:ic%=c%
 59240 c%=od%:gosub 59900:od%=c%
 59250 for i=0 to mi%
@@ -503,7 +505,7 @@
 59510 print:gosub 62600:gosub 62500:return
 
 59800 rem io-error
-59810 print:print "IO-Error: ";st:end
+59810 print:print "IO-Error: ";st:goto 49100
 
 59850 rem print progress indicator/check error
 59855 p=p+1:if p>40 then print".";:p=0
@@ -548,6 +550,8 @@
 60160 dim od$(30), od%: rem operations applied (command ID_item 1_item_2) (mx%)
 60170 dim og%(20,10), og$(20,5), gc%: rem ops. on items in the inventory (mo%)
 60180 dim ac%(10): rem actions of the current operation
+60190 rl$="": rem human readable room name
+60200 po%=0: rem point (each unique operation increases them by 10)
 60900 return
 
 61000 rem replace semicolon with komma
@@ -608,6 +612,7 @@
 
 62000 rem load room data
 62005 gosub 62100:open2,8,2,rn$:gosub 61700:rd%=val(a$):poke 646,15
+62008 gosub 61700:rl$=a$:gosub 63000
 62010 gosub 61700:gosub 59860
 62020 if a$="***" then md%=md%+1:goto 62050
 62030 tx$=a$:gosub 61000:a$=tx$
@@ -670,16 +675,16 @@
 62790 next i
 62795 gosub 41300:return
 
-62800 rem raster start
-62810 if peek(832)=120 then sys 832:rb=1
+62800 rem raster start, copy rom, lock 1st line
+62810 sys 832:sys 949:rb=1
 62815 return
 
 62820 rem raster off
-62830 if peek(832)=120 then sys 921:rb=0
+62830 sys 921:rb=0
 62835 return
 
 62840 rem raster resume
-62850 if peek(832)=120 and rb=0 then sys 938
+62850 if rb=0 then sys 938
 62860 return
 
 62900 rem calculate usable exits
@@ -690,6 +695,15 @@
 62930 next ii:if p=0 then 62950
 62940 xp$(xc%)=ex$(i):xx$(xc%)=xn$(i):xc%=xc%+1
 62950 next i:return
+
+63000 rem print human readable room name
+63005 i=peek(211):ii=peek(214):poke 646,13
+63010 for p=55296 to 55335:poke p, 13:next
+63015 for p=1024 to 1063:poke p, 160:next
+63030 print chr$(19);chr$(18);rl$;
+63035 a$=str$(po%):print spc(39-len(rl$)-len(a$));a$
+63036 print chr$(146):poke 646,15
+63040 poke 781,ii:poke 782,i:poke 783,0:sys 65520:return
 
 63100 rem convert tx$ to lower case
 63105 c%=len(tx$):if c%=0 then return
@@ -709,7 +723,7 @@
 63280 return
 
 63300 rem clear output
-63310 print chr$(14);chr$(147);:poke 53280,0:poke 53281,0:poke 646,15
+63310 print chr$(14);chr$(147):poke 53280,0:poke 53281,0:poke 646,15
 63320 return
 
 63400 data "n", "s", "w", "o", "nw", "sw", "no", "so", "h", "r"

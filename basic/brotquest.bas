@@ -8,6 +8,7 @@
 60 y=y+1:goto 30
 
 500 get a$:if a$="" then 500
+505 for i=0 to 24:sys 59626:next
 510 poke 646,1:printchr$(147);"Stelle Zeit auf 1984...":poke 646,0
 520 sys 921:for i=0 to 10
 530 print "load";chr$(34);"xam";chr$(34);",8,1":next

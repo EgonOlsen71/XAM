@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<room id="6">
+<room id="6" name="Wohnzimmer">
 	<desc>Das Wohnzimmer ist der größte Raum im ganzen Haus. Im Moment ist
-		er allerdings ziemlich leer, weil deine Eltern das Sofa zum Neubeziehen
+		er allerdings ziemlich leer, weil deine Eltern das Sofa zum
+		Neubeziehen
 		gebracht haben. Man sieht noch die Abdrücke an der
-		Raufasertapete, wo es einmal gestanden hat.|Es stehen hier noch der Tisch und der große
+		Raufasertapete, wo es einmal gestanden hat.|Es stehen hier noch der
+		Tisch und der große
 		Farbfernseher.
 	</desc>
 	<exits>
@@ -18,7 +20,8 @@
 		<operation command="1" item="3" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
 			remove_both="" portal_to="">Farbe, 67cm-Bildröhre, Stereo...das neueste
-			Modell (vom letzten Jahr).</operation>
+			Modell (vom letzten Jahr).
+		</operation>
 		<operation command="1" item="13" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
 			remove_both="" portal_to="">Ein niedriger, schwerer Eichentisch mit
@@ -26,22 +29,28 @@
 		</operation>
 		<operation command="8" item="3" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="" portal_to="">Du schaltest den Fernseher ein, aber es läuft nichts
+			remove_both="" portal_to="">Du schaltest den Fernseher ein, aber es
+			läuft nichts
 			Interessantes auf irgendeinem der drei Programme.
 		</operation>
 		<operation command="8" item="3" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item="4"
-			remove_both="" portal_to="">Du verbindest den Z81 mit dem Fernseher. Er funktioniert,
-			aber was will man mit 1 KB schon anfangen? Frustriert kabelst du ihn
+			remove_both="" portal_to="">Du verbindest den Z81 mit dem Fernseher. Er
+			funktioniert,
+			aber was will man mit 1 KB schon anfangen? Frustriert
+			kabelst du ihn
 			wieder ab.
 		</operation>
 		<operation command="8" item="40" unique="" remove_inv="40"
 			remove_room="" add_room="" add_inv="" unlock="" with_item="3"
-			remove_both="" portal_to="3">Du verbindest den C64 samt Zubehör mit dem Fernseher. Ein Moment, so grandios wie die Mondlandung! 'READY.'...du laedst das Spiel, das dabei war...
+			remove_both="" portal_to="3">Du verbindest den C64 samt Zubehör mit dem
+			Fernseher. Ein Moment, so grandios wie die Mondlandung! 'READY.'...du
+			laedst das Spiel, das dabei war...
 		</operation>
 		<operation command="9" item="3" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="" portal_to="">Du haust gegen den Fernseher. Warum auch immer!
+			remove_both="" portal_to="">Du haust gegen den Fernseher. Warum auch
+			immer!
 		</operation>
 	</operations>
 </room>

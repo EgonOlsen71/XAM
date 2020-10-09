@@ -2,6 +2,8 @@
 
 START=46
 END=254
+ROM1=$A000
+ROM2=$E000
 
 	sei                                 
 	lda #<myraster
@@ -76,5 +78,41 @@ rasteron:
 	sta $d01a
 	cli
 	rts
-	
+copyrom:
+	lda mapping
+	bne skipstore
+	lda $1
+	sta mapping
+skipstore:
+	ldy	#$00
+	lda #<ROM1
+	sta $61
+	lda #>ROM1
+	sta $62
+	lda #<ROM2
+	sta $63
+	lda #>ROM2
+	sta $64
+copy:	
+	lda ($61),y
+	sta ($61),y
+	lda ($63),y
+	sta ($63),y
+	iny
+	bne copy
+	inc $62
+	inc $64
+	bne copy
+	lda #0
+	sta 59639
+	lda mapping
+	and #$fd
+	sta $1
+	rts
+resetrom:
+	lda mapping
+	sta 1
+	rts
+mapping:
+.byte 0
     

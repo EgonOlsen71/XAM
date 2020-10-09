@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<room id="2">
+<room id="2" name="Badezimmer">
 	<desc>Du bist im Badezimmer. Der gesamte Raum ist in modischem Grün gehalten. In einem Regal liegt ein Stapel aprilfrisch weichgespülter Handtücher.
 	</desc>
 	<exits>

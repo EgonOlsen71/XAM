@@ -175,6 +175,7 @@ public class Converter {
 				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 				Document doc = dBuilder.parse(getInputSource(fr));
 				String roomId = doc.getDocumentElement().getAttribute("id");
+				String roomName = doc.getDocumentElement().getAttribute("name");
 				String end = doc.getDocumentElement().getAttribute("end");
 				if (Boolean.valueOf(end)) {
 					endId = Integer.parseInt(roomId);
@@ -184,6 +185,7 @@ public class Converter {
 				}
 				ids.add(roomId);
 				write(os, null, roomId + "|", false);
+				write(os, null, roomName + "|", true);
 				Element dsce = (Element) doc.getElementsByTagName("desc").item(0);
 				String desc = getText(dsce);
 				write(os, null, desc + "|", true);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<room id="13">
+<room id="13" name="Bushaltestelle">
 	<desc>
 		Hier ist die Haltestelle, an welcher der Bus nach Hause abfährt.
 		An die Haltestelle grenzt im Süden ein kleiner Park an, aus dem leises
