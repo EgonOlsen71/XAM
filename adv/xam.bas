@@ -23,7 +23,8 @@
 40530 gosub 59100:return
 
 40600 rem print can-not-do-that-message
-40610 print"Das kannst du nicht ";cv$(t%);"!":er=0
+40605 er=0: if t%=15 then print "Das will niemand haben!":return
+40610 print"Das kannst du nicht ";cv$(t%);"!"
 40620 return
 
 40650 rem print items
@@ -236,6 +237,7 @@
 48080 gosub 61000:og$(gc%,ii)=tx$::ii=ii+1:goto 48060
 48090 gc%=gc%+1:if st<>64 then 48020
 48100 print"ok"
+48105 if gc%>mo% then 42420
 48110 close 2:return
 
 49000 rem wait for restart
@@ -310,7 +312,7 @@
 
 52150 rem check schau command against room ops
 52155 rt%=0:if oc%=0 then return
-52160 co%=cv%(0):for j=0 to oc%:t%=op%(j,0)
+52160 co%=cv%(0):for j=0 to oc%-1:t%=op%(j,0)
 52165 if t%=co% then t2%=j:gosub 42200
 52170 if rt%=1 then return
 52175 next:return
@@ -450,12 +452,12 @@
 
 58500 rem generic command
 58510 if oc%=0 then 58700
-58520 rt%=0:for j=0 to oc%:t%=op%(j,0)
+58520 rt%=0:for j=0 to oc%-1:t%=op%(j,0)
 58530 if t%=co% then t2%=j:gosub 42200
 58540 if rt%=1 then return
 58550 next
 58700 rem generic item operations
-58710 rt%=0:for j=0 to gc%:t%=og%(j,0)
+58710 rt%=0:for j=0 to gc%-1:t%=og%(j,0)
 58720 if t%=co% then t2%=j:gosub 42700
 58730 if rt%=1 then return
 58740 next
@@ -524,7 +526,7 @@
 60000 rem init
 60001 if peek(832)=120 then sys 832
 60002 poke919,0:print "Einen Moment..."
-60005 mx%=30:mr%=35:mi%=50:mc%=16:xo%=8:cb$=chr$(13)+"> ":lr%=0
+60005 mx%=30:mr%=35:mi%=50:mc%=16:xo%=8:cb$=chr$(13)+"> ":lr%=0:mo%=20
 60006 al$="alles":ms%=5:dim i,ii,p,pp,ad:fi$="save.dat":ba=49152:ad=ba
 60010 dim it$(50), il$(50), mv%(50), ti%: rem all items (mi%)
 60020 dim rd$(24), pl%, rd%: rem current room's description
@@ -544,7 +546,7 @@
 60140 dim dr$(9):for i=0 to 9:read dr$(i):next: rem direction strings
 60150 dim op%(8,10), op$(8,5), oc%: rem possible operations in a room (xo%)
 60160 dim od$(30), od%: rem operations applied (command ID_item 1_item_2) (mx%)
-60170 dim og%(50,10), og$(50,5), gc%: rem ops. on items in the inventory (mi%)
+60170 dim og%(20,10), og$(20,5), gc%: rem ops. on items in the inventory (mo%)
 60180 dim ac%(10): rem actions of the current operation
 60900 return
 

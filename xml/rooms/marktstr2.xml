@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <room id="28">
 	<desc>
-		Die Fußgängerzone endet hier. Unter den Geschäften ist auch der Spiel-Mit-Laden, in dem du
-		früher stundenlang zwischen Bausteinen und Spielzeugautos verloren gehen konntest.|Vor dem Laden steht eine
-		Art mechanischer Clown, der aus einem knarzigen Lautsprecher 'Heute
-		große Verlosung - Jedes Los gewinnt!' über die Straße plärrt.|Im
+		Die Fußgängerzone endet hier. Unter den Geschäften ist auch der
+		Spiel-Mit-Laden, in dem du
+		früher stundenlang zwischen Bausteinen und
+		Spielzeugautos verloren gehen konntest.|Vor dem Laden steht eine
+		Art
+		mechanischer Clown, der aus einem knarzigen Lautsprecher 'Heute
+		große
+		Verlosung - Jedes Los gewinnt!' über die Straße plärrt.|Im
 		Schaufenster ist Spielzeug für alle Altersgruppen ausgestellt.
 	</desc>
 	<items>
@@ -25,8 +29,10 @@
 	</operation>
 	<operation command="1" item="44" unique="" remove_inv=""
 		remove_room="" add_room="" add_inv="" unlock="" with_item=""
-		remove_both="" portal_to="">Er versperrt dir den Weg in den Spielzeugladen,
-		indem er vor der Tür auf und ab läuft und bellt, sobald jemand näher
+		remove_both="" portal_to="">Er versperrt dir den Weg in den
+		Spielzeugladen,
+		indem er vor der Tür auf und ab läuft und bellt, sobald
+		jemand näher
 		kommt.
 	</operation>
 	<operation command="12" item="44" unique="" remove_inv=""
@@ -55,5 +61,10 @@
 		remove_both="" portal_to="">Du wirfst dem Hund das Pilzbrot hin. Er
 		verschlingt es gierig. Nach einer Weile torkelt er seltsam abwesend
 		die Straße entlang. Der Weg ist frei!
+	</operation>
+	<operation command="15" item="28" unique="" remove_inv=""
+		remove_room="" add_room="" add_inv="" unlock="" with_item="44"
+		remove_both="" portal_to="">Keine ganz schlechte Idee, aber pur wird der
+		Hund den Pilz sicher nicht wollen.
 	</operation>
 </room>

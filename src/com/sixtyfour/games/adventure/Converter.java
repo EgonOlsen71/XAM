@@ -30,6 +30,7 @@ public class Converter {
 	private final static String[] DIRS = new String[] { "n", "s", "w", "o", "nw", "sw", "no", "so", "h", "r" };
 
 	private int uniques = 0;
+	private int itemOps = 0;
 	private int maxOps = 0;
 	private String maxOpsName = null;
 
@@ -41,11 +42,13 @@ public class Converter {
 	public void convert() {
 		uniques = 0;
 		maxOps = 0;
+		itemOps = 0;
 		convertItems();
 		convertCommands();
 		int endId = convertRooms();
 		writeEndId(endId);
 		System.out.println("Unique operations in total: " + uniques);
+		System.out.println("Number of item ops: " + itemOps);
 		System.out.println("Maximum number of room ops: " + maxOps + "/" + maxOpsName);
 	}
 
@@ -74,11 +77,11 @@ public class Converter {
 	}
 
 	private InputSource getInputSource(Reader fr) {
-		InputSource is=new InputSource(fr);
+		InputSource is = new InputSource(fr);
 		is.setEncoding("UTF-8");
 		return is;
 	}
-	
+
 	private void convertCommands() {
 		System.out.println("Converting commands");
 		try (Reader fr = getReader("xml/commands/commands.xml");
@@ -137,7 +140,8 @@ public class Converter {
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(getInputSource(fr));
 			NodeList its = doc.getElementsByTagName("operation");
-			for (int i = 0; i < its.getLength(); i++) {
+			itemOps = its.getLength();
+			for (int i = 0; i < itemOps; i++) {
 				convert(os, its, i);
 			}
 		} catch (Exception e) {

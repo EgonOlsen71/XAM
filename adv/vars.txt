@@ -1,92 +1,82 @@
-tx$ 		- Übergabevariable für String-Subroutinen
-sx$ 		- temp. Variable in String-Subroutinen
-a$			- temp. Stringspeicher
-b$			- temp. Stringspeicher
-tf$			- temp. Stringspeicher
-lg$			- Zu loggender Text
-i,ii,p,pp,j	- Laufvariablen in Schleifen
-c$			- Zeichenspeicher (String)
-c%			- Zeichenspeicher 
-c2%			- Zeichenspeicher
-ff%			- Flag
-rt%			- Rückgabewert
-rr%			- Rückgabewert
-t%			- temp. Zahl
-t2%			- temp. Zahl
-er			- Fehlernummer
-sk%			- Flag, um generische Fehlermeldung zu skippen
-sk%			- Flag, um generische Fehlermeldung zu skippen
-ba			- Adresse des Stringbuffers
-sf%			- Spezialflag, quasi ein Hack für den Untersuche-Befehl
+tx$  				transfer variable for string subroutines
+sx$  				temp. Variable in string subroutines
+a$ 					temp. String storage
+b$  				temp. String storage
+tf$  				temp. String storage
+i, ii, p, pp, j  	variables in loops and for temp. stuff
+c$  				character storage (string)
+c%  				character storage
+c2%  				character storage
+ff%  				flag
+rt%  				return value
+rr%  				return value
+t%  				temp. number
+t2%  				temp. number
+er  				error number
+sk%  				Flag to skip generic error messages
+ba  				address of the string buffer
+sf%  				special flag, kind of a hack for the look command
 
-cc$			- Eingegebener Befehl
-lc$			- "Restbefehl" (wenn mit "und" abgetrennt)
-cb$			- Eingabeprompt
-cp$()		- Ergebnis des Lexers als Strings (nicht nicht normiert)
-cv%()		- Ergebnis des Lexers (auf IDs normiert, -1 für unbekannt)
-co%			- Anzahl der Lexerergebnisse vor Zuordnung, später: erwarteter Befehl
-cc%			- Anzahl der Lexerergebnisse nach Zuordnung
-ct$			- Zwischenspeicher des Lexers
-al$			- String mit "alles"
+cc$  				entered command
+lc$  				"remainder command" (if separated with "and")
+cb$  				input prompt
+cp$() 	 			result of the lexer as a string (not standardized)
+cv%()  				result of the lexer (standardized to IDs, -1 for unknown)
+co%  				number of lexer results before assignment, later: expected command
+cc%  				number of lexer results after assignment
+ct$  				temp. storage of the lexer
+al$  				string with "alles"
 
-mc%			- max. Anzahl Befehle
-ms%			- max. Anzahl Synonyme
-cm$()()		- Befehle, Synonyme gruppiert nach ID
-cv$()		- Textbaustein "das kann ich nicht xxx"	
-tb%			- Anzahl Befehle (Endindex)				
+mc%  				max. number of commands
+ms%  				max. number of synonyms
+cm$()() 			commands, synonyms grouped by ID
+cv$() 	 			text module "I can't do that xxx"
+tb%  				number of commands (end index)
 
 
-rn$			- aktueller Raumname
-mr%			- max. Anzahl Räume
-mi%			- max. Anzahl Gegenstände
-it$()		- Namen der Gegenstände
-il$()		- Namen der Gegenstände in Kleinschrift
-id$()()		- Beschreibung eines Gegenstandes (zeilenweise)
-id%()		- Adressen der Beschreibungen der Gegenstände im Speicher
-ad			- temp. Adresszeiger
-sd			- temp. Adresszeiger
-mv%()		- Flag, ob der Gegenstand eingesammelt werden kann (=1)
-rd$()		- Zeilen der Raumbeschreibung (ohne Extras)
-pl%			- Anzahl der Zeilen des Raumbeschreibung
-rd%			- ID des aktuellen Raums
-ex$()		- Ausgänge in einem Raum ingesamt
-xn$()		- Namen des Räume des jeweiligen Ausgangs
-lk%()		- Flag, ob der Ausgang per Default versperrt ist (=1)
-el%			- Anzahl der Ausgänge des Raumes
-lx$()()		- Liste mit nicht mehr versperrten Ausgängen pro Raum-ID
-ri$()		- Gegenstände in einem Raum (als String, aber mit ID als Inhalt)
-il%			- Anzahl der Gegenstände in einem Raum
-iv%()		- Inventar des Spielers (nur die IDs der Gegenstände)
-rv%()		- Inventar des Raumes (flexibel, nur die IDs der Gegenstände)
-ic%			- Anzahl Gegenstände im Inventar
-ip%()		- Im Raum noch sichtbare Gegenstände
-tc%			- Anzahl der im Raum sichtbaren Gegenstände
-uv%()		- Aus dem Inventar schon benutzte Gegenstände (d.h. dort nicht mehr sichtbar)
-xp$()		- Momentan benutzbare Ausgänge
-xx$()		- Namen des Räume der benutzbaren Ausgänge
-xc%			- Anzahl benutzbare Ausgänge
-ti%			- Anzahl Items (Endindex)
-rs%()		- Flag, um zu markieren, dass ein Gegenstand irgendwo im Rauminventar liegt
-lr%			- ID des letzten Raumes im Spiel
+rn$  				current room name
+mr%  				max. number of rooms
+mi%  				max. number of items
+it$()	 			names of the items
+il$()  				names of objects in lower case
+id$()()  			description of an object (line by line)
+id%() 	 			addresses of descriptions of items in memory
+ad  				temp. address pointer
+sd  				temp. address pointer
+mv%() 	 			Flag whether the item can be collected (= 1)
+rd$()  				lines of the room description (without extras)
+pl% 				number of lines of the room description
+rd%  				ID of the current room
+ex$() 	 			total exits in a room
+xn$()  				name of the room of the respective exit
+lk%()  				Flag whether the exit is blocked by default (= 1)
+el%  				number of exits in the room
+lx$()()  			List of exits that are no longer blocked per room ID
+ri$()	  			objects in a room (as a string, but with ID as content)
+il%  				number of items in a room
+iv%() 	 			player's inventory (only item IDs)
+rv%()  				inventory of the room (flexible, only the IDs of the objects)
+ic%  				number of items in inventory
+ip%()	  			Objects still visible in the room
+tc%  				number of objects visible in the room
+uv%() 	 			Items already used from the inventory (i.e. no longer visible there)
+xp$()  				Currently usable exits
+xx$()  				name of the room of the usable exits
+xc%  				number of usable exits
+ti%  				number of items (final index)
+rs%()	  			Flag to mark that an item is somewhere in the room inventory
+lr%  				ID of the last room in the game
 
-dr$			- Strings für die Himmelsrichtungen, am Index indentifiziert
-op%()()		- Operationen, die in einem Raum möglich sind
-op$()()		- Text für die jeweilige Operation
-oc%			- Anzahl Operationen im Raum
-mx%			- maximale Anzahl von Unique-Operations
-od$()		- Angewendete Operationen auf Gegenstände (nur unique)
-od%			- Anzahl Operationen auf Gegenständen
-uq%			- Zwischenspeicher für "unique"
-og%()()		- Operationen, die auf Gegenständen möglich sind
-og$()()		- Text für die jeweilige Operation
-gc%			- Anzahl Operationen auf Gegenständen
-ac%()		- Aktionen, die von der aktuelle Operation getriggert werden (umkopiert)
-	
-
-
-
-
-
-
-
-
+dr$  				strings for the cardinal points, identified by the index
+op%()()  			operations that are possible in a room
+op$()()  			text for the respective operation
+oc%  				number of operations in room
+mx% 				maximum number of unique operations
+mo%  				maximum number of item operations
+od$()	  			Applied operations on objects (only unique)
+od%  				number of operations on objects
+uq%  				buffer for "unique"
+og%()()  			operations that are possible on objects
+og$()()  			text for the respective operation
+gc%  				number of operations on objects
+ac%()  				Actions that are triggered by the current operation (copied over)
