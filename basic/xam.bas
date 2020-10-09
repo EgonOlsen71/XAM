@@ -124,7 +124,7 @@
 42530 gosub 62600:rt%=1:return
 
 42600 rem add item to inventory
-42605 poke 646,2:print it$(c%);" erhalten!"
+42605 poke 646,10:print it$(c%);" erhalten!"
 42610 gosub 42650
 42615 if ac%(5)<>-1 then rt%=1:return: rem hack to suppress double msg output
 42620 gosub 62600:rt%=1:return
@@ -163,7 +163,7 @@
 
 43150 rem flag as unique
 43160 od$(od%)=tf$:od%=od%+1:if od%>mx% then 42420
-43165 po%=po%+10:gosub 63000
+43165 po%=po%+10:gosub 63000:poke 646,3
 43170 return
 
 43200 rem remove from inventory (i.e. flag as used, id in c%)
