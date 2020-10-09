@@ -22,9 +22,9 @@ lc$  				"remainder command" (if separated with "and")
 cb$  				input prompt
 cp$() 	 			result of the lexer as a string (not standardized)
 cv%()  				result of the lexer (standardized to IDs, -1 for unknown)
-co%  				number of lexer results before assignment, later: expected command
+co%  				number of lexer results before assignment, later: reused for expected command
 cc%  				number of lexer results after assignment
-ct$  				temp. storage of the lexer
+ct$  				temp. storage used by the lexer
 al$  				string with "alles"
 
 mc%  				max. number of commands
@@ -80,3 +80,5 @@ og%()()  			operations that are possible on objects
 og$()()  			text for the respective operation
 gc%  				number of operations on objects
 ac%()  				Actions that are triggered by the current operation (copied over)
+
+rd					Flag, if the raster routine is running or not
