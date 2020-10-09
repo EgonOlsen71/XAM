@@ -8,4 +8,4 @@ XML actually relies on being compiled by MOSpeed to run properly: https://github
 The build script expects MOSpeed's dist-directory to be in the current path.
 It will run in the interpreter as well, but very very slowly.
 
-XAM comes with a full blown, german example adventure called Brotquest. 
+XAM comes with a full blown, german example adventure called Brotquest, which can be found in the build-directory as a d64 file.
