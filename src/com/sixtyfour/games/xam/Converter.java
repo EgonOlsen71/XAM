@@ -22,8 +22,8 @@ import org.xml.sax.InputSource;
 
 /**
  * A hacky converter tool that takes XML-files located in the xml-subdir and
- * converts it into SQE-files in the seq directory that the BASIC/compiled XAM
- * interpreter running on the C64 can then read.
+ * converts it into SEQ-files in the seq directory that the BASIC/compiled XAM
+ * interpreter running on the C64 can read.
  * 
  * @author EgonOlsen
  *
