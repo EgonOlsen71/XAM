@@ -15,7 +15,7 @@
 40070 print "'";cp$(0);"' kenne ich nicht!":return
 
 40100 rem init room with name in rn$
-40110 poke 919,0:gosub 62000:gosub 59500:return
+40110 gosub 62820:gosub 62000:gosub 59500:return
 
 40500 rem print object description in t%
 40510 ad=id%(t%)+ba:a$=""
@@ -245,10 +245,10 @@
 49010 goto 49000
 
 49100 rem end game
-49110 poke 919,0:end
+49110 gosub 62820:end
 
 50000 rem enter and parse command
-50002 poke 919,11:if rd%=lr% then 49000
+50002 gosub 62840:if rd%=lr% then 49000
 50005 for i=0 to 8:cv%(i)=-1:cp$(i)="":next:sf%=0
 50010 poke 646,5:print cb$;:cc$="":poke 646,1
 50012 if len(lc$)>0 then cc$=lc$:print lc$:goto 50020
@@ -419,13 +419,13 @@
 53802 rem cmd load
 53804 rem
 53810 if cc%>1 then goto 59150
-53820 poke 919,0:ff%=0:gosub 59200:return
+53820 gosub 62820:ff%=0:gosub 59200:return
 
 53850 rem
 53852 rem cmd save
 53854 rem
 53860 if cc%>1 then goto 59150
-53862 poke 919,0:a$=fi$+".bak":b$="s:"+a$:gosub 53880
+53862 gosub 62820:a$=fi$+".bak":b$="s:"+a$:gosub 53880
 53865 b$="r:"+a$+"="+fi$:gosub 53880
 53870 ff%=1:gosub 59200:return
 
@@ -524,8 +524,8 @@
 59990 return
 
 60000 rem init
-60001 if peek(832)=120 then sys 832
-60002 poke919,0:print "Einen Moment..."
+60001 gosub 62800:gosub 62820
+60002 print "Einen Moment..."
 60005 mx%=30:mr%=35:mi%=50:mc%=16:xo%=8:cb$=chr$(13)+"> ":lr%=0:mo%=20
 60006 al$="alles":ms%=5:dim i,ii,p,pp,ad:fi$="save.dat":ba=49152:ad=ba
 60010 dim it$(50), il$(50), mv%(50), ti%: rem all items (mi%)
@@ -669,6 +669,18 @@
 62780 ip%(tc%)=p:tc%=tc%+1
 62790 next i
 62795 gosub 41300:return
+
+62800 rem raster start
+62810 if peek(832)=120 then sys 832:rb=1
+62815 return
+
+62820 rem raster off
+62830 if peek(832)=120 then sys 921:rb=0
+62835 return
+
+62840 rem raster resume
+62850 if peek(832)=120 and rb=0 then sys 938
+62860 return
 
 62900 rem calculate usable exits
 62905 xc%=0:if el%=0 then return

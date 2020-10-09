@@ -58,4 +58,23 @@ exit:
  .byte 11
  
  color:
- .byte 0          
+ .byte 0
+ 
+ rasteroff:
+ 	sei 
+	lda $d01a
+	and #14
+	sta $d01a
+	lda color
+	sta $d020
+	cli
+	rts
+rasteron:
+	sei 
+	lda $d01a
+	ora #1
+	sta $d01a
+	cli
+	rts
+	
+    
