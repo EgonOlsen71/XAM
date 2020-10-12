@@ -221,7 +221,7 @@
 
 45000 rem print all commands
 45010 poke 646,10:print "Moegliche Befehle:":print
-45020 for i=0 to tb%-1:a$="":for ii=0 to 4:b$=cm$(i,ii)
+45020 for i=0 to tb%:a$="":for ii=0 to 4:b$=cm$(i,ii)
 45030 if len(b$)=0 then ii=5:goto 45060
 45040 if ii>0 then a$=a$+", "
 45050 a$=a$+b$
@@ -277,7 +277,7 @@
 50100 next i
 50110 pp%=cc%:co%=cc%:cc%=0:for i=0 to pp%-1
 50120 a$=cp$(i):t%=-1:if len(a$)<3 then 50155
-50130 for p=0 to tb%-1:for ii=0 to ms%:b$=cm$(p,ii)
+50130 for p=0 to tb%:for ii=0 to ms%:b$=cm$(p,ii)
 50135 if len(b$)=0 then ii=256:goto 50150
 50140 if a$=left$(b$, len(a$)) then t%=p:ii=256:p=256
 50150 next ii,p
