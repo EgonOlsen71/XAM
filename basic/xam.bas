@@ -15,7 +15,8 @@
 40070 print "'";cp$(0);"' kenne ich nicht!":return
 
 40100 rem init room with name in rn$
-40110 gosub 62820:gosub 62000:gosub 59500:return
+40110 gosub 62820:gosub 62000
+40120 gosub 48200:gosub 59500:close 1:return
 
 40500 rem print object description in t%
 40510 ad=id%(t%)+ba:a$=""
@@ -512,7 +513,7 @@
 59390 lc$="":return
 
 59500 rem print exits and items
-59510 gosub 48200:print:gosub 62600:gosub 62500:close 1:return
+59510 print:gosub 62600:gosub 62500:return
 
 59800 rem io-error
 59810 print:print "IO-Error: ";st:goto 49100
