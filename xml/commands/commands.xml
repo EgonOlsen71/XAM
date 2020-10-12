@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <commands>
-	<command id="0" verb="machen">geh,gehe,nach</command>
-	<command id="1" verb="anschauen">schau,sieh,schaue</command>
-	<command id="2" verb="nehmen">nimm,nehme,nehmen</command>
-	<command id="3" verb="anzeigen">inventar,inv,dabei,besitz,habe</command>
+	<command id="0" verb="machen">gehen,nach</command>
+	<command id="1" verb="anschauen">sieh,schauen,sehen</command>
+	<command id="2" verb="nehmen">nimm,nehmen</command>
+	<command id="3" verb="anzeigen">inventar,dabei,besitzen,haben</command>
 	<command id="4" verb="beenden">exit,quit,ende</command>
 	<command id="5" verb="anzeigen">info,system</command>
-	<command id="6" verb="ablegen">lege,leg,ablegen,verliere</command>
-	<command id="7" verb="oeffnen">oeffne,oeffnen</command>
-	<command id="8" verb="so_benutzen">benutze,benutzen,nutze,verwende</command>
-	<command id="9" verb="schlagen">schlag,schlage,trete,tritt,zerstoere,zerstoer</command>
-	<command id="10" verb="laden">load,lade,laden</command>
+	<command id="6" verb="ablegen">legen,ablegen,verlieren</command>
+	<command id="7" verb="oeffnen">oeffnen</command>
+	<command id="8" verb="so_benutzen">benutzen,nutzen,verwenden</command>
+	<command id="9" verb="schlagen">schlagen,treten,tritt,zerstoeren</command>
+	<command id="10" verb="laden">load,laden</command>
 	<command id="11" verb="speichern">save,speichern,sichern</command>
-	<command id="12" verb="untersuchen">untersuche,untersuchen,pruefe,pruefen</command>
-	<command id="13" verb="befragen">sprich,spreche,frag,frage,rede,red</command>
-	<command id="14" verb="lesen">lies,lese,lesen</command>
-	<command id="15" verb="geben">gib,gebe,geben</command>
-	<command id="16" verb="machen">hilfe,help,befehle,woerter</command>
+	<command id="12" verb="untersuchen">untersuchen,pruefen</command>
+	<command id="13" verb="befragen">sprich,sprechen,fragen,reden</command>
+	<command id="14" verb="lesen">lies,lesen</command>
+	<command id="15" verb="geben">gib,geben</command>
+	<command id="16" verb="machen">hilfen,help,befehlen,woerter</command>
 </commands>

@@ -58,9 +58,9 @@
 41020 if len(a$)<3 then 41100
 41030 gosub 41200:if a$="up" or a$="hoch" then cc$="geh "+cc$:return
 41040 if a$="down" or a$="runter" then cc$="geh "+cc$:return
-41050 if len(a$)>6 then a$=left$(a$,5)
-41060 if a$="nordo" or a$="nordw" then cc$="geh "+cc$:return
-41070 if a$="suedo" or a$="suedw" then cc$="geh "+cc$:return
+41050 if len(a$)>2 then a$=left$(a$,3)
+41060 if a$="nor" or a$="wes" then cc$="geh "+cc$:return
+41070 if a$="sue" or a$="ost" then cc$="geh "+cc$:return
 41090 return
 41100 if a$="n" or a$="s" or a$="w" or a$="o" then cc$="geh "+cc$:return
 41110 if a$="no" or a$="so" or a$="nw" or a$="sw" then cc$="geh "+cc$:return
@@ -265,10 +265,10 @@
 50080 if cc%=9 then i=256
 50100 next i
 50110 pp%=cc%:co%=cc%:cc%=0:for i=0 to pp%-1
-50120 a$=cp$(i):t%=-1
-50130 for p=0 to tb%:for ii=0 to ms%:b$=cm$(p,ii)
-50135 if len(b$)=0 then 50150
-50140 if b$=a$ then t%=p:ii=256:p=256
+50120 a$=cp$(i):t%=-1:if len(a$)<3 then 50155
+50130 for p=0 to tb%-1:for ii=0 to ms%:b$=cm$(p,ii)
+50135 if len(b$)=0 then ii=256:goto 50150
+50140 if a$=left$(b$, len(a$)) then t%=p:ii=256:p=256
 50150 next ii,p
 50155 if t%<>-1 and cv%(0)<>-1 then er=1:return
 50160 if t%<>-1 then cv%(0)=t%:t%=-1:goto 50230
