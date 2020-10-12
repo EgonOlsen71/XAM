@@ -7,6 +7,7 @@
 
 40000 rem print error message
 40010 if er=0 then return
+40015 sys 704
 40020 if er=1 then print "Das klappt so nicht!"
 40030 if er=3 then print "Das bewirkt nichts mehr!"
 40040 if er<>2 then er=0:return
@@ -25,7 +26,7 @@
 
 40600 rem print can-not-do-that-message
 40605 er=0: if t%=15 then print "Das will niemand haben!":return
-40610 print"Das kannst du nicht ";cv$(t%);"!"
+40610 sys 704:print"Das kannst du nicht ";cv$(t%);"!"
 40620 return
 
 40650 rem print items
@@ -380,7 +381,7 @@
 52820 for i=0 to xc%-1:tx$=xp$(i):gosub 63100:b$=tx$
 52830 if a$=b$ then rn$=xx$(i)+".rom":print:gosub 40100:return
 52840 next
-52850 print"Da geht es nicht lang!":return
+52850 sys 704:print"Da geht es nicht lang!":return
 
 52900 rem 
 52902 rem cmd info
