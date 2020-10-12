@@ -21,7 +21,7 @@
 			nähert. Wenn man sie nur irgendwie 'festhalten' könnte.
 		</operation>
 		<operation command="8" item="9" unique="" remove_inv=""
-			remove_room="" add_room="" add_inv="" unlock="" with_item=""
+			remove_room="" add_room="" add_inv="" unlock="" with_item="29"
 			remove_both="" portal_to="">Du versuchst, die Taube mit dem Handtuch zu
 			fangen, aber sie ist zu schnell. Es wäre besser, sie irgendwie am
 			Wegfliegen zu hindern.
