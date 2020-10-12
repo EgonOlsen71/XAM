@@ -363,7 +363,7 @@ public class Converter {
 	}
 
 	private String getValue(String tmp) {
-		return ((tmp != null && !tmp.isEmpty()) ? tmp : "-1") + "|";
+		return ((tmp != null && !tmp.isEmpty()) ? tmp : "?") + "|";
 	}
 
 }

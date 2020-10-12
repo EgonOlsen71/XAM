@@ -26,6 +26,7 @@ co%  				number of lexer results before assignment, later: reused for expected c
 cc%  				number of lexer results after assignment
 ct$  				temp. storage used by the lexer
 al$  				string with "alles"
+dn%					drive number
 
 mc%  				max. number of commands
 ms%  				max. number of synonyms
@@ -67,7 +68,7 @@ ti%  				number of items (final index)
 rs%()	  			Flag to mark that an item is somewhere in the room inventory
 lr%  				ID of the last room in the game
 
-dr$  				strings for the cardinal points, identified by the index
+dr$()  				strings for the cardinal points, identified by the index
 op%()()  			operations that are possible in a room
 op$()()  			text for the respective operation
 oc%  				number of operations in room

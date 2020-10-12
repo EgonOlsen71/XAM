@@ -1,4 +1,4 @@
-10 gosub 63300:gosub 60000:gosub 61200:gosub 48000:gosub 61500
+10 dn%=peek(186):gosub 63300:gosub 60000:gosub 61200:gosub 48000:gosub 61500
 20 rn$="start.rom":gosub 63300
 30 gosub 40100
 40 gosub 50000:gosub 40000
@@ -54,11 +54,11 @@
 
 41000 rem try to guess an intended direction command
 41005 if len(cc$)<2 then return
-41010 a$=left$(cc$,len(cc$)-1)
+41010 a$=left$(cc$, len(cc$)-1)
 41020 if len(a$)<3 then 41100
-41030 gosub 41200:if a$="up" or a$="hoch" then cc$="geh "+cc$:return
-41040 if a$="down" or a$="runter" then cc$="geh "+cc$:return
-41050 if len(a$)>2 then a$=left$(a$,3)
+41025 a$=left$(a$, 3)
+41030 gosub 41200:if a$="up" or a$="hoc" then cc$="geh "+cc$:return
+41040 if a$="dow" or a$="run" then cc$="geh "+cc$:return
 41060 if a$="nor" or a$="wes" then cc$="geh "+cc$:return
 41070 if a$="sue" or a$="ost" then cc$="geh "+cc$:return
 41090 return
@@ -97,7 +97,7 @@
 42000 rem load room operations
 42005 if oc%>xo% then 42420
 42010 for i=0 to 10
-42015 if a$="?" then a$="-1"
+42015 gosub 45200
 42020 op%(oc%,i)=val(a$):gosub 61700:next
 42040 for i=0 to 5:op$(oc%,i)="":next:ii=0
 42050 tx$=a$:gosub 61000:op$(oc%,ii)=tx$:gosub 61700:ii=ii+1
@@ -226,11 +226,18 @@
 45050 a$=a$+b$
 45060 next:gosub 59100:next:return 
 
+45100 rem open file in sx$
+45110 open 2,dn%,2,sx$:return
+
+45200 rem convert a$
+45210 if a$="?" then a$="-1"
+45220 return
+
 48000 rem load item operations
 48010 print "Lade Daten...";
-48015 open 2,8,2,"operations.def":gc%=0
+48015 sx$="operations.def":gosub 45100:gc%=0
 48020 for i=0 to 10
-48030 gosub 61700:if a$="?" then a$="-1"
+48030 gosub 61700:gosub 45200
 48040 og%(gc%,i)=val(a$):next
 48050 for i=0 to 5:og$(gc%,i)="":next:ii=0
 48060 gosub 61700:tx$=a$:print".";
@@ -240,6 +247,9 @@
 48100 print"ok"
 48105 if gc%>mo% then 42420
 48110 close 2:return
+
+48200 rem position head to sector 18 to speed up access somewhat
+48210 open 1,8,1,"$":return
 
 49000 rem wait for restart
 49005 geta$:ifa$="q" or a$="x" then 49100
@@ -357,7 +367,7 @@
 52704 rem
 52720 if co%<>2 then goto 59150
 52740 a$=cp$(1):gosub 41200
-52745 if len(a$)>2 and len(a$)<7 then a$=left$(a$,1)
+52745 if len(a$)>2 and len(a$)<7 then a$=left$(a$,1):goto 52800
 52750 if len(a$)>6 then a$=left$(a$,5)
 52760 if a$="nordo" then a$="no":goto 52800
 52770 if a$="nordw" then a$="nw":goto 52800
@@ -431,7 +441,7 @@
 53870 ff%=1:gosub 59200:return
 
 53880 rem execute disk command
-53882 open 1,8,15,b$:close 1:return
+53882 open 1,dn%,15,b$:close 1:return
 
 53900 rem
 53902 rem cmd untersuche
@@ -478,8 +488,8 @@
 59160 gosub 40600:return
 
 59200 rem load/save combined (ff%=0 or 1)
-59210 print:p=0:if ff%=0 then open 2,8,2,fi$+",r":print"Lade...";
-59220 if ff%=1 then open 2,8,2,fi$+",w":print"Speichere...";
+59210 print:p=0:if ff%=0 then sx$=fi$+",r":gosub 45100:print"Lade...";
+59220 if ff%=1 then sx$=fi$+",w":gosub 45100:print"Speichere...";
 59225 c%=po%:gosub 59900:po%=c%
 59230 c%=ic%:gosub 59900:ic%=c%
 59240 c%=od%:gosub 59900:od%=c%
@@ -502,7 +512,7 @@
 59390 lc$="":return
 
 59500 rem print exits and items
-59510 print:gosub 62600:gosub 62500:return
+59510 gosub 48200:print:gosub 62600:gosub 62500:close 1:return
 
 59800 rem io-error
 59810 print:print "IO-Error: ";st:goto 49100
@@ -569,7 +579,7 @@
 61200 rem load items
 61205 print "Lade Gegenstaende...";
 61206 ii=0:j=0
-61220 open 2,8,2,"items.def"
+61220 sx$="items.def":gosub 45100
 61230 gosub 61700:ii=ii+1
 61250 id$="":for i=1 to len(a$)
 61260 sx$=mid$(a$,i,1):if sx$=";" then 61280
@@ -596,7 +606,7 @@
 
 61500 rem load commands
 61510 print "Lade Befehle...";
-61520 p=0:open 2,8,2,"commands.def"
+61520 p=0:sx$="commands.def":gosub 45100
 61530 gosub 61700:ii=val(a$)
 61540 gosub 61700:pp=val(a$)
 61545 gosub 61700:cv$(ii)=a$
@@ -605,13 +615,13 @@
 61570 next:if st<>64 then p=p+1:goto 61530
 61580 print"ok"
 61590 tb%=p:close 2
-61600 open 2,8,2,"endid.def":input#2,lr%:close2:return
+61600 sx$="endid.def"::gosub 45100:input#2,lr%:close 2:return
 
 61700 rem input call
 61710 input#2,a$:return
 
 62000 rem load room data
-62005 gosub 62100:open2,8,2,rn$:gosub 61700:rd%=val(a$):poke 646,15
+62005 gosub 62100:open2,dn%,2,rn$:gosub 61700:rd%=val(a$):poke 646,15
 62008 gosub 61700:rl$=a$:gosub 63000
 62010 gosub 61700:gosub 59860
 62020 if a$="***" then md%=md%+1:goto 62050
@@ -707,7 +717,7 @@
 
 63100 rem convert tx$ to lower case
 63105 c%=len(tx$):if c%=0 then return
-63106 if c%=1 then gosub 63180:return
+63106 if c%=1 then 63180
 63110 sx$="":for pp=1 to len(tx$)
 63120 c%=asc(mid$(tx$,pp,1))
 63130 gosub 63250
