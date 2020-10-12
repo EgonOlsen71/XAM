@@ -7,7 +7,7 @@
 	<command id="4" verb="beenden">exit,quit,ende</command>
 	<command id="5" verb="anzeigen">info,system</command>
 	<command id="6" verb="ablegen">legen,ablegen,verlieren</command>
-	<command id="7" verb="oeffnen">oeffnen,auf</command>
+	<command id="7" verb="oeffnen">oeffnen</command>
 	<command id="8" verb="so_benutzen">benutzen,nutzen,verwenden</command>
 	<command id="9" verb="schlagen">schlagen,treten,tritt,zerstoeren</command>
 	<command id="10" verb="laden">load,laden</command>
