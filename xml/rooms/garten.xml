@@ -19,7 +19,7 @@
 	<operations>
 		<operation command="7" item="18" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
-			remove_both="" portal_to="">Du bekommst ihn nicht auf, die Klappe klemmt...mal wieder! Da hilft wohl nur Gewalt!
+			remove_both="" portal_to="">Du bekommst ihn nicht auf, die Klappe klemmt...mal wieder!
 		</operation>
 		<operation command="12" item="18" unique="" remove_inv=""
 			remove_room="" add_room="" add_inv="" unlock="" with_item=""
