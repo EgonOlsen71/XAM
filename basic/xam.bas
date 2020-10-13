@@ -147,7 +147,7 @@
 42900 rem check item availability
 42910 rt%=0:c%=cv%(1):c2%=cv%(2)
 42920 if pp<>-1 then 42950
-42930 if p=c% and c2%=-1 then gosub 43500
+42930 if p=c% then if c2%=-1 then gosub 43500
 42940 return
 42950 if (p=c% and pp=c2%) or (p=c2% and pp=c%) then gosub 43500
 42960 return
@@ -171,7 +171,7 @@
 43200 rem remove from inventory (i.e. flag as used, id in c%)
 43210 if ic%=0 then return
 43220 for ii=0 to ic%-1
-43230 if iv%(ii)=c% and uv%(ii)=0 then uv%(ii)=1:return
+43230 if iv%(ii)=c% then if uv%(ii)=0 then uv%(ii)=1:return
 43240 next:return
 
 43400 rem apply actions of current operation
@@ -193,11 +193,11 @@
 43600 rem check item against inv/room (id in rr%)
 43610 rt%=0:if ic%=0 then 43670
 43620 for i=0 to ic%-1
-43630 if iv%(i)=rr% and uv%(i)=0 then rt%=1:return
+43630 if iv%(i)=rr% then if uv%(i)=0 then rt%=1:return
 43640 next
 43670 if tc%=0 then 43710
 43680 for i=0 to tc%-1
-43690 if ip%(i)=rr% and mv%(rr%)=0 then rt%=1:return
+43690 if ip%(i)=rr% then if mv%(rr%)=0 then rt%=1:return
 43700 next
 43710 gosub 53450:return
 
@@ -271,7 +271,7 @@
 50035 gosub 41000
 50040 cc%=0:for i=1 to len(cc$):c$=mid$(cc$,i,1):c%=asc(c$)
 50045 if c%=128 then c%=32: rem handle shifted space
-50050 if ((c%<48 or c%>57) and (c%<65 or c%>90)) and c%<>32 then 50100
+50050 if (c%<48 or c%>57) then if (c%<65 or c%>90) then if c%<>32 then 50100
 50060 if c%<>32 then ct$=ct$+c$:goto 50080
 50070 if len(ct$)>0 then gosub 50500
 50080 if cc%=9 then i=256
@@ -282,7 +282,7 @@
 50135 if len(b$)=0 then ii=256:goto 50150
 50140 if a$=left$(b$, len(a$)) then t%=p:ii=256:p=256
 50150 next ii,p
-50155 if t%<>-1 and cv%(0)<>-1 then er=1:return
+50155 if t%<>-1 then if cv%(0)<>-1 then er=1:return
 50160 if t%<>-1 then cv%(0)=t%:t%=-1:goto 50230
 50170 for p=0 to ti%:if il$(p)=a$ then t%=p:p=256
 50180 next
@@ -319,7 +319,7 @@
 52080 next
 52085 if ic%=0 then 52110
 52090 t%=cv%(1):for i=0 to ic%-1
-52095 pp%=iv%(i):if pp%=t% and uv%(i)=0 then gosub 40500:return
+52095 pp%=iv%(i):if pp%=t% then if uv%(i)=0 then gosub 40500:return
 52100 next
 52110 print it$(t%)+" ist hier nicht!":sk%=1:return
 
@@ -351,7 +351,7 @@
 52502 rem cmd nimm
 52504 rem
 52510 ff%=0
-52520 if cc%=1 and co%=2 and (cp$(0)=al$ or cp$(1)=al$) then gosub 40800:return
+52520 if cc%=1 then if co%=2 then if (cp$(0)=al$ or cp$(1)=al$) then gosub 40800:return
 52525 if cc%=1 then goto 59150
 52530 for i=1 to cc%-1:t%=cv%(i):rt%=0
 52540 rr%=0:if tc%=0 then 52580
@@ -369,7 +369,7 @@
 52704 rem
 52720 if co%<>2 then goto 59150
 52740 a$=cp$(1):gosub 41200
-52745 if len(a$)>2 and len(a$)<7 then a$=left$(a$,1):goto 52800
+52745 if len(a$)>2 then if len(a$)<7 then a$=left$(a$,1):goto 52800
 52750 if len(a$)>6 then a$=left$(a$,5)
 52760 if a$="nordo" then a$="no":goto 52800
 52770 if a$="nordw" then a$="nw":goto 52800
@@ -397,7 +397,7 @@
 53220 if cc%=1 then goto 59150
 53230 for i=1 to cc%-1:t%=cv%(i)
 53240 rr%=0:for ii=0 to ic%-1:pp%=iv%(ii):rt%=0
-53245 if pp%=t% and uv%(ii)=0 then gosub 41400
+53245 if pp%=t% then if uv%(ii)=0 then gosub 41400
 53250 if rt%=1 then ff%=1
 53260 if rt%>0 then rr%=rt%:rt%=0:ii=256
 53270 next ii
