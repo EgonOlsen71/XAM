@@ -730,7 +730,7 @@
 63210 tx$=chr$(c%):return
 
 63250 rem convert
-63260 if c%>=192 then c%=c%-128
+63260 if c%>191 then c%=c%-128
 63270 if c%>90 then c%=c%-32
 63280 return
 
