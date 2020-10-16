@@ -7,7 +7,6 @@
 
 40000 rem print error message
 40010 if er=0 then return
-40015 sys 53180
 40020 if er=1 then print "Das klappt so nicht!"
 40030 if er=3 then print "Das bewirkt nichts mehr!"
 40040 if er<>2 then er=0:return

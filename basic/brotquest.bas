@@ -1,6 +1,5 @@
 0 dn%=peek(186)
 2 if lf=0 then lf=1:load "xam2",dn%,1
-3 if lf=1 then lf=2:load "beep",dn%,1
 5 sys 832
 10 print chr$(14);chr$(147);:poke 53280,0:poke 53281,0:poke 646,7
 20 x=0:y=0:d=1
