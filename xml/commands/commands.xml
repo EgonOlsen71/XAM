@@ -16,5 +16,5 @@
 	<command id="13" verb="befragen">sprich,sprechen,fragen,reden</command>
 	<command id="14" verb="lesen">lies,lesen</command>
 	<command id="15" verb="geben">gib,geben</command>
-	<command id="16" verb="machen">hilfen,help,befehlen,woerter</command>
+	<command id="16" verb="machen">hilfe,help,befehle,woerter</command>
 </commands>
