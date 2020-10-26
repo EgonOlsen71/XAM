@@ -350,8 +350,8 @@
 52502 rem cmd nimm
 52504 rem
 52510 ff%=0
-52520 if cc%=1 then if co%=2 then if (cp$(0)=al$ or cp$(1)=al$) then gosub 40800:return
-52525 if cc%=1 then goto 59150
+52520 if cc%=1 and co%=2 and (cp$(0)=al$ or cp$(1)=al$) then gosub 40800:return
+52525 if cc%=1 then 59150
 52530 for i=1 to cc%-1:t%=cv%(i):rt%=0
 52540 rr%=0:if tc%=0 then 52580
 52545 for ii=0 to tc%-1:pp%=ip%(ii):if pp%=t% then gosub 40900
