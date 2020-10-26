@@ -4,7 +4,7 @@ XAM is short for XML Adventure Machine, which is a bombastic name for a rather s
 
 The XAM code itself is game-agnostic, i.e. it's just an interpreter for the game's data that has been converted from the XML files that actually describe the game. It expects the first room to be called start.rom, but other than that, it doesn't know anything about the actual game. Well, that's not entirely true...the code defines some static data structures (i.e. arrays) whose dimensions depend on the "size" of the game. One might have to adjust these depending on the game that the interpreter is supposed to run. I could have made the Converter tool modify the interpreter's code to match the game's requirements, but I couldn't be bothered.
 
-XAM actually relies on being compiled by MOSpeed to run properly: https://github.com/EgonOlsen71/basicv2
+XAM actually relies on being compiled with MOSpeed to run properly: https://github.com/EgonOlsen71/basicv2
 The build script expects MOSpeed's dist-directory to be in the current path.
 It will run in the interpreter as well, but very very slowly.
 
