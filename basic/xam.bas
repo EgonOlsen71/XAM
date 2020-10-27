@@ -293,11 +293,18 @@
 50240 for i=0 to 8:if cv%(i)<>-1 then cc%=cc%+1:goto 50260
 50250 if cc%=0 then er=2:return
 50260 next
+50270 lo$="":i=cv%(1):if i<>-1 then tx$=it$(i):gosub 63100:lo$=tx$
 50280 return
 
 50500 rem detect chained commands
+50505 gosub 50600
 50510 if ct$<>"und" or cc%=0 then cp$(cc%)=ct$:ct$="":cc%=cc%+1:return
 50520 lc$=right$(cc$, len(cc$)-i):i=256:return
+
+50600 rem detect sie/es/ihr if needed
+50610 if len(lo$)=0 or len(ct$)>3 then return
+50620 a$=left$(ct$,2):if a$="es" or a$="ih" or a$="si" then ct$=lo$
+50630 return
 
 52000 rem evaluate parsed command
 52005 rr%=0:rt%=0:ff%=0:sk%=0
@@ -350,7 +357,7 @@
 52502 rem cmd nimm
 52504 rem
 52510 ff%=0
-52520 if cc%=1 and co%=2 and (cp$(0)=al$ or cp$(1)=al$) then gosub 40800:return
+52520 if cc%=1 then if co%=2 then if (cp$(0)=al$ or cp$(1)=al$) then gosub 40800:return
 52525 if cc%=1 then 59150
 52530 for i=1 to cc%-1:t%=cv%(i):rt%=0
 52540 rr%=0:if tc%=0 then 52580

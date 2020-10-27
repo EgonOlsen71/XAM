@@ -27,6 +27,7 @@ cc%  				number of lexer results after assignment
 ct$  				temp. storage used by the lexer
 al$  				string with "alles"
 dn%					drive number
+lo$					name of the last object
 
 mc%  				max. number of commands
 ms%  				max. number of synonyms
