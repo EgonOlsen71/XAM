@@ -15,7 +15,7 @@
 530 print "load";chr$(34);"xam";chr$(34);",";dn%;",1":next
 535 print chr$(19);
 540 poke 631,13:poke 632,82:poke 633,85:poke 634,78
-550 poke 636,58:poke 635,13:poke 198,6
+550 poke 635,58:poke 636,13:poke 198,6
 560 end
 
 600 x2=x:if x2<0 then x2=0
