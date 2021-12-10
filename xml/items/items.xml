@@ -158,7 +158,7 @@
 	</item>
 	<item id="39" inventory="1">
 		<name>Restgeld</name>
-		<desc>Das sind 200 DM, die von Wobist als Wechselgeld bekommen hast.</desc>
+		<desc>Das sind 200 DM, die du von Wobist als Wechselgeld bekommen hast.</desc>
 	</item>
 	<item id="40" inventory="1">
 		<name>C64</name>
