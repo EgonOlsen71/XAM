@@ -16,7 +16,7 @@
 
 40100 rem init room with name in rn$
 40110 gosub 62820:gosub 62000
-40120 gosub 48200:gosub 59500:close 1:return
+40120 gosub 59500:return
 
 40500 rem print object description in t%
 40510 ad=id%(t%)+ba:a$=""
@@ -248,9 +248,6 @@
 48100 print"ok"
 48105 if gc%>mo% then 42420
 48110 close 2:return
-
-48200 rem position head to sector 18 to speed up access somewhat
-48210 open 1,8,1,"$":return
 
 49000 rem wait for restart
 49005 geta$:ifa$="q" or a$="x" then 49100
